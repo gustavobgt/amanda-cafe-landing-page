@@ -11,9 +11,7 @@
     "build-storybook": "build-storybook",
     "test": "jest",
     "deploy-static": "npm run build && npm run export",
-    "lint": "eslint src --max-warnings=0",
-    "lint-staged": "lint-staged",
-    "prepare": "husky install"
+    "lint": "eslint src --max-warnings=0"
   },
   "dependencies": {
     "@styled-icons/material-outlined": "^10.28.0",
@@ -49,11 +47,5 @@
     "lint-staged": "^10.5.4",
     "prettier": "^2.2.1",
     "typescript": "^4.2.2"
-  },
-  "lint-staged": {
-    "src/**/*": [
-      "npm run lint -- --fix",
-      "npm test -- --findRelatedTests --bail"
-    ]
   }
 }

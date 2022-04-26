@@ -8,6 +8,7 @@ export type GridTwoColumnsProps = {
   text: string;
   srcImg: string;
   background?: boolean;
+  backgroundImg?: string;
   sectionId?: string;
   component?: string;
 };
@@ -17,10 +18,15 @@ export const GridTwoColumns = ({
   text,
   srcImg,
   background = false,
+  backgroundImg = '',
   sectionId = '',
 }: GridTwoColumnsProps) => {
   return (
-    <SectionBackground background={background} sectionId={sectionId}>
+    <SectionBackground
+      background={background}
+      backgroundImg={backgroundImg}
+      sectionId={sectionId}
+    >
       <Styled.Container>
         <Styled.TextContainer>
           <Heading uppercase colorDark={!background} as="h2">

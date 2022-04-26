@@ -20,7 +20,7 @@ export const Container = styled.div<MenuVisible>`
     right: 0;
     width: 100%;
     border-bottom: ${theme.colors.mediumGray};
-    background: ${theme.colors.white};
+    background: transparent;
     transition: all 300ms ease-in-out;
 
     > ${SectionContainer} {
@@ -34,6 +34,7 @@ export const Container = styled.div<MenuVisible>`
     }
 
     @media ${theme.media.lteMedium} {
+      background: white;
       height: 100vh;
       visibility: hidden;
       opacity: 0;
@@ -60,7 +61,7 @@ export const Container = styled.div<MenuVisible>`
 export const MenuContainer = styled.div`
   ${({ theme }) => css`
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
 
     @media ${theme.media.lteMedium} {

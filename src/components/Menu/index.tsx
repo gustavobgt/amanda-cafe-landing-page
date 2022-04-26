@@ -1,6 +1,5 @@
 import * as Styled from './styles';
 import { SectionContainer } from '../SectionContainer';
-import { LogoLink, LogoLinkProps } from '../LogoLink';
 import { NavLinks } from '../NavLinks';
 import { Menu as MenuIcon } from '@styled-icons/material-outlined/Menu';
 import { Close as CloseIcon } from '@styled-icons/material-outlined/Close';
@@ -9,10 +8,9 @@ import { MenuLinkProps } from '../MenuLink';
 
 export type MenuProps = {
   links?: MenuLinkProps[];
-  logoData: LogoLinkProps;
 };
 
-export const Menu = ({ links = [], logoData }: MenuProps) => {
+export const Menu = ({ links = [] }: MenuProps) => {
   const [visible, setVisible] = useState(false);
 
   return (
@@ -31,7 +29,6 @@ export const Menu = ({ links = [], logoData }: MenuProps) => {
       <Styled.Container visible={visible} onClick={() => setVisible(false)}>
         <SectionContainer>
           <Styled.MenuContainer>
-            <LogoLink {...logoData} />
             <NavLinks links={links} />
           </Styled.MenuContainer>
         </SectionContainer>

@@ -7,106 +7,79 @@ const data = [
       '<p><a href="https://beacons.page/otaviomiranda">Feito com ❤ por Otávio Miranda</a></p>',
     slug: 'landing-page',
     menu: {
-      text: 'Landing Page',
-      link: '#home',
       links: [
         {
-          children: 'intro',
-          link: '#intro',
+          children: 'Sobre',
+          link: '#sobre',
         },
         {
-          children: 'grid-one',
-          link: '#grid-one',
+          children: 'Portfólio',
+          link: '#portfolio',
         },
         {
-          children: 'gallery',
-          link: '#gallery',
+          children: 'Feedbacks',
+          link: '#feedbacks',
+        },
+        {
+          children: 'Loja',
+          link: '#loja',
+        },
+        {
+          children: 'Contato',
+          link: '#contato',
         },
       ],
     },
     sections: [
       {
-        title: 'January brings us Firefox 85',
+        title: 'Toda Mulher',
         text:
-          'To wrap up January, we are proud to bring you the release of Firefox 85. In this version we are bringing you support for the :focus-visible pseudo-class in CSS and associated devtools, and the complete removal of Flash support from Firefox.',
-        srcImg:
-          'https://res.cloudinary.com/dlizakp2a/image/upload/v1613749289/javascript_b57bf48cda.svg',
+          'deve querer se ver e se sentir cada dia melhor, e é isso que busco com minha fotografia. Quero reforçar a confiança dessas mulheres para que elas celebrem suas belezas.',
+        srcImg: 'https://i.imgur.com/YKMiFVo.png',
         background: true,
-        sectionId: 'home',
+        backgroundImg: 'https://i.imgur.com/ejAm74w.png',
+        sectionId: 'sobre',
         component: 'section.section-two-columns',
       },
       {
-        title: 'news coverage and some surprises',
-        html:
-          '<p>The release of Apple Silicon-based Macs at the end of last year generated a flurry of news coverage and some surprises at the machine’s performance. This post details some background information on the experience of porting Firefox to run natively on these CPUs.</p><p>We’ll start with some background on the Mac transition and give an overview of Firefox internals that needed to know about the new architecture, before moving on to the concept of Universal Binaries.</p><p>We’ll then explain how DRM/EME works on the new platform, talk about our experience with macOS Big Sur, and discuss various updater problems we had to deal with. We’ll conclude with the release and an overview of various other improvements that are in the pipeline.</p>',
-        background: false,
-        sectionId: 'intro',
-        component: 'section.section-content',
-      },
-      {
+        title: 'Celebrando belezas femininas',
+        text:
+          'Hoje meu foco é valorizar mulheres em todos os momentos. Seja para uma comemoração, ou simplesmente por querer se amar e se sentir maravilhosa. Aqui você vai encontrar um pouco do que eu faço, e se identificar com qual estilo você gostaria de fazer o seu ensaio! ',
+        srcImg: 'https://i.imgur.com/XLWS72x.png',
         background: true,
-        title: 'My Grid',
-        description:
-          'Debitis cum delectus molestias. Atque doloribus nobis laudantium esse ut',
-        grid: [
-          {
-            title: 'Teste 1',
-            description:
-              'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Debitis cum delectus molestias. Atque doloribus nobis laudantium esse ut, non commodi maxime distinctio veritatis unde, reprehenderit minus ad dolores provident maiores.',
-          },
-          {
-            title: 'Teste 2',
-            description:
-              'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Debitis cum delectus molestias. Atque doloribus nobis laudantium esse ut, non commodi maxime distinctio veritatis unde, reprehenderit minus ad dolores provident maiores.',
-          },
-          {
-            title: 'Teste 3',
-            description:
-              'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Debitis cum delectus molestias. Atque doloribus nobis laudantium esse ut, non commodi maxime distinctio veritatis unde, reprehenderit minus ad dolores provident maiores.',
-          },
-        ],
-        sectionId: 'grid-one',
-        component: 'section.section-grid-text',
+        backgroundImg: 'https://i.imgur.com/HiKn6r3.png',
+        sectionId: 'portfolio',
+        component: 'section.section-two-columns',
       },
       {
-        background: false,
-        title: 'Gallery',
-        description:
-          'Distinctio veritatis unde, reprehenderit minus ad dolores provident maiores.',
-        grid: [
-          {
-            altText: 'Uma paisagem com céu claro e montanhas bonitas',
-            srcImg:
-              'https://res.cloudinary.com/dlizakp2a/image/upload/v1613749814/360x360_r_1_6a2049d13a.jpg',
-          },
-          {
-            altText: 'Um livro grande aberto',
-            srcImg:
-              'https://res.cloudinary.com/dlizakp2a/image/upload/v1613749814/360x360_r_1_c073b11d09.jpg',
-          },
-          {
-            altText: 'Imagem do topo de uma cidade grande',
-            srcImg:
-              'https://res.cloudinary.com/dlizakp2a/image/upload/v1613749814/360x360_r_2_38651a645b.jpg',
-          },
-          {
-            altText: 'Filme para câmeras antigas',
-            srcImg:
-              'https://res.cloudinary.com/dlizakp2a/image/upload/v1613749814/360x360_r_1_9d32ada1f9.jpg',
-          },
-          {
-            altText: 'Tela de notebook com Webull',
-            srcImg:
-              'https://res.cloudinary.com/dlizakp2a/image/upload/v1613749814/360x360_r_a1_973b2a68c9.jpg',
-          },
-          {
-            altText: 'Filme Kodak para câmeras antigas',
-            srcImg:
-              'https://res.cloudinary.com/dlizakp2a/image/upload/v1613749814/360x360_r_1_b3fcbf1d93.jpg',
-          },
-        ],
-        sectionId: 'gallery',
-        component: 'section.section-grid-image',
+        title: 'Graziele Esteves',
+        text:
+          'Quando conheci Amanda lorem ipsum dolor sit amet, consectetur adipiscing elit. Posuere velit risus ut dignissim lectus. Bibendum porta lorem venenatis ante sit augue metus.',
+        srcImg: 'https://i.imgur.com/TDwbEQg.png',
+        background: true,
+        backgroundImg: 'https://i.imgur.com/rndYNNe.png',
+        sectionId: 'feedbacks',
+        component: 'section.section-two-columns',
+      },
+      {
+        title: 'Preset: Fairytail',
+        text:
+          'Um dos meus presets favoritos! Mistura tons quentes e traz aquela sensação de agradabilidade quando se olha pra foto! Lembrando que presets são configurações de cores prontas, sendo necessário adaptar para cada fotografia',
+        srcImg: 'https://i.imgur.com/wSxbbVz.png',
+        background: true,
+        backgroundImg: 'https://i.imgur.com/euiAPwX.png',
+        sectionId: 'loja',
+        component: 'section.section-two-columns',
+      },
+      {
+        title: 'Quer se sentir maravilhosa? Entre em contato!',
+        text:
+          'Substituir o final da página de contato por: Se preferir explicar sua proposta já completinha, pode enviar na caixinha ao lado! Ela vai direto pro meu whatsapp e continuamos nossa conversa por lá! ',
+        srcImg: 'https://i.imgur.com/lAQud8p.png',
+        background: true,
+        backgroundImg: 'https://i.imgur.com/4z5367A.png',
+        sectionId: 'contato',
+        component: 'section.section-two-columns',
       },
     ],
   },

@@ -10,14 +10,13 @@ import { GridImage, GridImageProps } from '../../components/GridImage';
 import { Base } from '../Base';
 import config from '../../config';
 import { theme } from '../../styles/theme';
-import { LogoLinkProps } from '../../components/LogoLink';
 import { MenuLinkProps } from '../../components/MenuLink';
 
 export type PageData = {
   title: string;
   slug: string;
   footerHtml: string;
-  menu: LogoLinkProps & { links?: MenuLinkProps[] };
+  menu: { links?: MenuLinkProps[] };
   sections: SectionProps[];
 };
 
@@ -33,14 +32,10 @@ export type HomeProps = {
 
 function Home({ data }: HomeProps) {
   const { menu, sections, footerHtml, slug, title } = data[0];
-  const { links, text, link, srcImg } = menu;
+  const { links } = menu;
 
   return (
-    <Base
-      links={links}
-      footerHtml={footerHtml}
-      logoData={{ text, link, srcImg }}
-    >
+    <Base links={links} footerHtml={footerHtml}>
       <Head>
         <title>
           {title} | {config.siteName}
