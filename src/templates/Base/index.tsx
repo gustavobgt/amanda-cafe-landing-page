@@ -7,7 +7,7 @@ import { LogoLinkProps } from '../../components/LogoLink';
 
 export type BaseProps = {
   children: React.ReactNode;
-  links: MenuLinkProps[];
+  links?: MenuLinkProps[];
   footerHtml: string;
   logoData: LogoLinkProps;
 };
