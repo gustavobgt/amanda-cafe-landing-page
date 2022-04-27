@@ -13,6 +13,7 @@ const menuVisible = () => css`
 
 export const Container = styled.div<MenuVisible>`
   ${({ theme, visible }) => css`
+    margin-top: 3rem;
     position: fixed;
     z-index: 5;
     top: 0;

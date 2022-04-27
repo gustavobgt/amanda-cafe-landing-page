@@ -1,7 +1,11 @@
 import styled, { css } from 'styled-components';
 
-export const Container = styled.a`
-  ${({ theme }) => css`
+interface Props {
+  isActive?: boolean;
+}
+
+export const Container = styled.a<Props>`
+  ${({ theme, isActive }) => css`
     display: block;
     text-decoration: none;
     font-size: ${theme.font.sizes.small};
@@ -10,20 +14,64 @@ export const Container = styled.a`
     font-weight: bold;
     position: relative;
 
-    &::after {
-      content: '';
-      position: absolute;
-      bottom: 0.76rem;
-      left: 50%;
-      width: 0;
-      height: 0.2rem;
-      background: #ffffff;
-      transition: all 300ms ease-in-out;
-    }
+    ${isActive
+      ? css`
+          &::after {
+            content: '';
+            position: absolute;
+            bottom: 0.76rem;
+            left: 10%;
+            width: 45%;
+            height: 0.3rem;
+            background: #ffffff;
+            transition: all 300ms ease-in-out;
+          }
 
-    &:hover::after {
-      left: 25%;
-      width: 50%;
-    }
+          &::before {
+            content: '';
+            position: absolute;
+            bottom: 0.9rem;
+            left: 40%;
+            width: 50%;
+            height: 0.1rem;
+            background: #ffffff;
+            opacity: 0.7;
+            transition: all 300ms ease-in-out;
+          }
+        `
+      : css`
+          &::after {
+            content: '';
+            position: absolute;
+            bottom: 0.76rem;
+            left: 50%;
+            width: 0;
+            height: 0.3rem;
+            background: #ffffff;
+            transition: all 300ms ease-in-out;
+          }
+
+          &::before {
+            content: '';
+            position: absolute;
+            bottom: 0.9rem;
+            left: 50%;
+            width: 0;
+            height: 0.1rem;
+            background: #ffffff;
+            opacity: 0.7;
+            transition: all 300ms ease-in-out;
+          }
+
+          &:hover::after {
+            left: 10%;
+            width: 45%;
+          }
+
+          &:hover::before {
+            left: 40%;
+            width: 50%;
+          }
+        `}
   `}
 `;

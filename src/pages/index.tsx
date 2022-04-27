@@ -4,29 +4,29 @@ const data = [
   {
     title: 'Amanda Café',
     footerHtml:
-      '<p><a href="https://beacons.page/otaviomiranda">Feito com ❤ por Otávio Miranda</a></p>',
+      '<p><a href="https://beacons.page/otaviomiranda">Feito por Gustavo Bruno</a></p>',
     slug: 'landing-page',
     menu: {
       links: [
         {
           children: 'Sobre',
-          link: '#sobre',
+          link: '/#sobre',
         },
         {
           children: 'Portfólio',
-          link: '#portfolio',
+          link: '/#portfolio',
         },
         {
           children: 'Feedbacks',
-          link: '#feedbacks',
+          link: '/#feedbacks',
         },
         {
           children: 'Loja',
-          link: '#loja',
+          link: '/#loja',
         },
         {
           children: 'Contato',
-          link: '#contato',
+          link: '/#contato',
         },
       ],
     },
