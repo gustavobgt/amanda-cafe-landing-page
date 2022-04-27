@@ -1,6 +1,7 @@
 import Head from 'next/head';
 
-import { About } from '../../components/About';
+import { About } from '../../components/Sections/About';
+import { Portfolio } from '../../components/Sections/Portfolio';
 import { Base } from '../Base';
 import config from '../../config';
 import { theme } from '../../styles/theme';
@@ -18,7 +19,7 @@ export type HomeProps = {
 };
 
 function Home({ data }: HomeProps) {
-  const { menu, footerHtml, slug, title } = data[0];
+  const { menu, footerHtml, title } = data[0];
   const { links } = menu;
 
   return (
@@ -36,6 +37,8 @@ function Home({ data }: HomeProps) {
       </Head>
 
       <About />
+
+      <Portfolio />
     </Base>
   );
 }
