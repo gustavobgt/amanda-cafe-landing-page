@@ -2,8 +2,8 @@ import Head from 'next/head';
 
 import { About } from '../../components/Sections/About';
 import { Portfolio } from '../../components/Sections/Portfolio';
+import { Feedback } from '../../components/Sections/Feedback';
 import { Base } from '../Base';
-import config from '../../config';
 import { theme } from '../../styles/theme';
 import { MenuLinkProps } from '../../components/MenuLink';
 
@@ -25,9 +25,7 @@ function Home({ data }: HomeProps) {
   return (
     <Base links={links} footerHtml={footerHtml}>
       <Head>
-        <title>
-          {title} | {config.siteName}
-        </title>
+        <title>{title}</title>
 
         <meta name="theme-color" content={theme.colors.primaryColor} />
         <meta
@@ -39,6 +37,8 @@ function Home({ data }: HomeProps) {
       <About />
 
       <Portfolio />
+
+      <Feedback />
     </Base>
   );
 }
