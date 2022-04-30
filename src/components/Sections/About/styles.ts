@@ -1,17 +1,21 @@
 import styled, { css } from 'styled-components';
 
 export const RelativeContainer = styled.div`
-  position: relative;
+  ${({ theme }) => css`
+    position: relative;
+    height: 80vh;
+    @media ${theme.media.lteMedium} {
+      height: inherit;
+    }
+  `}
 `;
 
 export const TextContainer1 = styled.div`
   ${({ theme }) => css`
     max-width: 205px;
-    position: absolute;
     bottom: 14rem;
     @media ${theme.media.lteMedium} {
       margin-bottom: ${theme.spacings.large};
-      position: static;
       max-width: inherit;
     }
   `}
@@ -21,8 +25,8 @@ export const TextContainer2 = styled.div`
   ${({ theme }) => css`
     max-width: 419px;
     position: absolute;
-    right: 10rem;
-    top: -8rem;
+    right: 7rem;
+    top: 6.5rem;
     @media ${theme.media.lteMedium} {
       margin-bottom: ${theme.spacings.large};
       position: static;

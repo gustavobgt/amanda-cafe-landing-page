@@ -18,7 +18,7 @@ const data = [
     name: 'Graziele Esteves 1',
     feedback:
       'Quando conheci Amanda lorem ipsum dolor sit amet, consectetur adipiscing elit. Posuere velit risus ut dignissim lectus. Bibendum porta lorem venenatis ante sit augue metus.',
-    instagram: '@Graziesteves',
+    instagram: '@Graziesteves1',
     link: 'https://www.instagram.com/grazisteves/',
     photo: 'https://i.imgur.com/TDwbEQg.png',
     avatar: 'https://i.imgur.com/MAK6oUW.png',
@@ -26,8 +26,8 @@ const data = [
   {
     name: 'Graziele Esteves 2',
     feedback:
-      'Quando conheci Amanda lorem ipsum dolor sit amet, consectetur adipiscing elit. Posuere velit risus ut dignissim lectus. Bibendum porta lorem venenatis ante sit augue metus.',
-    instagram: '@Graziesteves',
+      'Ei, Mari, percebi que você se encarregou de organizar as atividades de construção e integração das equipes. Você faz um ótimo trabalho e todos se divertem muito em seus eventos. Nos avise caso precise de ajuda com os eventos futuros, será um prazer contribuir.',
+    instagram: '@Graziesteves2',
     link: 'https://www.instagram.com/grazisteves/',
     photo: 'https://i.imgur.com/Y1tmAyg.png',
     avatar: 'https://i.imgur.com/pkT2bvI.png',
@@ -35,8 +35,8 @@ const data = [
   {
     name: 'Graziele Esteves 3',
     feedback:
-      'Quando conheci Amanda lorem ipsum dolor sit amet, consectetur adipiscing elit. Posuere velit risus ut dignissim lectus. Bibendum porta lorem venenatis ante sit augue metus.',
-    instagram: '@Graziesteves',
+      'Estou muito feliz com sua determinação em terminar este projeto, Lu. Sei que não foi fácil, mas sabia que você conseguiria. Sua atitude prestativa deixa claro que você pode continuar a assumir novas responsabilidades, desafios e crescer com a empresa. Obrigado pelo seu esforço extra.',
+    instagram: '@Graziesteves3',
     link: 'https://www.instagram.com/grazisteves/',
     photo: 'https://i.imgur.com/TDwbEQg.png',
     avatar: 'https://i.imgur.com/86h7xwe.png',
@@ -45,7 +45,7 @@ const data = [
     name: 'Graziele Esteves 4',
     feedback:
       'Quando conheci Amanda lorem ipsum dolor sit amet, consectetur adipiscing elit. Posuere velit risus ut dignissim lectus. Bibendum porta lorem venenatis ante sit augue metus.',
-    instagram: '@Graziesteves',
+    instagram: '@Graziesteves4',
     link: 'https://www.instagram.com/grazisteves/',
     photo: 'https://i.imgur.com/Y1tmAyg.png',
     avatar: 'https://i.imgur.com/86h7xwe.png',
@@ -54,7 +54,7 @@ const data = [
     name: 'Graziele Esteves 5',
     feedback:
       'Quando conheci Amanda lorem ipsum dolor sit amet, consectetur adipiscing elit. Posuere velit risus ut dignissim lectus. Bibendum porta lorem venenatis ante sit augue metus.',
-    instagram: '@Graziesteves',
+    instagram: '@Graziesteves5',
     link: 'https://www.instagram.com/grazisteves/',
     photo: 'https://i.imgur.com/TDwbEQg.png',
     avatar: 'https://i.imgur.com/pkT2bvI.png',
@@ -92,15 +92,25 @@ export const Feedback = () => {
               </Styled.SvgContainer>
 
               <Styled.ButtonsContainer>
-                <Button direction="left" disabled={true} />
+                <Button
+                  direction="left"
+                  disabled={currentIndex <= 0}
+                  onClick={() => setCurrentIndex((prevState) => prevState - 1)}
+                />
 
-                <Button direction="right" />
+                <Button
+                  disabled={currentIndex === data.length - 1}
+                  direction="right"
+                  onClick={() => setCurrentIndex((prevState) => prevState + 1)}
+                />
               </Styled.ButtonsContainer>
             </Styled.Header>
 
             <Styled.Title1>{data[currentIndex].name}</Styled.Title1>
 
-            <Styled.SubTitle1>{data[currentIndex].feedback}</Styled.SubTitle1>
+            <Styled.Description>
+              {data[currentIndex].feedback}
+            </Styled.Description>
 
             <Styled.Instagram target="_blank" href={data[currentIndex].link}>
               {data[currentIndex].instagram}
@@ -109,8 +119,14 @@ export const Feedback = () => {
             <Styled.Avatars>
               {data.map(({ avatar }, key) => {
                 return (
-                  <Styled.AvatarContainer key={key}>
-                    <Styled.AvatarImg src={avatar} />
+                  <Styled.AvatarContainer
+                    isFocused={key === currentIndex}
+                    key={key}
+                  >
+                    <Styled.AvatarImg
+                      onClick={() => setCurrentIndex(key)}
+                      src={avatar}
+                    />
                   </Styled.AvatarContainer>
                 );
               })}

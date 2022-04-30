@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
 
 export const Container = styled.div`
   ${({ theme }) => css`
@@ -21,6 +21,7 @@ export const Background = styled.div`
     min-height: 100vh;
     display: flex;
     align-items: center;
+    border-bottom: 0.05px solid rgba(255, 255, 255, 0.5);
 
     background: url('https://i.imgur.com/rndYNNe.png') no-repeat,
       ${theme.colors.background};
@@ -90,6 +91,11 @@ export const ButtonsContainer = styled.div`
   grid-gap: 2rem;
 `;
 
+const fadeIn = keyframes`
+  0% {opacity:0;}
+  100% {opacity:1;}
+`;
+
 export const Title1 = styled.h2`
   ${() => css`
     font-family: 'Poppins';
@@ -98,14 +104,16 @@ export const Title1 = styled.h2`
     font-size: 4.8rem;
     line-height: 51px;
     letter-spacing: 0.01em;
+    animation: ${fadeIn} linear 7s;
 
     color: #ffffff;
     text-align: left;
   `}
 `;
 
-export const SubTitle1 = styled.p`
+export const Description = styled.p`
   ${({ theme }) => css`
+    min-height: 160px;
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 500;
@@ -150,21 +158,32 @@ export const Avatars = styled.div`
   }
 `;
 
-export const AvatarContainer = styled.div`
-  display: flex;
-  align-items: center;
-  padding: 0.3rem;
-  min-width: 80px;
-  border: 1px solid
-    linear-gradient(137.58deg, #ffffff 12.45%, rgba(255, 255, 255, 0) 91.14%);
+type AvatarContainerProps = {
+  isFocused?: boolean;
+};
 
-  border-image-source: linear-gradient(
-    137.58deg,
-    #ffffff 12.45%,
-    rgba(255, 255, 255, 0) 91.14%
-  );
+const focused = () => css`
+  background: url('https://i.imgur.com/BMcnXbB.png') no-repeat;
+  background-size: contain;
+`;
+
+export const AvatarContainer = styled.div<AvatarContainerProps>`
+  ${({ isFocused }) => css`
+    display: flex;
+    align-items: center;
+    padding: 0.6rem;
+    width: 92px;
+    transition: all 0.5s ease-in-out;
+    ${isFocused && focused()}
+  `}
 `;
 
 export const AvatarImg = styled.img`
   width: 100%;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+
+  :hover {
+    opacity: 0.5;
+  }
 `;

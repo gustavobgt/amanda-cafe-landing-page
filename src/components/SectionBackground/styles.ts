@@ -10,9 +10,9 @@ const containerBackgroundActivate = (
   backgroundImg: string,
 ) => css`
   background: url(${backgroundImg}) no-repeat, ${theme.colors.background};
-  background-position: center center;
+  background-position: 0% 100%;
   background-attachment: fixed;
-  background-size: cover;
+  background-size: contain;
   color: ${theme.colors.white};
 `;
 
@@ -24,5 +24,6 @@ export const Container = styled.div<Background>`
     min-height: 100vh;
     display: flex;
     align-items: center;
+    border-bottom: 0.05px solid rgba(255, 255, 255, 0.5);
   `}
 `;
