@@ -3,6 +3,7 @@ import Head from 'next/head';
 import { About } from '../../components/Sections/About';
 import { Portfolio } from '../../components/Sections/Portfolio';
 import { Feedback } from '../../components/Sections/Feedback';
+import { Contact } from '../../components/Sections/Contact';
 import { Base } from '../Base';
 import { theme } from '../../styles/theme';
 import { MenuLinkProps } from '../../components/MenuLink';
@@ -39,6 +40,8 @@ function Home({ data }: HomeProps) {
       <Portfolio />
 
       <Feedback />
+
+      <Contact />
     </Base>
   );
 }

@@ -1,10 +1,10 @@
 import * as Styled from './styles';
 import { GridTwoColumns } from '../../GridTwoColumns';
+import SocialMedia from '../../SocialMedia';
 
 const aboutInfo = {
   title: 'Toda Mulher',
-  text:
-    'deve querer se ver e se sentir cada dia melhor, e é isso que busco com minha fotografia. Quero reforçar a confiança dessas mulheres para que elas celebrem suas belezas.',
+  text: 'deve querer se ver e se sentir cada dia melhor, e é isso que busco com minha fotografia. Quero reforçar a confiança dessas mulheres para que elas celebrem suas belezas.',
   srcImg: 'https://i.imgur.com/YKMiFVo.png',
   background: true,
   backgroundImg: 'https://i.imgur.com/ejAm74w.png',

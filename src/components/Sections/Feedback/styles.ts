@@ -150,7 +150,7 @@ export const Instagram = styled.a`
 export const Avatars = styled.div`
   display: flex;
   align-items: center;
-  grid-gap: 3rem;
+  justify-content: space-between;
   margin-top: 5rem;
   overflow: scroll;
   ::-webkit-scrollbar {

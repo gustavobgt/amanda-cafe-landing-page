@@ -1,6 +1,8 @@
 import * as Styled from './styles';
 import Button from '../../Button';
 import { useState } from 'react';
+import SocialMedia from '../../SocialMedia';
+
 /*
 const portfolioInfo = {
         title: 'Graziele Esteves',
@@ -133,6 +135,8 @@ export const Feedback = () => {
             </Styled.Avatars>
           </Styled.TextContainer1>
         </Styled.Container>
+        
+        <SocialMedia/>
       </Styled.SectionContainer>
     </Styled.Background>
   );

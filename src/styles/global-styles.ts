@@ -39,4 +39,16 @@ export const GlobalStyles = createGlobalStyle`
     width: 100%;
     overflow-y: auto;
   }
+
+  button {
+    border: none;
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    -webkit-font-smoothing: inherit;
+    -moz-osx-font-smoothing: inherit;
+    -webkit-appearance: none;
+  }
 `;

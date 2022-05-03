@@ -1,5 +1,7 @@
 import * as Styled from './styles';
 import Button from './components/Button';
+import SocialMedia from '../../SocialMedia';
+
 /*
 const portfolioInfo = {
   title: 'Celebrando belezas femininas',
@@ -130,6 +132,8 @@ export const Portfolio = () => {
             </Styled.Carousel>
           </Styled.CarouselContainer>
         </Styled.Container>
+
+        <SocialMedia/>
       </Styled.SectionContainer>
     </Styled.Background>
   );
