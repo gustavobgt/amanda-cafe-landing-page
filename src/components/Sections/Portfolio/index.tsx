@@ -1,6 +1,5 @@
 import * as Styled from './styles';
 import Button from './components/Button';
-import SocialMedia from '../../SocialMedia';
 
 /*
 const portfolioInfo = {
@@ -102,7 +101,8 @@ export const Portfolio = () => {
             </Styled.CarouselActions>
           </Styled.TextContainer1>
 
-          <Styled.CarouselContainer>
+          {/*
+            <Styled.CarouselContainer>
             <Styled.Carousel>
               <Styled.CarouselList>
                 <Styled.CarouselItem>
@@ -131,9 +131,8 @@ export const Portfolio = () => {
               </Styled.CarouselList>
             </Styled.Carousel>
           </Styled.CarouselContainer>
+            */}
         </Styled.Container>
-
-        <SocialMedia/>
       </Styled.SectionContainer>
     </Styled.Background>
   );
