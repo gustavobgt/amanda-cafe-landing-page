@@ -1,9 +1,10 @@
 import styled, { css } from 'styled-components';
+import Carousel from 'react-elastic-carousel';
 
 export const Container = styled.div`
   ${({ theme }) => css`
     display: grid;
-    grid-template-columns: 1fr 1.5fr;
+    grid-template-columns: 1fr 2fr;
     align-items: flex-start;
     grid-gap: 6rem;
 
@@ -83,7 +84,6 @@ export const SubTitle = styled.h3`
 
 export const Description = styled.p`
   ${({ theme }) => css`
-    min-height: 160px;
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 500;
@@ -106,6 +106,7 @@ export const ButtonsContainer = styled.div`
   display: flex;
   gap: 10px;
   align-items: center;
+  flex-wrap: wrap;
 `;
 
 export const BuyButton = styled.button`
@@ -176,14 +177,40 @@ export const DetailsButton = styled.button`
 export const PrincipalImageContainer = styled.div`
   ${() =>
     css`
-      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
       margin-bottom: 44px;
     `}
 `;
 
 export const PrincipalImage = styled.img`
   ${() => css`
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
     width: 100%;
+  `}
+`;
+
+export const ECarousel = styled(Carousel)`
+  ${() => css`
+    flex-direction: row;
+
+    @media (min-width: 1100px) {
+      > div:nth-child(1) {
+        height: 600px !important;
+      }
+    }
+
+    > div:nth-child(2) {
+      flex-direction: column;
+      margin-left: 10px;
+    }
+
+    @media (max-width: 1100px) {
+      flex-direction: column;
+
+      > div:nth-child(2) {
+        flex-direction: row;
+        margin-top: 44px;
+      }
+    }
   `}
 `;
 
@@ -264,4 +291,67 @@ export const ImageTitle = styled.p`
   /* White */
 
   color: #ffffff;
+`;
+
+export const RightSideContainer = styled.div`
+  ${({ theme }) => css`
+    display: grid;
+    grid-template-columns: 1fr 0.5fr;
+    grid-gap: 20px;
+
+    @media (max-width: 1100px) {
+      display: flex;
+      flex-direction: column;
+    }
+  `}
+`;
+
+export const PaginationContainer = styled.div`
+  position: relative;
+  height: 18px;
+`;
+
+export const Pagination = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 8px;
+`;
+
+export const DotContainer = styled.div`
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  padding: 2px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+interface Dot {
+  active: boolean;
+}
+
+export const Dot = styled.div<Dot>`
+  ${({ active }) => css`
+    opacity: ${!active ? 0 : 1};
+    background: #ffffff;
+    width: ${!active ? '5px' : '10px'};
+    height: ${!active ? '5px' : '10px'};
+    border-radius: 50%;
+    transition: all 0.25s ease-in-out;
+  `}
+`;
+
+interface NextButton {
+  visible: boolean;
+}
+
+export const NextButton = styled.button<NextButton>`
+  ${({ visible }) =>
+    css`
+      cursor: pointer;
+      opacity: ${!visible ? 0 : 1};
+      display: flex;
+      transition: all 0.25s ease-in-out;
+    `}
 `;
