@@ -40,6 +40,10 @@ export const About = () => {
         </Styled.TextContainer1>
       </Styled.RelativeContainer>
 
+      <Styled.AmandaImgContainer>
+        <Styled.AmandaImg src="https://i.imgur.com/KRetRm2.png" />
+      </Styled.AmandaImgContainer>
+
       <Styled.RelativeContainer>
         <Styled.TextContainer2>
           <Styled.SvgContainer>

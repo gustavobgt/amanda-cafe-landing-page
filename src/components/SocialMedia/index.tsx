@@ -4,7 +4,10 @@ const SocialMedia = () => {
   return (
     <Styled.Container>
       <Styled.Footer>
-        <Styled.Link href="">
+        <Styled.Link
+          target="_blank"
+          href="https://api.whatsapp.com/send?phone=5571992787948"
+        >
           <svg
             width="25"
             height="26"
@@ -19,7 +22,10 @@ const SocialMedia = () => {
           </svg>
         </Styled.Link>
 
-        <Styled.Link href="">
+        <Styled.Link
+          target="_blank"
+          href="https://www.instagram.com/amandacafefotografia/"
+        >
           <svg
             width="25"
             height="26"
@@ -42,7 +48,10 @@ const SocialMedia = () => {
           </svg>
         </Styled.Link>
 
-        <Styled.Link href="">
+        <Styled.Link
+          target="_blank"
+          href="mailto: amandacafefotografia@gmail.com"
+        >
           <svg
             width="25"
             height="26"
@@ -65,4 +74,4 @@ const SocialMedia = () => {
   );
 };
 
-export default SocialMedia
+export default SocialMedia;

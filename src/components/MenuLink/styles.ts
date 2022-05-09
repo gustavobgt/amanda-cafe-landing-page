@@ -14,6 +14,15 @@ export const Container = styled.a<Props>`
     font-weight: bold;
     position: relative;
 
+    @media ${theme.media.lteMedium} {
+      color: white;
+      font-family: 'Poppins';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 34px;
+    }
+
     ${isActive
       ? css`
           &::after {

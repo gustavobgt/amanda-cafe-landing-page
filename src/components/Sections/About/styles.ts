@@ -10,13 +10,30 @@ export const RelativeContainer = styled.div`
   `}
 `;
 
+export const AmandaImgContainer = styled.div`
+  ${({ theme }) =>
+    css`
+      display: none;
+
+      @media ${theme.media.lteMedium} {
+        display: block;
+      }
+    `}
+`;
+
+export const AmandaImg = styled.img`
+  ${() => css`
+    width: 100%;
+  `}
+`;
+
 export const TextContainer1 = styled.div`
   ${({ theme }) => css`
     max-width: 205px;
-    bottom: 14rem;
     @media ${theme.media.lteMedium} {
       margin-bottom: ${theme.spacings.large};
       max-width: inherit;
+      padding: 5%;
     }
   `}
 `;
@@ -31,12 +48,13 @@ export const TextContainer2 = styled.div`
       margin-bottom: ${theme.spacings.large};
       position: static;
       max-width: inherit;
+      padding: 5%;
     }
   `}
 `;
 
 export const Title1 = styled.h2`
-  ${() => css`
+  ${({ theme }) => css`
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 700;
@@ -45,11 +63,15 @@ export const Title1 = styled.h2`
     letter-spacing: 0.01em;
 
     color: #ffffff;
+
+    @media ${theme.media.lteMedium} {
+      margin: 5% 0 0 0;
+    }
   `}
 `;
 
 export const SubTitle1 = styled.p`
-  ${() => css`
+  ${({ theme }) => css`
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 500;
@@ -60,6 +82,10 @@ export const SubTitle1 = styled.p`
     letter-spacing: 0.03em;
 
     color: #ffffff;
+
+    @media ${theme.media.lteMedium} {
+      margin: 0;
+    }
   `}
 `;
 

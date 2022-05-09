@@ -1,11 +1,11 @@
 import styled, { css } from 'styled-components';
 
 export const Container = styled.div`
-  ${({ theme }) => css`
+  ${() => css`
     position: fixed;
     bottom: 2rem;
     right: 10rem;
-    z-index: 6;
+    z-index: 3;
   `}
 `;
 
@@ -14,7 +14,7 @@ export const Footer = styled.div`
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    grid-gap: 40px;
+    gap: 40px;
   `}
 `;
 

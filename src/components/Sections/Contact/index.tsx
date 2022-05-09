@@ -1,8 +1,5 @@
 import * as Styled from './styles';
-import Button from '../../Button';
 import SocialMedia from '../../SocialMedia';
-import { useState } from 'react';
-import { Style } from '@styled-icons/material-outlined';
 /*
 const contactInfo = {
         title: 'Quer se sentir maravilhosa? Entre em contato!',
@@ -99,7 +96,7 @@ export const Contact = () => {
           </Styled.TextContainer1>
         </Styled.Container>
 
-        <SocialMedia/>
+        <SocialMedia />
       </Styled.SectionContainer>
     </Styled.Background>
   );

@@ -13,9 +13,6 @@ export const NavLinks = ({ links = [] }: NavLinksProps) => {
     <Styled.Container aria-label="Main menu">
       {links.map((link) => {
         const isActive = router.asPath === link.link;
-        console.log('isActive = ', isActive);
-        console.log('router.asPath = ', router.asPath);
-        console.log('link.link = ', link.link);
         return <MenuLink isActive={isActive} key={link.link} {...link} />;
       })}
     </Styled.Container>
