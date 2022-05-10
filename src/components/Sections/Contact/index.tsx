@@ -39,7 +39,8 @@ export const Contact = () => {
           </Styled.TextContainer1>
 
           <Styled.TextContainer1>
-            <Styled.Form>
+            {/**
+               * <Styled.Form>
               <Styled.SvgContainer>
                 <svg
                   width="17"
@@ -93,6 +94,7 @@ export const Contact = () => {
                 ENVIAR MENSAGEM
               </Styled.SubmitButton>
             </Styled.Form>
+               */}
           </Styled.TextContainer1>
         </Styled.Container>
 

@@ -1,6 +1,5 @@
 import * as Styled from './styles';
 import { GridTwoColumns } from '../../GridTwoColumns';
-import SocialMedia from '../../SocialMedia';
 
 const aboutInfo = {
   title: 'Toda Mulher',

@@ -10,7 +10,7 @@ export const Container = styled.div`
 
     @media ${theme.media.lteMedium} {
       grid-template-columns: 1fr;
-      grid-template-rows: 1fr 20rem 1fr;
+      grid-template-rows: 1fr 14rem 1fr;
       text-align: center;
       height: 100%;
     }

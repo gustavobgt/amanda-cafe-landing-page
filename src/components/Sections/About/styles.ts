@@ -98,6 +98,8 @@ export const SvgContainer = styled.div`
       margin-right: -8rem;
     }
     @media ${theme.media.lteMedium} {
+      align-items: center;
+      justify-content: center;
       > svg {
         margin-right: 0;
       }
@@ -106,7 +108,7 @@ export const SvgContainer = styled.div`
 `;
 
 export const Title2 = styled.h2`
-  ${() => css`
+  ${({ theme }) => css`
     margin: 0;
     font-family: 'Poppins';
     font-style: normal;
@@ -116,6 +118,11 @@ export const Title2 = styled.h2`
     letter-spacing: 0.01em;
 
     color: #ffffff;
+
+    @media ${theme.media.lteMedium} {
+      font-size: 6.4rem;
+      line-height: 69px;
+    }
   `}
 `;
 
