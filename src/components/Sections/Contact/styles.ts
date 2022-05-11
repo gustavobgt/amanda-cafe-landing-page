@@ -107,6 +107,11 @@ export const Whatsapp = styled.a`
     line-height: 20px;
     color: #ffffff;
     text-decoration: none;
+
+    &:hover {
+      opacity: 0.7;
+      transition: 0.25s;
+    }
   `}
 `;
 
@@ -128,6 +133,11 @@ export const Instagram = styled.a`
     line-height: 20px;
     color: #ffffff;
     text-decoration: none;
+
+    &:hover {
+      opacity: 0.7;
+      transition: 0.25s;
+    }
   `}
 `;
 
@@ -149,6 +159,11 @@ export const Email = styled.a`
     line-height: 20px;
     color: #ffffff;
     text-decoration: none;
+
+    &:hover {
+      opacity: 0.7;
+      transition: 0.25s;
+    }
   `}
 `;
 

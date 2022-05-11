@@ -17,6 +17,7 @@ export const Container = styled.div`
 
 export const Background = styled.div`
   ${({ theme }) => css`
+    padding-top: 49px;
     background: ${theme.colors.white};
     color: ${theme.colors.primaryColor};
     min-height: 100vh;
@@ -109,8 +110,9 @@ export const ButtonsContainer = styled.div`
   flex-wrap: wrap;
 `;
 
-export const BuyButton = styled.button`
+export const BuyButton = styled.a`
   ${() => css`
+    text-decoration: none;
     cursor: pointer;
     display: flex;
     flex-direction: row;
@@ -143,8 +145,9 @@ export const BuyButton = styled.button`
   `}
 `;
 
-export const DetailsButton = styled.button`
+export const DetailsButton = styled.a`
   ${() => css`
+    text-decoration: none;
     cursor: pointer;
     display: flex;
     flex-direction: row;
@@ -183,8 +186,9 @@ export const PrincipalImageContainer = styled.div`
 
 export const PrincipalImage = styled.img`
   ${() => css`
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
     width: 100%;
+    border-radius: 7px;
   `}
 `;
 

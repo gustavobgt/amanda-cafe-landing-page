@@ -117,8 +117,7 @@ export const Feedback = () => {
               {data[currentIndex].instagram}
             </Styled.Instagram>
 
-            {/**
-               * <Styled.Avatars>
+            <Styled.Avatars>
               {data.map(({ avatar }, key) => {
                 return (
                   <Styled.AvatarContainer
@@ -133,8 +132,6 @@ export const Feedback = () => {
                 );
               })}
             </Styled.Avatars>
-               *
-               */}
           </Styled.TextContainer1>
         </Styled.Container>
       </Styled.SectionContainer>

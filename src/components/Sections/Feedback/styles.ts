@@ -16,6 +16,7 @@ export const Container = styled.div`
 
 export const Background = styled.div`
   ${({ theme }) => css`
+    padding-top: 49px;
     background: ${theme.colors.white};
     color: ${theme.colors.primaryColor};
     min-height: 100vh;
@@ -151,8 +152,10 @@ export const Avatars = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
   margin-top: 5rem;
-  overflow: scroll;
+  overflow-x: auto;
+  overflow-y: hidden;
   ::-webkit-scrollbar {
     display: none;
   }

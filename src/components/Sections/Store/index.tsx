@@ -83,7 +83,7 @@ export const Store = () => {
             </Styled.Description>
 
             <Styled.ButtonsContainer>
-              <Styled.BuyButton>
+              <Styled.BuyButton target="_blank" href="https://www.youtube.com/">
                 COMPRAR{' '}
                 <svg
                   width="5"
@@ -102,7 +102,12 @@ export const Store = () => {
                 </svg>
               </Styled.BuyButton>
 
-              <Styled.DetailsButton>VER MAIS</Styled.DetailsButton>
+              <Styled.DetailsButton
+                target="_blank"
+                href="https://www.youtube.com/"
+              >
+                VER MAIS
+              </Styled.DetailsButton>
             </Styled.ButtonsContainer>
           </Styled.TextContainer1>
 

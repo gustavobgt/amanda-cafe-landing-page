@@ -42,9 +42,9 @@ function Home({ data }: HomeProps) {
 
       <Feedback />
 
-      <Contact />
-
       <Store />
+
+      <Contact />
     </Base>
   );
 }
