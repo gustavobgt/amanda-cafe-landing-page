@@ -306,3 +306,49 @@ export const ButtonContainer = styled.div`
       justify-content: center;
     `}
 `;
+
+export const ModalHeader = styled.div`
+  ${() =>
+    css`
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    `}
+`;
+
+export const ModalClose = styled.div`
+  ${() =>
+    css`
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding-right: 20px;
+    `}
+`;
+
+export const ModalCloseButton = styled.button`
+  ${() =>
+    css`
+      cursor: pointer;
+      position: relative;
+      margin-bottom: -20px;
+      padding: 20px;
+    `}
+`;
+
+export const ModalTitle = styled.p`
+  ${() =>
+    css`
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 20px;
+      /* identical to box height, or 143% */
+
+      text-align: center;
+      letter-spacing: 0.01em;
+
+      color: #ffffff;
+    `}
+`;
