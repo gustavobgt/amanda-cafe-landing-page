@@ -1,7 +1,7 @@
 import * as Styled from './styles';
 import { Menu } from '../../components/Menu';
 import { Footer } from '../../components/Footer';
-import { GoTop } from '../../components/GoTop';
+// import { GoTop } from '../../components/GoTop';
 import { MenuLinkProps } from '../../components/MenuLink';
 
 export type BaseProps = {
@@ -18,7 +18,6 @@ export const Base = ({ links, footerHtml, children }: BaseProps) => {
         {children}
         <Footer footerHtml={footerHtml} />
       </Styled.Container>
-      <GoTop />
     </>
   );
 };

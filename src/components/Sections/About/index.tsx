@@ -13,8 +13,8 @@ const aboutInfo = {
 
 export const About = () => {
   return (
-    <GridTwoColumns {...aboutInfo}>
-      <Styled.RelativeContainer>
+    <GridTwoColumns {...aboutInfo} data-aos="fade">
+      <Styled.RelativeContainer data-aos="fade-right">
         <Styled.TextContainer1>
           <svg
             width="17"
@@ -39,11 +39,11 @@ export const About = () => {
         </Styled.TextContainer1>
       </Styled.RelativeContainer>
 
-      <Styled.AmandaImgContainer>
+      <Styled.AmandaImgContainer data-aos="fade">
         <Styled.AmandaImg src="https://i.imgur.com/KRetRm2.png" />
       </Styled.AmandaImgContainer>
 
-      <Styled.RelativeContainer>
+      <Styled.RelativeContainer data-aos="fade-left">
         <Styled.TextContainer2>
           <Styled.SvgContainer>
             <svg

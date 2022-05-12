@@ -16,49 +16,31 @@ const portfolioInfo = {
 
 const data = [
   {
-    name: 'Graziele Esteves 1',
+    name: 'Viviane Rollemberg',
     feedback:
-      'Quando conheci Amanda lorem ipsum dolor sit amet, consectetur adipiscing elit. Posuere velit risus ut dignissim lectus. Bibendum porta lorem venenatis ante sit augue metus.',
+      'Já fotografei com outras pessoas mas, a experiência de fotografar com Amanda, posso definir como inesquecível. A empolgação dela te empolga, você sente que não falha! Você é a Gisele Bündchen naquele momento!',
     instagram: '@Graziesteves1',
     link: 'https://www.instagram.com/grazisteves/',
     photo: 'https://i.imgur.com/TDwbEQg.png',
     avatar: 'https://i.imgur.com/MAK6oUW.png',
   },
   {
-    name: 'Graziele Esteves 2',
+    name: 'Carol Sampaio',
     feedback:
-      'Ei, Mari, percebi que você se encarregou de organizar as atividades de construção e integração das equipes. Você faz um ótimo trabalho e todos se divertem muito em seus eventos. Nos avise caso precise de ajuda com os eventos futuros, será um prazer contribuir.',
+      'Pra mim todo mundo tem que fazer um ensaio, agora fazer um ensaio com Amanda é completamente diferenciado e surreal! Ela tem paciência, é super simpática e amiga, te deixa muito a vontade e tranquila. Enfim, se antes eu indicava que todos fizessem um ensaio, eu indico 3x mais que este ensaio seja feito com Amanda',
     instagram: '@Graziesteves2',
     link: 'https://www.instagram.com/grazisteves/',
     photo: 'https://i.imgur.com/Y1tmAyg.png',
     avatar: 'https://i.imgur.com/pkT2bvI.png',
   },
   {
-    name: 'Graziele Esteves 3',
+    name: 'Victoria Lima',
     feedback:
-      'Estou muito feliz com sua determinação em terminar este projeto, Lu. Sei que não foi fácil, mas sabia que você conseguiria. Sua atitude prestativa deixa claro que você pode continuar a assumir novas responsabilidades, desafios e crescer com a empresa. Obrigado pelo seu esforço extra.',
+      'Fazer ensaio com Amanda foi uma jornada de autoconhecimento pra mim. Não é só a forma como ela faz você se sentir cada minuto do ensaio, é como no fim de tudo ela te mostra o resultados das fotos e te prova que você é sim, tudo aquilo que você sentiu. Depois disso, você se enxerga de uma forma totalmente diferente, da forma que você merece!',
     instagram: '@Graziesteves3',
     link: 'https://www.instagram.com/grazisteves/',
     photo: 'https://i.imgur.com/TDwbEQg.png',
     avatar: 'https://i.imgur.com/86h7xwe.png',
-  },
-  {
-    name: 'Graziele Esteves 4',
-    feedback:
-      'Quando conheci Amanda lorem ipsum dolor sit amet, consectetur adipiscing elit. Posuere velit risus ut dignissim lectus. Bibendum porta lorem venenatis ante sit augue metus.',
-    instagram: '@Graziesteves4',
-    link: 'https://www.instagram.com/grazisteves/',
-    photo: 'https://i.imgur.com/Y1tmAyg.png',
-    avatar: 'https://i.imgur.com/86h7xwe.png',
-  },
-  {
-    name: 'Graziele Esteves 5',
-    feedback:
-      'Quando conheci Amanda lorem ipsum dolor sit amet, consectetur adipiscing elit. Posuere velit risus ut dignissim lectus. Bibendum porta lorem venenatis ante sit augue metus.',
-    instagram: '@Graziesteves5',
-    link: 'https://www.instagram.com/grazisteves/',
-    photo: 'https://i.imgur.com/TDwbEQg.png',
-    avatar: 'https://i.imgur.com/pkT2bvI.png',
   },
 ];
 
@@ -69,11 +51,11 @@ export const Feedback = () => {
     <Styled.Background id="feedbacks">
       <Styled.SectionContainer>
         <Styled.Container>
-          <Styled.PhotoContainer>
+          <Styled.PhotoContainer data-aos="fade-right">
             <Styled.Photo src={data[currentIndex].photo} />
           </Styled.PhotoContainer>
 
-          <Styled.TextContainer1>
+          <Styled.TextContainer1 data-aos="fade-left">
             <Styled.Header>
               <Styled.SvgContainer>
                 <svg

@@ -14,9 +14,11 @@ export const GridTwoColumns = ({
   backgroundImg = '',
   sectionId = '',
   children,
+  ...rest
 }: GridTwoColumnsProps) => {
   return (
     <SectionBackground
+      {...rest}
       background={background}
       backgroundImg={backgroundImg}
       sectionId={sectionId}

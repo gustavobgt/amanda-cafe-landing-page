@@ -17,7 +17,7 @@ export const Contact = () => {
     <Styled.Background id="contato">
       <Styled.SectionContainer>
         <Styled.Container>
-          <Styled.TextContainer1>
+          <Styled.TextContainer1 data-aos="fade-right">
             <Styled.Title1>
               Quer se sentir maravilhosa? Entre em contato!
             </Styled.Title1>
@@ -38,9 +38,8 @@ export const Contact = () => {
             </Styled.Description>
           </Styled.TextContainer1>
 
-          <Styled.TextContainer1>
-            {/**
-               * <Styled.Form>
+          <Styled.TextContainer1 data-aos="fade-left">
+            <Styled.Form>
               <Styled.SvgContainer>
                 <svg
                   width="17"
@@ -94,7 +93,6 @@ export const Contact = () => {
                 ENVIAR MENSAGEM
               </Styled.SubmitButton>
             </Styled.Form>
-               */}
           </Styled.TextContainer1>
         </Styled.Container>
 

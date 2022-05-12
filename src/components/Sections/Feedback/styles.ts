@@ -120,7 +120,7 @@ export const Description = styled.p`
     font-weight: 500;
     font-size: 1.4rem;
     line-height: 20px;
-    max-width: 346px;
+    max-width: 400px;
     text-align: left;
 
     letter-spacing: 0.03em;

@@ -13,9 +13,11 @@ export const SectionBackground = ({
   background = false,
   backgroundImg = '',
   sectionId = '',
+  ...rest
 }: SectionBackgroundProps) => {
   return (
     <Styled.Container
+      {...rest}
       background={background}
       backgroundImg={backgroundImg}
       id={sectionId}

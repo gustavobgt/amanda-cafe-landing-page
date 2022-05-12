@@ -218,33 +218,6 @@ export const ECarousel = styled(Carousel)`
   `}
 `;
 
-export const ItemContainer = styled.button`
-  ${() => css`
-    cursor: pointer;
-    background: #ffffff;
-    background-color: rgba(255, 255, 255, 0.15);
-    //opacity: 0.35;
-    border-radius: 10px;
-    padding: 15px;
-    transition: all 0.25s ease-in-out;
-
-    :hover {
-      background-color: rgba(255, 255, 255, 0.35);
-      > ${PhotoContainer} {
-        ${Image} {
-          opacity: 0.4;
-          transition: all 0.25s ease-in-out;
-        }
-
-        ${ImageTitleContainer} > ${ImageTitle} {
-          display: block;
-          transition: all 0.25s ease-in-out;
-        }
-      }
-    }
-  `}
-`;
-
 interface PhotoProps {
   backgroundImg: string;
 }
@@ -310,6 +283,13 @@ export const RightSideContainer = styled.div`
   `}
 `;
 
+export const ModalPagination = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 20px;
+`;
+
 export const PaginationContainer = styled.div`
   position: relative;
   height: 18px;
@@ -357,5 +337,160 @@ export const NextButton = styled.button<NextButton>`
       opacity: ${!visible ? 0 : 1};
       display: flex;
       transition: all 0.25s ease-in-out;
+    `}
+`;
+
+export const ItemContainer = styled.button`
+  ${() => css`
+    cursor: pointer;
+    background: #ffffff;
+    background-color: rgba(255, 255, 255, 0.15);
+    //opacity: 0.35;
+    border-radius: 10px;
+    padding: 15px;
+    transition: all 0.25s ease-in-out;
+
+    :hover {
+      background-color: rgba(255, 255, 255, 0.35);
+      > ${CarouselImageContainer} ${CarouselImageOverlay} {
+        opacity: 0.4;
+      }
+    }
+  `}
+`;
+
+export const CarouselImageContainer = styled.div`
+  ${() =>
+    css`
+      border-radius: 7px;
+      cursor: pointer;
+      position: relative;
+    `}
+`;
+
+export const CarouselImage = styled.img`
+  ${() =>
+    css`
+      border-radius: 7px;
+      display: block;
+      width: 100%;
+      height: auto;
+    `}
+`;
+
+export const CarouselImageOverlay = styled.div`
+  ${() =>
+    css`
+      border-radius: 7px;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 100%;
+      width: 100%;
+      opacity: 0;
+      transition: 0.5s ease;
+      background: #000000;
+    `}
+`;
+
+export const CarouselImageText = styled.p`
+  ${() =>
+    css`
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 17px;
+      /* or 121% */
+
+      letter-spacing: 0.01em;
+
+      /* White */
+
+      color: #ffffff;
+      width: 116px;
+      text-align: left;
+
+      transform: translate(-50%, -50%);
+    `}
+`;
+
+export const ModalHeader = styled.div`
+  ${() =>
+    css`
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    `}
+`;
+
+export const ModalClose = styled.div`
+  ${() =>
+    css`
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding-right: 20px;
+    `}
+`;
+
+export const ModalCloseButton = styled.button`
+  ${() =>
+    css`
+      cursor: pointer;
+      position: relative;
+      margin-bottom: -20px;
+      padding: 20px;
+    `}
+`;
+
+export const ButtonContainer = styled.div`
+  ${() =>
+    css`
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    `}
+`;
+
+export const ModalTitle = styled.p`
+  ${() =>
+    css`
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 20px;
+      /* identical to box height, or 143% */
+
+      text-align: center;
+      letter-spacing: 0.01em;
+
+      color: #ffffff;
+    `}
+`;
+
+export const ModalImageContainer = styled.div`
+  ${() =>
+    css`
+      cursor: pointer;
+      position: relative;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    `}
+`;
+
+export const ModalImage = styled.img`
+  ${() =>
+    css`
+      display: block;
+      width: 100%;
+      height: auto;
+      // box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+      // width: 100%;
     `}
 `;

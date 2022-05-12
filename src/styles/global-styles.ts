@@ -11,7 +11,6 @@ export const GlobalStyles = createGlobalStyle`
     font-size: 62.5%;
     scroll-behavior: smooth;
     width: 100%;
-    height: 100%;
     margin: 0;
     padding: 0;
     overflow-x: hidden;

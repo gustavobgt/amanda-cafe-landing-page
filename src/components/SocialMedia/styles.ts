@@ -3,8 +3,8 @@ import styled, { css } from 'styled-components';
 export const Container = styled.div`
   ${() => css`
     position: fixed;
-    bottom: 2rem;
-    right: 10rem;
+    bottom: 1rem;
+    right: 3.5rem;
     z-index: 3;
   `}
 `;
