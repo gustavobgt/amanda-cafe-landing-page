@@ -2,7 +2,11 @@ import * as Styled from './styles';
 import SocialMedia from '../../SocialMedia';
 import Modal from 'react-modal';
 import { useState } from 'react';
+import * as Yup from 'yup';
 import { Spinner } from '../../Spinner';
+import { Formik } from 'formik';
+import { TextField } from '../../TextField';
+import { TextAreaInput } from '../../TextArea';
 
 /*
 const contactInfo = {
@@ -21,6 +25,22 @@ const wait = (timeout) => {
 };
 
 export const Contact = () => {
+  const validate = Yup.object({
+    name: Yup.string().required('O nome é obrigatório'),
+    phone: Yup.string()
+      .min(9, 'Deve ter no mínimo 9 caracteres.')
+      .max(9, 'Deve ter no máximo 9 caracteres.')
+      .required('O telefone é obrigatório'),
+    email: Yup.string()
+      .email('E-mail inválido')
+      .required('O E-mail é obrigatório'),
+    subject: Yup.string().required('O assunto é obrigatório'),
+    message: Yup.string()
+      .min(10, 'Deve ter no mínimo 10 caracteres.')
+      .max(300, 'Deve ter no máximo 300 caracteres.')
+      .required('A mensagem é obrigatória'),
+  });
+
   const [modalIsOpen, setIsOpen] = useState(false);
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
@@ -102,60 +122,91 @@ export const Contact = () => {
                 </div>
               </Styled.SvgContainer2>
 
-              <Styled.Form>
-                <Styled.SvgContainer>
-                  <svg
-                    width="17"
-                    height="17"
-                    viewBox="0 0 17 17"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      clipRule="evenodd"
-                      d="M6 0H0V6H6V0ZM6 11H0V17H6V11ZM11 0H17V6H11V0ZM17 11H11V17H17V11Z"
-                      fill="white"
-                    />
-                  </svg>
-                </Styled.SvgContainer>
+              <Formik
+                initialValues={{
+                  name: '',
+                  phone: '',
+                  email: '',
+                  subject: '',
+                  message: '',
+                }}
+                validationSchema={validate}
+                onSubmit={(values) => {
+                  console.log(values);
+                  setIsOpen(true);
+                }}
+              >
+                {(formik) => (
+                  <Styled.Form>
+                    <Styled.SvgContainer>
+                      <svg
+                        width="17"
+                        height="17"
+                        viewBox="0 0 17 17"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          clipRule="evenodd"
+                          d="M6 0H0V6H6V0ZM6 11H0V17H6V11ZM11 0H17V6H11V0ZM17 11H11V17H17V11Z"
+                          fill="white"
+                        />
+                      </svg>
+                    </Styled.SvgContainer>
 
-                <Styled.Group>
-                  <Styled.Label>Nome</Styled.Label>
+                    <Styled.Group>
+                      <TextField
+                        placeholder="Escrever"
+                        label="Nome"
+                        name="name"
+                        type="text"
+                      />
+                    </Styled.Group>
 
-                  <Styled.Input placeholder="Escrever" />
-                </Styled.Group>
+                    <Styled.GroupRow>
+                      <Styled.Group>
+                        <TextField
+                          placeholder="(DDD)"
+                          label="Telefone"
+                          name="phone"
+                          type="text"
+                        />
+                      </Styled.Group>
 
-                <Styled.GroupRow>
-                  <Styled.Group>
-                    <Styled.Label>Telefone</Styled.Label>
+                      <Styled.Group>
+                        <TextField
+                          placeholder="Escrever"
+                          label="Email"
+                          name="email"
+                          type="email"
+                        />
+                      </Styled.Group>
+                    </Styled.GroupRow>
 
-                    <Styled.Input placeholder="(DDD)" />
-                  </Styled.Group>
+                    <Styled.Group>
+                      <TextField
+                        placeholder="Escrever"
+                        label="Assunto"
+                        name="subject"
+                        type="text"
+                      />
+                    </Styled.Group>
 
-                  <Styled.Group>
-                    <Styled.Label>Email</Styled.Label>
+                    <Styled.Group>
+                      <TextAreaInput
+                        label="Escreva sua mensagem"
+                        name="message"
+                        type="text"
+                      />
+                    </Styled.Group>
 
-                    <Styled.Input placeholder="Escrever" />
-                  </Styled.Group>
-                </Styled.GroupRow>
-
-                <Styled.Group>
-                  <Styled.Label>Assunto</Styled.Label>
-
-                  <Styled.Input placeholder="Selecionar" />
-                </Styled.Group>
-
-                <Styled.Group>
-                  <Styled.Label>Escreva sua mensagem</Styled.Label>
-
-                  <Styled.TextArea />
-                </Styled.Group>
-
-                <Styled.SubmitButton onClick={onClick} placeholder="Escrever">
-                  ENVIAR MENSAGEM
-                </Styled.SubmitButton>
-              </Styled.Form>
+                    <Styled.SubmitButton type="submit">
+                      ENVIAR MENSAGEM
+                    </Styled.SubmitButton>
+                  </Styled.Form>
+                )}
+              </Formik>
 
               <Styled.SvgContainer1>
                 <div>

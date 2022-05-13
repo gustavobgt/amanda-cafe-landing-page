@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import { Form as FormikForm } from 'formik';
 
 export const Container = styled.div`
   ${({ theme }) => css`
@@ -179,7 +180,7 @@ export const SvgContainer = styled.div`
   `}
 `;
 
-export const Form = styled.form`
+export const Form = styled(FormikForm)`
   ${() => css`
     border: 1px solid;
     border-image-slice: 1;
