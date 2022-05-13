@@ -4,7 +4,7 @@ const data = [
   {
     title: 'Amanda Café',
     footerHtml:
-      '<p><a href="https://beacons.page/otaviomiranda">Feito por Gustavo Bruno</a></p>',
+      '<p>Feito por <a style="font-weight:600;" target="_blank" href="https://www.instagram.com/gustavo.bgt/">@gustavo.bgt</a></p>',
     slug: 'landing-page',
     menu: {
       links: [

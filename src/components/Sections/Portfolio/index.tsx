@@ -88,22 +88,40 @@ export const Portfolio = () => {
           <Styled.Container>
             <Styled.TextContainer1 data-aos="fade-right">
               <Styled.SvgContainer>
-                <svg
-                  width="50"
-                  height="48"
-                  viewBox="0 0 50 48"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M15.1002 33.2154L12.4588 2.91944e-05L42.6588 14.4868L15.1002 33.2154Z"
-                    fill="#F98EB2"
-                  />
-                  <path
-                    d="M46.8673 42.9298L35.766 42.621L41.6434 33.1295L46.8673 42.9298Z"
-                    fill="#8EE7F9"
-                  />
-                </svg>
+                <div>
+                  <svg
+                    width="72"
+                    height="76"
+                    viewBox="0 0 72 76"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      opacity="0.2"
+                      d="M59.4761 75.3354L-7.53773e-05 27.5365L71.5896 -1.67089e-07L59.4761 75.3354Z"
+                      fill="white"
+                    />
+                  </svg>
+                </div>
+
+                <div>
+                  <svg
+                    width="50"
+                    height="48"
+                    viewBox="0 0 50 48"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M15.1002 33.2154L12.4588 2.91944e-05L42.6588 14.4868L15.1002 33.2154Z"
+                      fill="#F98EB2"
+                    />
+                    <path
+                      d="M46.8673 42.9298L35.766 42.621L41.6434 33.1295L46.8673 42.9298Z"
+                      fill="#8EE7F9"
+                    />
+                  </svg>
+                </div>
               </Styled.SvgContainer>
 
               <Styled.Title1>Celebrando belezas femininas</Styled.Title1>
@@ -200,6 +218,8 @@ export const Portfolio = () => {
       </Styled.Background>
 
       <Modal
+        onRequestClose={closeModal}
+        shouldCloseOnOverlayClick={true}
         style={{
           overlay: {
             backgroundColor: 'rgba(0, 0, 0, 0.85)',
@@ -208,7 +228,7 @@ export const Portfolio = () => {
           content: {
             backgroundColor: 'transparent',
             border: 'none',
-            inset: 0,
+            inset: '5% 0',
             display: 'flex',
             flexDirection: 'column',
             aligItems: 'center',

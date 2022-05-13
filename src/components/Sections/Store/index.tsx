@@ -111,7 +111,46 @@ export const Store = () => {
         <Styled.SectionContainer>
           <Styled.Container>
             <Styled.TextContainer1 data-aos="fade-right">
+              <Styled.SvgContainer1>
+                <div>
+                  <svg
+                    width="72"
+                    height="76"
+                    viewBox="0 0 72 76"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      opacity="0.2"
+                      d="M59.4761 75.3354L-7.53773e-05 27.5365L71.5896 -1.67089e-07L59.4761 75.3354Z"
+                      fill="white"
+                    />
+                  </svg>
+                </div>
+              </Styled.SvgContainer1>
+
               <Styled.Title1>{data[currentIndex].title}</Styled.Title1>
+
+              <Styled.SvgContainer2>
+                <div>
+                  <svg
+                    width="36"
+                    height="34"
+                    viewBox="0 0 36 34"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M24.5144 23.4615L26.3802 -6.0436e-05L5.04847 10.2326L24.5144 23.4615Z"
+                      fill="#F98EB2"
+                    />
+                    <path
+                      d="M2.07575 30.3233L9.91717 30.1052L5.76569 23.4009L2.07575 30.3233Z"
+                      fill="#8EE7F9"
+                    />
+                  </svg>
+                </div>
+              </Styled.SvgContainer2>
 
               <Styled.SubTitle>{data[currentIndex].price}</Styled.SubTitle>
 
@@ -149,6 +188,31 @@ export const Store = () => {
                   VER MAIS
                 </Styled.DetailsButton>
               </Styled.ButtonsContainer>
+
+              <Styled.SvgContainer3>
+                <div>
+                  <svg
+                    width="108"
+                    height="103"
+                    viewBox="0 0 108 103"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M70.4437 90.7516L73.2282 49.1208L108 72.5747L70.4437 90.7516Z"
+                      fill="#F9F28E"
+                    />
+                    <path
+                      d="M66.1882 3.93571L82.347 16.224L63.8051 24.0958L66.1882 3.93571Z"
+                      fill="#8EE7F9"
+                    />
+                    <path
+                      d="M37.0531 55.9092L1.01972e-05 69.9992L6.16758 31.0587L37.0531 55.9092Z"
+                      fill="#F98EB2"
+                    />
+                  </svg>
+                </div>
+              </Styled.SvgContainer3>
             </Styled.TextContainer1>
 
             <Styled.RightSideContainer data-aos="fade-left">

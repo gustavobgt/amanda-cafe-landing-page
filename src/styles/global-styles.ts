@@ -55,4 +55,17 @@ export const GlobalStyles = createGlobalStyle`
     -moz-osx-font-smoothing: inherit;
     -webkit-appearance: none;
   }
+
+  ::-webkit-scrollbar-track {
+	background-color: #e6e7e8;
+  }
+
+  ::-webkit-scrollbar {
+	width: 0.6rem;
+  }
+
+  ::-webkit-scrollbar-thumb {
+	border-radius: 0.4rem;
+	background-image: linear-gradient(109.13deg, #9100FF 5.77%, #BC00FF 77.99%);
+  }
 `;

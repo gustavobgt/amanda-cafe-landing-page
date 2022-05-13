@@ -62,7 +62,7 @@ export const Photo = styled.img`
 export const TextContainer1 = styled.div`
   ${({ theme }) => css`
     background: url('https://i.imgur.com/oJWSzq2.png') no-repeat;
-    background-position: 0% 40%;
+    background-position: 0% 25%;
     background-size: auto;
     > h2 {
       margin: 0;

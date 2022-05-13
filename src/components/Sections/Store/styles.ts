@@ -283,6 +283,95 @@ export const RightSideContainer = styled.div`
   `}
 `;
 
+export const SvgContainer1 = styled.div`
+  ${({ theme }) => css`
+    display: flex;
+    justify-content: flex-start;
+    position: relative;
+
+    div:nth-child(1) {
+      position: relative;
+
+      > svg {
+        position: absolute;
+        right: -3rem;
+        bottom: -7rem;
+      }
+    }
+
+    @media ${theme.media.lteMedium} {
+      div:nth-child(1) {
+        position: relative;
+
+        > svg {
+          margin-right: 0;
+        }
+      }
+    }
+  `}
+`;
+
+export const SvgContainer2 = styled.div`
+  ${({ theme }) => css`
+    display: flex;
+    justify-content: center;
+    position: relative;
+
+    div:nth-child(1) {
+      position: relative;
+
+      > svg {
+        position: absolute;
+        right: 0rem;
+        bottom: -7rem;
+        z-index: -1;
+      }
+    }
+
+    @media ${theme.media.lteMedium} {
+      div:nth-child(1) {
+        position: relative;
+
+        > svg {
+          margin-right: 0;
+        }
+      }
+    }
+  `}
+`;
+
+export const SvgContainer3 = styled.div`
+  ${({ theme }) => css`
+    display: flex;
+    justify-content: flex-start;
+    position: relative;
+
+    div:nth-child(1) {
+      position: relative;
+
+      > svg {
+        position: absolute;
+        //right: -3rem;
+        top: 1rem;
+      }
+    }
+
+    @media ${theme.media.lteMedium} {
+      justify-content: flex-end;
+      div:nth-child(1) {
+        position: relative;
+
+        > svg {
+          margin-right: 0;
+          right: 0;
+          top: -2rem;
+          z-index: -1;
+        }
+      }
+    }
+  `}
+`;
+
 export const ModalPagination = styled.div`
   display: flex;
   align-items: center;

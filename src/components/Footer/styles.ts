@@ -30,6 +30,7 @@ export const Container2 = styled.div`
 
     @media ${theme.media.lteMedium} {
       padding: 0;
+      padding-bottom: 4rem;
     }
   `}
 `;

@@ -3,6 +3,7 @@ import styled, { css } from 'styled-components';
 export const RelativeContainer = styled.div`
   ${({ theme }) => css`
     position: relative;
+    z-index: 1;
     height: 80vh;
     @media ${theme.media.lteMedium} {
       height: inherit;

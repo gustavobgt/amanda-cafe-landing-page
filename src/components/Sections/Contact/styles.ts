@@ -1,4 +1,4 @@
-import styled, { css, keyframes } from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const Container = styled.div`
   ${({ theme }) => css`
@@ -10,6 +10,7 @@ export const Container = styled.div`
     @media ${theme.media.lteMedium} {
       grid-template-columns: 1fr;
       text-align: center;
+      grid-gap: 0;
     }
   `}
 `;
@@ -42,6 +43,7 @@ export const SectionContainer = styled.div`
 
 export const TextContainer1 = styled.div`
   ${({ theme }) => css`
+    z-index: 1;
     > h2 {
       margin: 0;
     }
@@ -82,6 +84,7 @@ export const Description = styled.p`
 
     @media ${theme.media.lteMedium} {
       max-width: inherit;
+      min-height: inherit;
     }
 
     color: #ffffff;
@@ -167,40 +170,60 @@ export const Email = styled.a`
   `}
 `;
 
-export const SvgContainer = styled.div``;
+export const SvgContainer = styled.div`
+  ${({ theme }) => css`
+    @media ${theme.media.lteMedium} {
+      display: flex;
+      margin-bottom: 10px;
+    }
+  `}
+`;
 
 export const Form = styled.form`
   ${() => css`
+    border: 1px solid;
+    border-image-slice: 1;
+    border-radius: 8px;
+
     background: linear-gradient(
       306.59deg,
       rgba(255, 255, 255, 0.3) 22.77%,
       rgba(255, 255, 255, 0) 100%
     );
-    filter: drop-shadow(-12px 15px 40px rgba(0, 0, 0, 0.15));
+    // filter: drop-shadow(-12px 15px 40px rgba(0, 0, 0, 0.15));
     backdrop-filter: blur(20px);
     /* Note: backdrop-filter has minimal browser support */
 
-    border-radius: 8px;
     padding: 30px 40px 46px 40px;
-    min-height: 464px;
   `}
 `;
 
 export const Group = styled.div`
-  ${() =>
+  ${({ theme }) =>
     css`
       display: flex;
       flex-direction: column;
       margin-bottom: 10px;
+
+      @media ${theme.media.lteMedium} {
+        align-items: flex-start;
+        justify-content: center;
+      }
     `}
 `;
 
 export const GroupRow = styled.div`
-  ${() =>
+  ${({ theme }) =>
     css`
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       grid-gap: 20px;
+
+      @media ${theme.media.lteMedium} {
+        grid-template-columns: 1fr;
+        text-align: center;
+        grid-gap: 0;
+      }
     `}
 `;
 
@@ -223,6 +246,7 @@ export const Label = styled.label`
 export const Input = styled.input`
   ${() =>
     css`
+      width: 100%;
       font-family: 'Montserrat';
       font-style: normal;
       font-weight: 500;
@@ -235,7 +259,7 @@ export const Input = styled.input`
       color: #ffffff;
       border: none;
       height: 30px;
-      background: transparent;
+      background: rgba(255, 255, 255, 0.2);
       border: 1px solid rgba(255, 255, 255, 0.2);
       box-sizing: border-box;
       box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.15);
@@ -253,8 +277,98 @@ export const Input = styled.input`
     `}
 `;
 
+export const SvgContainer3 = styled.div`
+  ${({ theme }) => css`
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+    z-index: -1;
+
+    div:nth-child(1) {
+      position: relative;
+
+      > svg {
+        position: absolute;
+        right: -3rem;
+        bottom: 5rem;
+      }
+    }
+
+    @media ${theme.media.lteMedium} {
+      div:nth-child(1) {
+        position: relative;
+
+        > svg {
+          margin-right: 0;
+        }
+      }
+    }
+  `}
+`;
+
+export const SvgContainer2 = styled.div`
+  ${({ theme }) => css`
+    display: flex;
+    justify-content: flex-start;
+    position: relative;
+    z-index: -1;
+
+    div:nth-child(1) {
+      position: relative;
+
+      > svg {
+        position: absolute;
+        left: -10rem;
+        top: 4rem;
+      }
+    }
+
+    @media ${theme.media.lteMedium} {
+      div:nth-child(1) {
+        position: relative;
+
+        > svg {
+          margin-right: 0;
+          left: -4rem;
+          top: -5rem;
+        }
+      }
+    }
+  `}
+`;
+
+export const SvgContainer1 = styled.div`
+  ${({ theme }) => css`
+    display: flex;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+
+    div:nth-child(1) {
+      position: relative;
+
+      > svg {
+        position: absolute;
+        right: 4rem;
+        bottom: -2rem;
+      }
+    }
+
+    @media ${theme.media.lteMedium} {
+      div:nth-child(1) {
+        position: relative;
+
+        > svg {
+          margin-right: 0;
+        }
+      }
+    }
+  `}
+`;
+
 export const TextArea = styled.textarea`
   ${() => css`
+    width: 100%;
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 500;
@@ -266,7 +380,7 @@ export const TextArea = styled.textarea`
 
     color: #ffffff;
     min-height: 83px;
-    background: transparent;
+    background: rgba(255, 255, 255, 0.2);
     border: 1px solid rgba(255, 255, 255, 0.2);
     box-sizing: border-box;
     box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.15);
@@ -311,6 +425,147 @@ export const SubmitButton = styled.button`
 
     color: #ffffff;
     border-color: transparent;
+
+    &:hover {
+      opacity: 0.7;
+      transition: 0.25s;
+    }
+  `}
+`;
+
+export const ModalContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 30px;
+`;
+
+export const ModalTitle = styled.p`
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 34px;
+  /* or 113% */
+  max-width: 484px;
+
+  text-align: center;
+  letter-spacing: 0.01em;
+
+  color: #ffffff;
+`;
+
+export const ModalButtons = styled.div`
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  padding: 0 50px;
+`;
+
+export const BuyButton = styled.button`
+  ${() => css`
+    width: 100%;
+    text-decoration: none;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 20px;
+
+    /* Black */
+
+    background: #000000;
+    border-radius: 4px;
+
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 20px;
+    /* identical to box height, or 154% */
+
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+
+    color: #ffffff;
+    border: 1px solid #000000;
+
+    &:hover {
+      opacity: 0.7;
+      transition: 0.25s;
+    }
+  `}
+`;
+
+export const DetailsButton = styled.button`
+  ${() => css`
+    width: 100%;
+    text-decoration: none;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 20px;
+
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 20px;
+
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+
+    color: #ffffff;
+    border: 1px solid #ffffff;
+
+    &:hover {
+      opacity: 0.7;
+      transition: 0.25s;
+    }
+  `}
+`;
+
+export const OkCotainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+`;
+
+export const OkButton = styled.button`
+  ${() => css`
+    width: 180px;
+    text-decoration: none;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 20px;
+
+    /* Black */
+
+    background: #000000;
+    border-radius: 4px;
+
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 20px;
+    /* identical to box height, or 154% */
+
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+
+    color: #ffffff;
+    border: 1px solid #000000;
 
     &:hover {
       opacity: 0.7;

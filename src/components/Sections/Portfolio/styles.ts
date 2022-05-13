@@ -44,17 +44,44 @@ export const SectionContainer = styled.div`
 export const SvgContainer = styled.div`
   ${({ theme }) => css`
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     position: relative;
 
-    > svg {
-      position: absolute;
-      right: -2rem;
-      bottom: -3rem;
-    }
-    @media ${theme.media.lteMedium} {
+    div:nth-child(1) {
+      position: relative;
+
       > svg {
-        margin-right: 0;
+        position: absolute;
+        right: -3rem;
+        bottom: -7rem;
+      }
+    }
+
+    div:nth-child(2) {
+      position: relative;
+
+      > svg {
+        position: absolute;
+        right: -2rem;
+        bottom: -3rem;
+      }
+    }
+
+    @media ${theme.media.lteMedium} {
+      div:nth-child(1) {
+        position: relative;
+
+        > svg {
+          margin-right: 0;
+        }
+      }
+
+      div:nth-child(2) {
+        position: relative;
+
+        > svg {
+          margin-right: 0;
+        }
       }
     }
   `}
