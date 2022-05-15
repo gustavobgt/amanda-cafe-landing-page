@@ -7,18 +7,6 @@ import { Formik } from 'formik';
 import { TextField } from '../../TextField';
 import { TextAreaInput } from '../../TextArea';
 
-/*
-const contactInfo = {
-        title: 'Quer se sentir maravilhosa? Entre em contato!',
-        text:
-          'Substituir o final da página de contato por: Se preferir explicar sua proposta já completinha, pode enviar na caixinha ao lado! Ela vai direto pro meu whatsapp e continuamos nossa conversa por lá! ',
-        srcImg: 'https://i.imgur.com/lAQud8p.png',
-        background: true,
-        backgroundImg: 'https://i.imgur.com/4z5367A.png',
-        sectionId: 'contato',
-        component: 'section.section-two-columns',
-      };*/
-
 const wait = (timeout) => {
   return new Promise((resolve) => setTimeout(resolve, timeout));
 };
@@ -92,10 +80,9 @@ export const Contact = () => {
               </Styled.Email>
 
               <Styled.Description>
-                Substituir o final da página de contato por: Se preferir
-                explicar sua proposta já completinha, pode enviar na caixinha ao
-                lado! Ela vai direto pro meu whatsapp e continuamos nossa
-                conversa por lá!
+                Se preferir explicar sua proposta já completinha, pode enviar na
+                caixinha ao lado! Ela vai direto pro meu whatsapp e continuamos
+                nossa conversa por lá!
               </Styled.Description>
             </Styled.TextContainer1>
 

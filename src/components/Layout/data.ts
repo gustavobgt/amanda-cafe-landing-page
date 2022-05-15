@@ -67,7 +67,7 @@ export const data = [
       },
       {
         title: 'Quer se sentir maravilhosa? Entre em contato!',
-        text: 'Substituir o final da página de contato por: Se preferir explicar sua proposta já completinha, pode enviar na caixinha ao lado! Ela vai direto pro meu whatsapp e continuamos nossa conversa por lá! ',
+        text: 'Se preferir explicar sua proposta já completinha, pode enviar na caixinha ao lado! Ela vai direto pro meu whatsapp e continuamos nossa conversa por lá! ',
         srcImg: 'https://i.imgur.com/lAQud8p.png',
         background: true,
         backgroundImg: 'https://i.imgur.com/4z5367A.png',
