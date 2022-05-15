@@ -145,7 +145,7 @@ export const BuyButton = styled.a`
   `}
 `;
 
-export const DetailsButton = styled.a`
+export const DetailsButton = styled.button`
   ${() => css`
     text-decoration: none;
     cursor: pointer;
@@ -429,8 +429,12 @@ export const NextButton = styled.button<NextButton>`
     `}
 `;
 
-export const ItemContainer = styled.button`
-  ${() => css`
+interface ItemContainerProps {
+  isActive: boolean;
+}
+
+export const ItemContainer = styled.button<ItemContainerProps>`
+  ${({ isActive }) => css`
     cursor: pointer;
     background: #ffffff;
     background-color: rgba(255, 255, 255, 0.15);
@@ -445,6 +449,15 @@ export const ItemContainer = styled.button`
         opacity: 0.4;
       }
     }
+
+    ${isActive
+      ? css`
+          background-color: rgba(255, 255, 255, 0.35);
+          > ${CarouselImageContainer} ${CarouselImageOverlay} {
+            opacity: 0.4;
+          }
+        `
+      : css``}
   `}
 `;
 

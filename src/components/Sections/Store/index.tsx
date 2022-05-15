@@ -13,62 +13,42 @@ const data = [
     price: 'R$ 35,00',
     description:
       'Um dos meus presets favoritos! Mistura tons quentes e traz aquela sensação de agradabilidade quando se olha pra foto! Lembrando que presets são configurações de cores prontas, sendo necessário adaptar para cada fotografia',
-    buy_link: 'https://www.instagram.com/grazisteves/',
-    details_link: 'https://www.instagram.com/grazisteves/',
-    photo: 'https://i.imgur.com/iV9iOSY.png',
-    carousel_image: 'https://i.imgur.com/iPBw99r.png',
-    modal_image: 'https://i.imgur.com/nQL9Rj3.png',
+    buy_link: 'https://pay.hotmart.com/S70703324V',
+    photo:
+      'https://res.cloudinary.com/amanda-caf/image/upload/v1652635674/Loja/fairy-tail-photo_fyxayt.png',
+    carousel_image:
+      'https://res.cloudinary.com/amanda-caf/image/upload/v1652635507/Loja/fairytail-carousel_cs6wut.png',
+    modal_image:
+      'https://res.cloudinary.com/amanda-caf/image/upload/v1652636299/Loja/fairy-tail-modal_qeei76.png',
   },
   {
     id: 2,
     title: 'Preset: Cold as your heart',
-    price: 'R$ 36,00',
+    price: 'R$ 50,00',
     description:
       'Com nome de música de Diva Pop, esse preset traz tons mais frios às fotos, dando aquele aspecto de chique na neve. Lembrando que presets são configurações de cores prontas, sendo necessário adaptar para cada fotografia',
-    buy_link: 'https://www.instagram.com/grazisteves/',
-    details_link: 'https://www.instagram.com/grazisteves/',
-    photo: 'https://i.imgur.com/iV9iOSY.png',
-    carousel_image: 'https://i.imgur.com/iPBw99r.png',
-    modal_image: 'https://i.imgur.com/nQL9Rj3.png',
+    buy_link: 'https://pay.hotmart.com/D70704020T',
+    photo:
+      'https://res.cloudinary.com/amanda-caf/image/upload/v1652635674/Loja/cold-as-your-heart-photo_dh0qf3.png',
+    carousel_image:
+      'https://res.cloudinary.com/amanda-caf/image/upload/v1652635507/Loja/cold-as-your-heart-carousel_snxevy.png',
+    modal_image:
+      'https://res.cloudinary.com/amanda-caf/image/upload/v1652636299/Loja/cold-as-your-heart-modal_iivukk.png',
   },
   {
     id: 3,
-    title: 'Preset: Fairytail 3',
+    title: 'Preset: Greek beauty',
     price: 'R$ 37,00',
     description:
       'Um dos meus presets favoritos! Mistura tons quentes e traz aquela sensação de agradabilidade quando se olha pra foto! Lembrando que presets são configurações de cores prontas, sendo necessário adaptar para cada fotografia',
 
-    buy_link: 'https://www.instagram.com/grazisteves/',
-    details_link: 'https://www.instagram.com/grazisteves/',
-    photo: 'https://i.imgur.com/iV9iOSY.png',
-    carousel_image: 'https://i.imgur.com/iPBw99r.png',
-    modal_image: 'https://i.imgur.com/nQL9Rj3.png',
-  },
-  {
-    id: 4,
-    title: 'Preset: Fairytail 4',
-    price: 'R$ 38,00',
-    description:
-      'Um dos meus presets favoritos! Mistura tons quentes e traz aquela sensação de agradabilidade quando se olha pra foto! Lembrando que presets são configurações de cores prontas, sendo necessário adaptar para cada fotografia',
-
-    buy_link: 'https://www.instagram.com/grazisteves/',
-    details_link: 'https://www.instagram.com/grazisteves/',
-    photo: 'https://i.imgur.com/iV9iOSY.png',
-    carousel_image: 'https://i.imgur.com/iPBw99r.png',
-    modal_image: 'https://i.imgur.com/nQL9Rj3.png',
-  },
-  {
-    id: 5,
-    title: 'Preset: Fairytail 5',
-    price: 'R$ 39,00',
-    description:
-      'Um dos meus presets favoritos! Mistura tons quentes e traz aquela sensação de agradabilidade quando se olha pra foto! Lembrando que presets são configurações de cores prontas, sendo necessário adaptar para cada fotografia',
-
-    buy_link: 'https://www.instagram.com/grazisteves/',
-    details_link: 'https://www.instagram.com/grazisteves/',
-    photo: 'https://i.imgur.com/iV9iOSY.png',
-    carousel_image: 'https://i.imgur.com/iPBw99r.png',
-    modal_image: 'https://i.imgur.com/nQL9Rj3.png',
+    buy_link: 'https://pay.hotmart.com/S70704609Q',
+    photo:
+      'https://res.cloudinary.com/amanda-caf/image/upload/v1652635674/Loja/greek-beauty-photo_apvqa6.png',
+    carousel_image:
+      'https://res.cloudinary.com/amanda-caf/image/upload/v1652635507/Loja/greek-beauty-carousel_qxrz6r.png',
+    modal_image:
+      'https://res.cloudinary.com/amanda-caf/image/upload/v1652636299/Loja/greek-beauty-modal_xdsmt3.png',
   },
 ];
 
@@ -80,6 +60,7 @@ const breakPoints = [
 
 export const Store = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [modalIndex, setModalIndex] = useState(0);
   const [modalIsOpen, setIsOpen] = useState(false);
   const { width } = useWindowDimensions();
 
@@ -91,8 +72,8 @@ export const Store = () => {
     setIsOpen(false);
   }
 
-  const onChange = (params) => {
-    console.log('onChange = ', params);
+  const onChange = ({ index }) => {
+    setModalIndex(index);
   };
 
   const myArrow = ({ type, onClick, isEdge }) => {
@@ -110,7 +91,7 @@ export const Store = () => {
       <Styled.Background id="loja">
         <Styled.SectionContainer>
           <Styled.Container>
-            <Styled.TextContainer1 data-aos="fade-right">
+            <Styled.TextContainer1 data-aos="fade-left">
               <Styled.SvgContainer1>
                 <div>
                   <svg
@@ -182,8 +163,10 @@ export const Store = () => {
                 </Styled.BuyButton>
 
                 <Styled.DetailsButton
-                  target="_blank"
-                  href="https://www.youtube.com/"
+                  onClick={() => {
+                    openModal();
+                    setModalIndex(currentIndex);
+                  }}
                 >
                   VER MAIS
                 </Styled.DetailsButton>
@@ -323,9 +306,9 @@ export const Store = () => {
                 >
                   {data.map((item, index) => (
                     <Styled.ItemContainer
+                      isActive={index === currentIndex}
                       onClick={() => {
                         setCurrentIndex(index);
-                        openModal();
                       }}
                       key={item.id}
                     >
@@ -383,7 +366,7 @@ export const Store = () => {
           </Styled.ModalCloseButton>
         </Styled.ModalClose>
         <Styled.ModalHeader>
-          <Styled.ModalTitle>Sensual</Styled.ModalTitle>
+          <Styled.ModalTitle>{data[modalIndex].title}</Styled.ModalTitle>
         </Styled.ModalHeader>
 
         <Carousel
