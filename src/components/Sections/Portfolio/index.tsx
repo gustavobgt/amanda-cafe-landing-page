@@ -64,6 +64,8 @@ const breakPoints = [
 
 export const Portfolio = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [modalIndex, setModalIndex] = useState(0);
+
   const [modalIsOpen, setIsOpen] = useState(false);
 
   function openModal() {
@@ -74,8 +76,8 @@ export const Portfolio = () => {
     setIsOpen(false);
   }
 
-  const onChange = (params) => {
-    console.log('onChange = ', params);
+  const onChange = ({ index }) => {
+    setModalIndex(index);
   };
 
   const myArrow = ({ type, onClick, isEdge }) => {
@@ -205,6 +207,7 @@ export const Portfolio = () => {
                   <Styled.CarouselImageContainer
                     onClick={() => {
                       setCurrentIndex(index);
+                      setModalIndex(index);
                       openModal();
                     }}
                     key={item.id}
@@ -262,7 +265,7 @@ export const Portfolio = () => {
           </Styled.ModalCloseButton>
         </Styled.ModalClose>
         <Styled.ModalHeader>
-          <Styled.ModalTitle>Sensual</Styled.ModalTitle>
+          <Styled.ModalTitle>{data[modalIndex].title}</Styled.ModalTitle>
         </Styled.ModalHeader>
 
         <Carousel
@@ -325,13 +328,10 @@ export const Portfolio = () => {
             );
           }}
         >
-          {data.map((item, index) => (
-            <Styled.CarouselImageContainer
-              onClick={() => setCurrentIndex(index)}
-              key={item.id}
-            >
+          {data.map((item) => (
+            <Styled.ModalImageContainer key={item.id}>
               <Styled.CarouselImage src={item.modal_image} />
-            </Styled.CarouselImageContainer>
+            </Styled.ModalImageContainer>
           ))}
         </Carousel>
       </Modal>

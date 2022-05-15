@@ -10,6 +10,7 @@ export function getStyles(hasError: boolean) {
         ? '1px solid red'
         : '1px solid rgba(255, 255, 255, 0.4)'};
       box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.15);
+      width: 100%;
     `,
     fieldStyles: css`
       display: flex;
@@ -57,6 +58,7 @@ export function getStyles(hasError: boolean) {
       overflow-y: auto;
     `,
     itemStyles: css`
+      text-align: left;
       font-family: 'Montserrat';
       font-size: 14px;
       color: #ffffff;

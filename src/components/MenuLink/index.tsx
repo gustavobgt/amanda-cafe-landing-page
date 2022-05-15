@@ -1,5 +1,5 @@
-import Link from 'next/link';
 import * as Styled from './styles';
+import { useRouter } from 'next/router';
 
 export type MenuLinkProps = {
   children: React.ReactNode;
@@ -13,9 +13,15 @@ export const MenuLink = ({
   link,
   isActive = false,
 }: MenuLinkProps) => {
+  const router = useRouter();
+  const handleClick = (e) => {
+    e.preventDefault();
+    router.push(link);
+  };
+
   return (
-    <Link href={link} passHref>
-      <Styled.Container isActive={isActive}>{children}</Styled.Container>
-    </Link>
+    <Styled.Container href={link} onClick={handleClick} isActive={isActive}>
+      {children}
+    </Styled.Container>
   );
 };

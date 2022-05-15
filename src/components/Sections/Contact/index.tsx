@@ -9,10 +9,8 @@ import { TextAreaInput } from '../../TextArea';
 import { ControlledDropdown } from '../../ControlledDropdown';
 import { PhoneField } from '../../PhoneField';
 import { FormikProps } from 'formik';
-
-const wait = (timeout) => {
-  return new Promise((resolve) => setTimeout(resolve, timeout));
-};
+import emailjs from '@emailjs/browser';
+import React from 'react';
 
 const status = [
   { name: 'Orçamento', value: 'Orçamento' },
@@ -47,13 +45,10 @@ export const Contact = () => {
   });
 
   const [modalIsOpen, setIsOpen] = useState(false);
+  const [formValues, setFormValues] = useState({});
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
-
-  const onClick = (e) => {
-    e.preventDefault();
-    setIsOpen(true);
-  };
+  const [error, setError] = useState(false);
 
   function closeModal() {
     setIsOpen(false);
@@ -62,10 +57,20 @@ export const Contact = () => {
   function onSendClick() {
     setLoading(true);
 
-    wait(2000).then(() => {
-      setSuccess(true);
-      setLoading(false);
-    });
+    emailjs
+      .send('emailService', 'template_mabqnzl', formValues, 'QeNvORPfHiJ6K3r6w')
+      .then(
+        (result) => {
+          console.log('result.text = ', result.text);
+          setLoading(false);
+          setSuccess(true);
+        },
+        (error) => {
+          console.log('error.text = ', error.text);
+          setLoading(false);
+          setError(true);
+        },
+      );
   }
 
   return (
@@ -189,6 +194,7 @@ export const Contact = () => {
                 onSubmit={(values) => {
                   console.log(values);
                   setIsOpen(true);
+                  setFormValues(values);
                 }}
               >
                 {(props: FormikProps<Values>) => (
@@ -360,6 +366,30 @@ export const Contact = () => {
                     onClick={() => {
                       closeModal();
                       setSuccess(false);
+                      setError(false);
+                    }}
+                  >
+                    OK
+                  </Styled.OkButton>
+                </Styled.OkCotainer>
+              </Styled.ModalContainer>
+            );
+          }
+
+          if (error) {
+            return (
+              <Styled.ModalContainer>
+                <Styled.ModalTitle>
+                  Aconteceu algum problema ao enviar sua mensagem. Por favor
+                  tente novamente.
+                </Styled.ModalTitle>
+
+                <Styled.OkCotainer>
+                  <Styled.OkButton
+                    onClick={() => {
+                      closeModal();
+                      setSuccess(false);
+                      setError(false);
                     }}
                   >
                     OK

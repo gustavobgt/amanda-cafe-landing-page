@@ -221,6 +221,15 @@ export const CarouselImageContainer = styled.div`
     `}
 `;
 
+export const ModalImageContainer = styled.div`
+  ${() =>
+    css`
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    `}
+`;
+
 export const CarouselImage = styled.img`
   ${() =>
     css`
