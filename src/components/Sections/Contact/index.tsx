@@ -7,6 +7,7 @@ import { Formik } from 'formik';
 import { TextField } from '../../TextField';
 import { TextAreaInput } from '../../TextArea';
 import { ControlledDropdown } from '../../ControlledDropdown';
+import { PhoneField } from '../../PhoneField';
 import { FormikProps } from 'formik';
 
 const wait = (timeout) => {
@@ -33,8 +34,7 @@ export const Contact = () => {
   const validate = Yup.object({
     name: Yup.string().required('O nome é obrigatório'),
     phone: Yup.string()
-      .min(9, 'Deve ter no mínimo 9 caracteres.')
-      .max(9, 'Deve ter no máximo 9 caracteres.')
+      .min(15, 'Complete o telefone.')
       .required('O telefone é obrigatório'),
     email: Yup.string()
       .email('E-mail inválido')
@@ -221,7 +221,7 @@ export const Contact = () => {
 
                     <Styled.GroupRow>
                       <Styled.Group>
-                        <TextField
+                        <PhoneField
                           placeholder="(DDD)"
                           label="Telefone"
                           name="phone"

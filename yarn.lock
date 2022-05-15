@@ -10022,6 +10022,11 @@ react-syntax-highlighter@^13.5.3:
     prismjs "^1.21.0"
     refractor "^3.1.0"
 
+react-telefone-brasileiro@^1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/react-telefone-brasileiro/-/react-telefone-brasileiro-1.0.5.tgz#65ebeb909422baeda0da6a21406a015334d33879"
+  integrity sha512-dKmcY5ak0ji8zOYqh/P6Ka8EggVezcqj3kx1s2Ga7Xq94eyZDERIXj327bvqHDbpj/bksBHhSVEVeA0nhnOxYw==
+
 react-textarea-autosize@^8.3.0:
   version "8.3.3"
   resolved "https://registry.yarnpkg.com/react-textarea-autosize/-/react-textarea-autosize-8.3.3.tgz#f70913945369da453fd554c168f6baacd1fa04d8"
