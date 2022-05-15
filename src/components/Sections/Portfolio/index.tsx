@@ -4,47 +4,54 @@ import Carousel from 'react-elastic-carousel';
 import { useState } from 'react';
 import Modal from 'react-modal';
 
-/*
-const portfolioInfo = {
-  title: 'Celebrando belezas femininas',
-  text:
-    'Hoje meu foco é valorizar mulheres em todos os momentos. Seja para uma comemoração, ou simplesmente por querer se amar e se sentir maravilhosa. Aqui você vai encontrar um pouco do que eu faço, e se identificar com qual estilo você gostaria de fazer o seu ensaio! ',
-  srcImg: 'https://i.imgur.com/XLWS72x.png',
-  background: true,
-  backgroundImg: 'https://i.imgur.com/HiKn6r3.png',
-  sectionId: 'portfolio',
-  component: 'section.section-two-columns',
-};*/
-
 const data = [
   {
     id: 1,
-    image: 'https://i.imgur.com/IZ7ZMLz.png',
+    title: 'Praiano',
+    image:
+      'https://res.cloudinary.com/amanda-caf/image/upload/v1652632996/portfolio/banner-praiano_bojowr.png',
     modal_image: 'https://i.imgur.com/nQL9Rj3.png',
   },
   {
     id: 2,
-    image: 'https://i.imgur.com/OUH0WMi.png',
+    title: 'Casual',
+    image:
+      'https://res.cloudinary.com/amanda-caf/image/upload/v1652632996/portfolio/banner-casual_q3m6le.png',
     modal_image: 'https://i.imgur.com/nQL9Rj3.png',
   },
   {
     id: 3,
-    image: 'https://i.imgur.com/oSrPh4X.png',
+    title: 'Urbano',
+    image:
+      'https://res.cloudinary.com/amanda-caf/image/upload/v1652632996/portfolio/banner-urbano_n8coy5.png',
     modal_image: 'https://i.imgur.com/nQL9Rj3.png',
   },
   {
     id: 4,
-    image: 'https://i.imgur.com/IZ7ZMLz.png',
+    title: 'Sensual',
+    image:
+      'https://res.cloudinary.com/amanda-caf/image/upload/v1652632996/portfolio/banner-sensual_xyvwok.png',
     modal_image: 'https://i.imgur.com/nQL9Rj3.png',
   },
   {
     id: 5,
-    image: 'https://i.imgur.com/OUH0WMi.png',
+    title: 'Criativo',
+    image:
+      'https://res.cloudinary.com/amanda-caf/image/upload/v1652632996/portfolio/banner-criativo_v17e5u.png',
     modal_image: 'https://i.imgur.com/nQL9Rj3.png',
   },
   {
     id: 6,
-    image: 'https://i.imgur.com/oSrPh4X.png',
+    title: 'Estúdio',
+    image:
+      'https://res.cloudinary.com/amanda-caf/image/upload/v1652632996/portfolio/banner-estudio_wjwqud.png',
+    modal_image: 'https://i.imgur.com/nQL9Rj3.png',
+  },
+  {
+    id: 7,
+    title: 'Casal',
+    image:
+      'https://res.cloudinary.com/amanda-caf/image/upload/v1652632996/portfolio/banner-casal_motkfc.png',
     modal_image: 'https://i.imgur.com/nQL9Rj3.png',
   },
 ];
@@ -86,7 +93,7 @@ export const Portfolio = () => {
       <Styled.Background id="portfolio">
         <Styled.SectionContainer>
           <Styled.Container>
-            <Styled.TextContainer1 data-aos="fade-right">
+            <Styled.TextContainer1 data-aos="fade-left">
               <Styled.SvgContainer>
                 <div>
                   <svg
@@ -136,7 +143,7 @@ export const Portfolio = () => {
 
             <Styled.CarouselContainer data-aos="fade-left">
               <Carousel
-                selectedItem={1}
+                disableArrowsOnEnd={false}
                 onChange={onChange}
                 breakPoints={breakPoints}
                 renderArrow={myArrow}
@@ -206,7 +213,7 @@ export const Portfolio = () => {
 
                     <Styled.CarouselImageOverlay>
                       <Styled.CarouselImageText>
-                        Sensual
+                        {item.title}
                       </Styled.CarouselImageText>
                     </Styled.CarouselImageOverlay>
                   </Styled.CarouselImageContainer>
@@ -259,6 +266,7 @@ export const Portfolio = () => {
         </Styled.ModalHeader>
 
         <Carousel
+          disableArrowsOnEnd={false}
           initialActiveIndex={currentIndex}
           onChange={onChange}
           itemsToShow={1}

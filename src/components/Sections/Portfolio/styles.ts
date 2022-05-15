@@ -202,32 +202,21 @@ const slide = keyframes`
   }
 `;
 
-/*
-export const CarouselItem = styled.li`
-  ${() =>
-    css`
-      min-width: 181px;
-      position: relative;
-      animation: ${slide} 15s infinite ease-out;
-    `}
-`;
-
-export const CarouselImage = styled.img`
-  ${() =>
-    css`
-      width: 100%;
-    `}
-`;*/
-
 export const CarouselImageContainer = styled.div`
   ${() =>
     css`
+      overflow: hidden;
       cursor: pointer;
       position: relative;
       box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
 
       :hover ${CarouselImageOverlay} {
         opacity: 0.7;
+      }
+
+      :hover ${CarouselImage} {
+        transform: scale(1.3);
+        transition: transform 1s;
       }
     `}
 `;
@@ -270,6 +259,7 @@ export const CarouselImageText = styled.p`
       font-weight: 700;
       font-size: 48px;
       line-height: 51px;
+      text-align: center;
 
       letter-spacing: 0.01em;
 
