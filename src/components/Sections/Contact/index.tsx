@@ -6,10 +6,28 @@ import { Spinner } from '../../Spinner';
 import { Formik } from 'formik';
 import { TextField } from '../../TextField';
 import { TextAreaInput } from '../../TextArea';
+import { ControlledDropdown } from '../../ControlledDropdown';
+import { FormikProps } from 'formik';
 
 const wait = (timeout) => {
   return new Promise((resolve) => setTimeout(resolve, timeout));
 };
+
+const status = [
+  { name: 'Orçamento', value: 'Orçamento' },
+  { name: 'Agenda', value: 'Agenda' },
+  { name: 'Cursos', value: 'Cursos' },
+  { name: 'Produtos', value: 'Produtos' },
+  { name: 'Dúvidas Gerais', value: 'Dúvidas Gerais' },
+];
+
+interface Values {
+  name: string;
+  phone: string;
+  email: string;
+  subject: string;
+  message: string;
+}
 
 export const Contact = () => {
   const validate = Yup.object({
@@ -173,7 +191,7 @@ export const Contact = () => {
                   setIsOpen(true);
                 }}
               >
-                {() => (
+                {(props: FormikProps<Values>) => (
                   <Styled.Form>
                     <Styled.SvgContainer>
                       <svg
@@ -222,12 +240,26 @@ export const Contact = () => {
                     </Styled.GroupRow>
 
                     <Styled.Group>
-                      <TextField
+                      <ControlledDropdown
+                        onChange={(value: string) => {
+                          props.setFieldValue('subject', value);
+                        }}
                         placeholder="Escrever"
                         label="Assunto"
                         name="subject"
                         type="text"
-                      />
+                      >
+                        {status.map((item, index) => {
+                          return (
+                            <ControlledDropdown.Item
+                              key={index}
+                              value={item.value}
+                            >
+                              {item.name}
+                            </ControlledDropdown.Item>
+                          );
+                        })}
+                      </ControlledDropdown>
                     </Styled.Group>
 
                     <Styled.TextAreaGroup>
