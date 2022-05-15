@@ -3,6 +3,7 @@ import { theme } from '../styles/theme';
 import { AppProps } from 'next/app';
 import { useEffect } from 'react';
 import AOS from 'aos';
+import Layout from '../components/Layout';
 
 import 'aos/dist/aos.css';
 
@@ -17,7 +18,10 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <ThemeProvider theme={theme}>
-      <Component {...pageProps} />
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+
       <GlobalStyles />
     </ThemeProvider>
   );

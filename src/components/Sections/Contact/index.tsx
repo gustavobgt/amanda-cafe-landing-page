@@ -1,5 +1,4 @@
 import * as Styled from './styles';
-import SocialMedia from '../../SocialMedia';
 import Modal from 'react-modal';
 import { useState } from 'react';
 import * as Yup from 'yup';
@@ -136,7 +135,7 @@ export const Contact = () => {
                   setIsOpen(true);
                 }}
               >
-                {(formik) => (
+                {() => (
                   <Styled.Form>
                     <Styled.SvgContainer>
                       <svg
@@ -243,8 +242,6 @@ export const Contact = () => {
               </Styled.SvgContainer3>
             </div>
           </Styled.Container>
-
-          <SocialMedia />
         </Styled.SectionContainer>
       </Styled.Background>
       <Modal
