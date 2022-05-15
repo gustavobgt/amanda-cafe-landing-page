@@ -14,7 +14,7 @@ const aboutInfo = {
 export const About = () => {
   return (
     <GridTwoColumns {...aboutInfo} data-aos="fade">
-      <Styled.RelativeContainer data-aos="fade-right">
+      <Styled.RelativeContainer data-aos="fade-left">
         <Styled.TextContainer1>
           <svg
             width="17"

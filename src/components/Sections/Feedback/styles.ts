@@ -92,11 +92,6 @@ export const ButtonsContainer = styled.div`
   grid-gap: 2rem;
 `;
 
-const fadeIn = keyframes`
-  0% {opacity:0;}
-  100% {opacity:1;}
-`;
-
 export const Title1 = styled.h2`
   ${() => css`
     font-family: 'Poppins';
@@ -105,7 +100,6 @@ export const Title1 = styled.h2`
     font-size: 4.8rem;
     line-height: 51px;
     letter-spacing: 0.01em;
-    animation: ${fadeIn} linear 7s;
 
     color: #ffffff;
     text-align: left;
@@ -178,15 +172,15 @@ export const AvatarContainer = styled.div<AvatarContainerProps>`
     width: 92px;
     transition: all 0.5s ease-in-out;
     ${isFocused && focused()}
+
+    :hover {
+      transition: all 0.3s ease-in-out;
+      ${focused()}
+    }
   `}
 `;
 
 export const AvatarImg = styled.img`
   width: 100%;
   cursor: pointer;
-  transition: all 0.3s ease-in-out;
-
-  :hover {
-    opacity: 0.5;
-  }
 `;

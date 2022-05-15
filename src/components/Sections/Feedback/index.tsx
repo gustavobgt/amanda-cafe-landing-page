@@ -67,7 +67,7 @@ export const Feedback = () => {
     <Styled.Background id="feedbacks">
       <Styled.SectionContainer>
         <Styled.Container>
-          <Styled.PhotoContainer data-aos="fade-right">
+          <Styled.PhotoContainer data-aos="fade-left">
             <Styled.Photo src={data[currentIndex].photo} />
           </Styled.PhotoContainer>
 
