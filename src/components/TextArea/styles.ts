@@ -24,7 +24,6 @@ export const TextArea = styled.textarea<Props>`
     box-sizing: border-box;
     box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.15);
     border-radius: 4px;
-    margin-bottom: 10px;
     border: ${hasError
       ? '1px solid red'
       : '1px solid rgba(255, 255, 255, 0.2)'};
@@ -57,8 +56,15 @@ export const Label = styled.label`
   `}
 `;
 
+export const FloatError = styled.div`
+  ${() => css`
+    position: relative;
+  `}
+`;
+
 export const ErrorMessage = styled(FormikErrorMessage)`
   ${() => css`
+    position: absolute;
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 500;

@@ -204,7 +204,21 @@ export const Group = styled.div`
     css`
       display: flex;
       flex-direction: column;
-      margin-bottom: 10px;
+      margin-bottom: 14px;
+
+      @media ${theme.media.lteMedium} {
+        align-items: flex-start;
+        justify-content: center;
+      }
+    `}
+`;
+
+export const TextAreaGroup = styled.div`
+  ${({ theme }) =>
+    css`
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 18px;
 
       @media ${theme.media.lteMedium} {
         align-items: flex-start;

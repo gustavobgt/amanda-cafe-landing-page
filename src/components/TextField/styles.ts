@@ -56,8 +56,15 @@ export const Label = styled.label`
   `}
 `;
 
+export const FloatError = styled.div`
+  ${() => css`
+    position: relative;
+  `}
+`;
+
 export const ErrorMessage = styled(FormikErrorMessage)`
   ${() => css`
+    position: absolute;
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 500;
