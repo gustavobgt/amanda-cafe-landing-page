@@ -10,7 +10,21 @@ export const Container = styled.div`
 
     @media ${theme.media.lteMedium} {
       grid-template-columns: 1fr;
+      grid-template-rows: 1fr 30rem 1fr;
+      text-align: center;
+      height: 100%;
+    }
+
+    @media ${theme.media.lteMedium2} {
+      grid-template-columns: 1fr;
       grid-template-rows: 1fr 14rem 1fr;
+      text-align: center;
+      height: 100%;
+    }
+
+    @media ${theme.media.lteMedium3} {
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr 0.1px 1fr;
       text-align: center;
       height: 100%;
     }
@@ -33,4 +47,16 @@ export const ImageContainer = styled.div``;
 
 export const Image = styled.img`
   width: 100%;
+`;
+
+export const SocialContainer = styled.div`
+  ${({ theme }) => css`
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+
+    @media ${theme.media.lteMedium} {
+      padding: 10px 5%;
+    }
+  `}
 `;

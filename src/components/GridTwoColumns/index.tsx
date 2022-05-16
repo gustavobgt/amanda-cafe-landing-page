@@ -26,15 +26,9 @@ export const GridTwoColumns = ({
     >
       <Styled.Container>{children}</Styled.Container>
 
-      <div
-        style={{
-          display: 'flex',
-          width: '100%',
-          justifyContent: 'flex-end',
-        }}
-      >
+      <Styled.SocialContainer>
         <SocialMedia />
-      </div>
+      </Styled.SocialContainer>
     </SectionBackground>
   );
 };

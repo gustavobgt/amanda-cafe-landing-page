@@ -7,7 +7,6 @@ export const Container = styled.div`
     width: 100%;
 
     @media ${theme.media.lteMedium} {
-      height: 100vh;
       padding: 0;
     }
   `}

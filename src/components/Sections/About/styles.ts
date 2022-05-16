@@ -50,6 +50,9 @@ export const TextContainer2 = styled.div`
       position: static;
       max-width: inherit;
       padding: 5%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
   `}
 `;
@@ -123,6 +126,8 @@ export const Title2 = styled.h2`
     @media ${theme.media.lteMedium} {
       font-size: 6.4rem;
       line-height: 69px;
+      max-width: 438px;
+      text-align: center;
     }
   `}
 `;
