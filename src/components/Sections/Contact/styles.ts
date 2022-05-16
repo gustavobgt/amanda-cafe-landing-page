@@ -23,6 +23,7 @@ export const Background = styled.div`
     color: ${theme.colors.primaryColor};
     min-height: 100vh;
     display: flex;
+    flex-direction: column;
     align-items: center;
     border-bottom: 0.05px solid rgba(255, 255, 255, 0.5);
 

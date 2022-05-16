@@ -1,14 +1,5 @@
 import styled, { css } from 'styled-components';
 
-export const Container = styled.div`
-  ${() => css`
-    position: fixed;
-    bottom: 1rem;
-    right: 3.5rem;
-    z-index: 3;
-  `}
-`;
-
 export const Footer = styled.div`
   ${() => css`
     display: flex;

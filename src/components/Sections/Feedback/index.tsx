@@ -1,6 +1,7 @@
 import * as Styled from './styles';
 import Button from '../../Button';
 import { useState } from 'react';
+import SocialMedia from '../../SocialMedia';
 
 const data = [
   {
@@ -64,7 +65,7 @@ export const Feedback = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   return (
-    <Styled.Background id="feedbacks">
+    <Styled.Background id="feedbacks" data-aos="fade">
       <Styled.SectionContainer>
         <Styled.Container>
           <Styled.PhotoContainer data-aos="fade-left">
@@ -133,6 +134,17 @@ export const Feedback = () => {
           </Styled.TextContainer1>
         </Styled.Container>
       </Styled.SectionContainer>
+
+      <div
+        style={{
+          padding: '2% 5%',
+          display: 'flex',
+          width: '100%',
+          justifyContent: 'flex-end',
+        }}
+      >
+        <SocialMedia />
+      </div>
     </Styled.Background>
   );
 };

@@ -3,6 +3,7 @@ import { useState } from 'react';
 import Modal from 'react-modal';
 import Button from './components/Button';
 import Carousel from 'react-elastic-carousel';
+import SocialMedia from '../../SocialMedia';
 
 import { useWindowDimensions } from './useWindowDimensions';
 
@@ -88,7 +89,7 @@ export const Store = () => {
 
   return (
     <>
-      <Styled.Background id="loja">
+      <Styled.Background id="loja" data-aos="fade">
         <Styled.SectionContainer>
           <Styled.Container>
             <Styled.TextContainer1 data-aos="fade-left">
@@ -328,6 +329,17 @@ export const Store = () => {
             </Styled.RightSideContainer>
           </Styled.Container>
         </Styled.SectionContainer>
+
+        <div
+          style={{
+            padding: '2% 5%',
+            display: 'flex',
+            width: '100%',
+            justifyContent: 'flex-end',
+          }}
+        >
+          <SocialMedia />
+        </div>
       </Styled.Background>
 
       <Modal

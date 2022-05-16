@@ -11,6 +11,7 @@ import { PhoneField } from '../../PhoneField';
 import { FormikProps } from 'formik';
 import emailjs from '@emailjs/browser';
 import React from 'react';
+import SocialMedia from '../../SocialMedia';
 
 const status = [
   { name: 'Orçamento', value: 'Orçamento' },
@@ -75,7 +76,7 @@ export const Contact = () => {
 
   return (
     <>
-      <Styled.Background id="contato">
+      <Styled.Background id="contato" data-aos="fade">
         <Styled.SectionContainer>
           <Styled.Container>
             <Styled.TextContainer1 data-aos="fade-left">
@@ -319,6 +320,17 @@ export const Contact = () => {
             </div>
           </Styled.Container>
         </Styled.SectionContainer>
+
+        <div
+          style={{
+            paddingRight: '5%',
+            display: 'flex',
+            width: '100%',
+            justifyContent: 'flex-end',
+          }}
+        >
+          <SocialMedia />
+        </div>
       </Styled.Background>
       <Modal
         onRequestClose={closeModal}

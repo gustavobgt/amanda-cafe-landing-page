@@ -68,4 +68,19 @@ export const GlobalStyles = createGlobalStyle`
 	border-radius: 0.4rem;
 	background-image: linear-gradient(109.13deg, #9100FF 5.77%, #BC00FF 77.99%);
   }
+
+  input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  -webkit-text-fill-color: white;
+  -webkit-box-shadow: 0 0 0px 1000px rgba(255, 255, 255, 0.001) inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
 `;

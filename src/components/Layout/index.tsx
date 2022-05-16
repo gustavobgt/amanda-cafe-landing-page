@@ -1,5 +1,4 @@
 import Head from 'next/head';
-import SocialMedia from '../SocialMedia';
 
 import { Base } from '../../templates/Base';
 import { ReactNode } from 'react';
@@ -27,8 +26,6 @@ function Layout({ children }: Props) {
       </Head>
 
       {children}
-
-      <SocialMedia />
     </Base>
   );
 }

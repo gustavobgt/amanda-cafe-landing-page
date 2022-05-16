@@ -3,6 +3,7 @@ import Button from './components/Button';
 import Carousel from 'react-elastic-carousel';
 import { useState } from 'react';
 import Modal from 'react-modal';
+import SocialMedia from '../../SocialMedia';
 
 const data = [
   {
@@ -92,7 +93,7 @@ export const Portfolio = () => {
 
   return (
     <>
-      <Styled.Background id="portfolio">
+      <Styled.Background id="portfolio" data-aos="fade">
         <Styled.SectionContainer>
           <Styled.Container>
             <Styled.TextContainer1 data-aos="fade-left">
@@ -225,6 +226,17 @@ export const Portfolio = () => {
             </Styled.CarouselContainer>
           </Styled.Container>
         </Styled.SectionContainer>
+
+        <div
+          style={{
+            paddingRight: '5%',
+            display: 'flex',
+            width: '100%',
+            justifyContent: 'flex-end',
+          }}
+        >
+          <SocialMedia />
+        </div>
       </Styled.Background>
 
       <Modal

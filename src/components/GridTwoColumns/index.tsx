@@ -1,5 +1,6 @@
 import * as Styled from './styles';
 import { SectionBackground } from '../SectionBackground';
+import SocialMedia from '../SocialMedia';
 
 export type GridTwoColumnsProps = {
   background?: boolean;
@@ -24,6 +25,16 @@ export const GridTwoColumns = ({
       sectionId={sectionId}
     >
       <Styled.Container>{children}</Styled.Container>
+
+      <div
+        style={{
+          display: 'flex',
+          width: '100%',
+          justifyContent: 'flex-end',
+        }}
+      >
+        <SocialMedia />
+      </div>
     </SectionBackground>
   );
 };

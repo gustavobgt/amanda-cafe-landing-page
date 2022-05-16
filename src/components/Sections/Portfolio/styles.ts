@@ -21,9 +21,11 @@ export const Background = styled.div`
     color: ${theme.colors.primaryColor};
     min-height: 100vh;
     display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
     border-bottom: 0.05px solid rgba(255, 255, 255, 0.5);
-
+    gap: 20px;
     background: url('https://i.imgur.com/HiKn6r3.png') no-repeat,
       ${theme.colors.background};
     background-position: center center;
