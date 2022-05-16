@@ -16,12 +16,14 @@ export const Container = styled.div`
 
 export const Background = styled.div`
   ${({ theme }) => css`
-    padding-top: 49px;
+    //padding-top: 49px;
     background: ${theme.colors.white};
     color: ${theme.colors.primaryColor};
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+
     align-items: center;
     border-bottom: 0.05px solid rgba(255, 255, 255, 0.5);
     gap: 20px;

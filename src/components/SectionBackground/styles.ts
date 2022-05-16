@@ -27,7 +27,7 @@ export const Container = styled.div<Background>`
     border-bottom: 0.05px solid rgba(255, 255, 255, 0.5);
 
     @media ${theme.media.lteMedium} {
-      padding-top: 49px;
+      //padding-top: 49px;
       display: flex;
       flex-direction: column;
       align-items: center;

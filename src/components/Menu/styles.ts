@@ -11,21 +11,27 @@ const menuVisible = () => css`
   opacity: 1;
 `;
 
-export const MobileContainer = styled.div`
-  ${({ theme }) => css`
-    position: fixed;
-    z-index: 6;
+export const MobileContainer = styled.div<MenuVisible>`
+  ${({ visible }) => css`
+    //position: ${visible ? 'fixed' : 'static'};
+    //z-index: 6;
     background-color: black;
     height: 49px;
     width: 100%;
     padding: 16px 20px;
-    display: none;
 
-    @media ${theme.media.lteMedium} {
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-    }
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  `}
+`;
+
+export const ModalHeader = styled.div`
+  ${() => css`
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
   `}
 `;
 
@@ -45,25 +51,20 @@ export const Button = styled.button<MenuVisible>`
     display: none;
     // pointer-events: ${visible ? 'none' : 'all'};
 
-    @media ${theme.media.lteMedium} {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
+    display: flex;
+    align-items: center;
+    justify-content: center;
   `}
 `;
 
 export const Footer = styled.footer`
   ${({ theme }) =>
     css`
-      display: none;
-
-      @media ${theme.media.lteMedium} {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 60px;
-      }
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 60px;
+      margin-bottom: 20px;
     `}
 `;
 
@@ -75,7 +76,7 @@ export const Container = styled.div<MenuVisible>`
   ${({ theme, visible }) => css`
     position: fixed;
     z-index: 5;
-    top: 49px;
+    top: 0;
     left: 0;
     right: 0;
     width: 100%;
@@ -93,40 +94,35 @@ export const Container = styled.div<MenuVisible>`
       margin-bottom: 0;
     }
 
-    @media ${theme.media.lteMedium} {
-      background: black;
+    background: black;
+    height: 100vh;
+    visibility: hidden;
+    opacity: 0;
+    ${visible && menuVisible()}
+
+    > ${SectionContainer} {
+      display: grid;
+      grid-template-columns: 1fr;
       height: 100vh;
-      visibility: hidden;
-      opacity: 0;
-      ${visible && menuVisible()}
+      align-items: center;
+      overflow-y: auto;
+    }
 
-      > ${SectionContainer} {
-        display: grid;
-        grid-template-columns: 1fr;
-        height: 100vh;
-        align-items: center;
-        overflow-y: auto;
-      }
-
-      & ${Heading} {
-        padding-bottom: ${theme.spacings.large};
-        display: flex;
-        justify-content: center;
-      }
+    & ${Heading} {
+      padding-bottom: ${theme.spacings.large};
+      display: flex;
+      justify-content: center;
     }
   `}
 `;
 
 export const MenuContainer = styled.div`
   ${({ theme }) => css`
-    display: flex;
     justify-content: flex-end;
     align-items: center;
 
-    @media ${theme.media.lteMedium} {
-      display: block;
-      text-align: center;
-      padding: ${theme.spacings.xxlarge} 0;
-    }
+    display: block;
+    text-align: center;
+    padding: ${theme.spacings.xxlarge} 0;
   `}
 `;

@@ -13,7 +13,7 @@ export const Menu = ({ links = [] }: MenuProps) => {
 
   return (
     <>
-      <Styled.MobileContainer>
+      <Styled.MobileContainer visible={visible}>
         <Styled.Button
           visible={visible}
           onClick={() => setVisible((prevState) => !prevState)}
@@ -79,6 +79,38 @@ export const Menu = ({ links = [] }: MenuProps) => {
       </Styled.MobileContainer>
 
       <Styled.Container visible={visible} onClick={() => setVisible(false)}>
+        <Styled.ModalHeader>
+          <Styled.Button
+            visible={visible}
+            onClick={() => setVisible((prevState) => !prevState)}
+            aria-label="Open/Close menu"
+          >
+            <svg
+              aria-label="Close menu"
+              width="19"
+              height="19"
+              viewBox="0 0 19 19"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M1 1L18 18"
+                stroke="white"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+              <path
+                d="M18 1L1 18"
+                stroke="white"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </Styled.Button>
+        </Styled.ModalHeader>
+
         <SectionContainer>
           <Styled.MenuContainer>
             <NavLinks links={links} />

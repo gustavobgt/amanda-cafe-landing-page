@@ -18,7 +18,7 @@ export const Container = styled.div`
 
 export const Background = styled.div`
   ${({ theme }) => css`
-    padding-top: 49px;
+    //padding-top: 49px;
     background: ${theme.colors.white};
     color: ${theme.colors.primaryColor};
     min-height: 100vh;
@@ -26,6 +26,7 @@ export const Background = styled.div`
     flex-direction: column;
     align-items: center;
     border-bottom: 0.05px solid rgba(255, 255, 255, 0.5);
+    justify-content: center;
 
     background: url('https://i.imgur.com/4z5367A.png') no-repeat,
       ${theme.colors.background};

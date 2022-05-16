@@ -229,7 +229,7 @@ export const Portfolio = () => {
 
         <div
           style={{
-            paddingRight: '5%',
+            padding: '10px 5%',
             display: 'flex',
             width: '100%',
             justifyContent: 'flex-end',

@@ -137,7 +137,7 @@ export const Feedback = () => {
 
       <div
         style={{
-          padding: '2% 5%',
+          padding: '10px 5%',
           display: 'flex',
           width: '100%',
           justifyContent: 'flex-end',
