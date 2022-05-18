@@ -364,6 +364,12 @@ const breakPoints = [
   { width: 550, itemsToShow: 4, itemsToScroll: 1 },
 ];
 
+const breakPoints2 = [
+  { width: 1, itemsToShow: 1 },
+  { width: 1200, itemsToShow: 2, itemsToScroll: 1 },
+  { width: 700, itemsToShow: 3, itemsToScroll: 1 },
+];
+
 export const Portfolio = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [modalIndex, setModalIndex] = useState(0);
@@ -613,8 +619,12 @@ export const Portfolio = () => {
             disableArrowsOnEnd={false}
             initialActiveIndex={modalIndex}
             onChange={onChange}
-            itemsToShow={1}
-            renderArrow={myArrow}
+            itemPadding={[0, 20]}
+            breakPoints={breakPoints2}
+            outerSpacing={50}
+            //qouterSpacing={100}
+            //renderArrow={myArrow}
+            showArrows={false}
             renderPagination={({ pages, activePage, onClick }) => {
               return (
                 <Styled.Pagination>
