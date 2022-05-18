@@ -21,7 +21,7 @@ export const Container = styled.div<Background>`
     background: ${theme.colors.white};
     color: ${theme.colors.primaryColor};
     ${background && containerBackgroundActivate(theme, backgroundImg)};
-    min-height: 100vh;
+    min-height: calc(100vh - 49px);
     display: flex;
     align-items: center;
     border-bottom: 0.05px solid rgba(255, 255, 255, 0.5);

@@ -9,6 +9,7 @@ export const Container = styled.div`
 
     @media ${theme.media.lteMedium} {
       grid-template-columns: 1fr;
+      grid-gap: 0;
       text-align: center;
     }
   `}
@@ -19,7 +20,7 @@ export const Background = styled.div`
     //padding-top: 49px;
     background: ${theme.colors.white};
     color: ${theme.colors.primaryColor};
-    min-height: 100vh;
+    min-height: calc(100vh - 49px);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -210,7 +211,7 @@ const slide = keyframes`
 `;
 
 export const CarouselImageContainer = styled.div`
-  ${() =>
+  ${({ theme }) =>
     css`
       overflow: hidden;
       cursor: pointer;
@@ -224,6 +225,12 @@ export const CarouselImageContainer = styled.div`
       :hover ${CarouselImage} {
         transform: scale(1.3);
         transition: transform 1s;
+      }
+
+      @media ${theme.media.lteMedium} {
+        ${CarouselImageOverlay} {
+          opacity: 0.7;
+        }
       }
     `}
 `;
@@ -265,7 +272,7 @@ export const CarouselImageOverlay = styled.div`
 `;
 
 export const CarouselImageText = styled.p`
-  ${() =>
+  ${({ theme }) =>
     css`
       position: absolute;
       top: 50%;
@@ -282,6 +289,18 @@ export const CarouselImageText = styled.p`
       color: #ffffff;
 
       transform: translate(-25%, 80%) rotate(-90deg);
+
+      @media ${theme.media.lteMedium} {
+        width: 200px;
+        text-align: start;
+        transform: translate(-30%, 50%) rotate(-90deg);
+      }
+
+      @media (max-width: 713px) {
+        width: 200px;
+        text-align: start;
+        transform: translate(-25%, 100%) rotate(-90deg);
+      }
     `}
 `;
 
@@ -387,3 +406,33 @@ export const ModalTitle = styled.p`
 export const ModalContainer = styled.div``;
 
 export const ModalContent = styled.div``;
+
+export const MobileIndicatorContainer = styled.div`
+  ${({ theme }) => css`
+    display: none;
+
+    @media ${theme.media.lteMedium} {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+  `}
+`;
+
+export const MobileIndicatorTitle = styled.p`
+  ${() =>
+    css`
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 20px;
+      /* identical to box height, or 143% */
+
+      text-align: center;
+      letter-spacing: 0.01em;
+
+      color: #ffffff;
+    `}
+`;

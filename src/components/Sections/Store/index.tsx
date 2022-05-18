@@ -18,7 +18,7 @@ const data = [
       'Lembrando que presets são configurações de cores prontas, sendo necessário adaptar para cada fotografia.',
     buy_link: 'https://pay.hotmart.com/S70703324V',
     photo:
-      'https://res.cloudinary.com/amanda-caf/image/upload/v1652635674/Loja/fairy-tail-photo_fyxayt.png',
+      'https://res.cloudinary.com/amanda-caf/image/upload/v1652837636/Loja/fairy-tail-2x-photo_i3eexm.png',
     carousel_image:
       'https://res.cloudinary.com/amanda-caf/image/upload/v1652635507/Loja/fairytail-carousel_cs6wut.png',
     modal_image:
@@ -34,7 +34,7 @@ const data = [
       'Lembrando que presets são configurações de cores prontas, sendo necessário adaptar para cada fotografia.',
     buy_link: 'https://pay.hotmart.com/D70704020T',
     photo:
-      'https://res.cloudinary.com/amanda-caf/image/upload/v1652635674/Loja/cold-as-your-heart-photo_dh0qf3.png',
+      'https://res.cloudinary.com/amanda-caf/image/upload/v1652837660/Loja/cold-as-your-heart-2x-photo_tgwrrd.png',
     carousel_image:
       'https://res.cloudinary.com/amanda-caf/image/upload/v1652635507/Loja/cold-as-your-heart-carousel_snxevy.png',
     modal_image:
@@ -50,7 +50,7 @@ const data = [
       'Lembrando que presets são configurações de cores prontas, sendo necessário adaptar para cada fotografia.',
     buy_link: 'https://pay.hotmart.com/S70704609Q',
     photo:
-      'https://res.cloudinary.com/amanda-caf/image/upload/v1652635674/Loja/greek-beauty-photo_apvqa6.png',
+      'https://res.cloudinary.com/amanda-caf/image/upload/v1652837672/Loja/greek-beauty-2x-photo_pxpr18.png',
     carousel_image:
       'https://res.cloudinary.com/amanda-caf/image/upload/v1652635507/Loja/greek-beauty-carousel_qxrz6r.png',
     modal_image:

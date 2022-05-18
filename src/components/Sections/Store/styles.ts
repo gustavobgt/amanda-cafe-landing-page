@@ -20,7 +20,7 @@ export const Background = styled.div`
     //padding-top: 49px;
     background: ${theme.colors.white};
     color: ${theme.colors.primaryColor};
-    min-height: 100vh;
+    min-height: calc(100vh - 49px);
     flex-direction: column;
     display: flex;
     align-items: center;
