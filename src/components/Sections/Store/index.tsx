@@ -88,20 +88,27 @@ export const Store = () => {
   const [modalIndex, setModalIndex] = useState(0);
   const [modalIsOpen, setIsOpen] = useState(false);
   const { width } = useWindowDimensions();
-
-  function openModal() {
-    setIsOpen(true);
-  }
+  //const width = 1000;
 
   function closeModal() {
     setIsOpen(false);
+  }
+
+  function onVerMais() {
+    setIsOpen(true);
+    //setModalIndex(currentIndex);
   }
 
   const onChange = ({ index }) => {
     setModalIndex(index);
   };
 
-  const myArrow = ({ type, onClick, isEdge }) => {
+  //console.log('modalIsOpen = ', modalIsOpen);
+  console.log('width = ', width);
+
+  /**
+   *
+   * const myArrow = ({ type, onClick, isEdge }) => {
     const pointer = type === 'PREV' ? 'left' : 'right';
 
     return (
@@ -110,6 +117,8 @@ export const Store = () => {
       </Styled.ButtonContainer>
     );
   };
+   *
+   */
 
   return (
     <>
@@ -171,7 +180,7 @@ export const Store = () => {
               <Styled.ButtonsContainer>
                 <Styled.BuyButton
                   target="_blank"
-                  href="https://www.youtube.com/"
+                  href={data[currentIndex].buy_link}
                 >
                   COMPRAR{' '}
                   <svg
@@ -191,12 +200,7 @@ export const Store = () => {
                   </svg>
                 </Styled.BuyButton>
 
-                <Styled.DetailsButton
-                  onClick={() => {
-                    openModal();
-                    setModalIndex(currentIndex);
-                  }}
-                >
+                <Styled.DetailsButton onClick={onVerMais}>
                   VER MAIS
                 </Styled.DetailsButton>
               </Styled.ButtonsContainer>
@@ -234,7 +238,8 @@ export const Store = () => {
 
               <div style={{ display: 'flex' }}>
                 <Styled.ECarousel
-                  breakPoints={width > 1100 ? [] : breakPoints}
+                  breakPoints={width > 1100 ? null : breakPoints}
+                  //breakPoints={breakPoints}
                   itemsToShow={3}
                   itemPadding={[5, 5, 5, 5]}
                   verticalMode={width > 1100}
@@ -371,7 +376,7 @@ export const Store = () => {
       </Styled.Background>
 
       {modalIsOpen ? (
-        <Modal onClose={closeModal} show={modalIsOpen}>
+        <Modal onClose={closeModal}>
           <Styled.ModalClose onClick={closeModal}>
             <Styled.ModalCloseButton onClick={closeModal}>
               <svg
@@ -399,7 +404,6 @@ export const Store = () => {
             initialActiveIndex={currentIndex}
             onChange={onChange}
             itemsToShow={1}
-            renderArrow={myArrow}
             renderPagination={({ pages, activePage, onClick }) => {
               return (
                 <Styled.ModalPagination>

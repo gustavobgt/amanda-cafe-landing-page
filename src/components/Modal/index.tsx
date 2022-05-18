@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef, useCallback } from 'react';
 import ReactDOM from 'react-dom';
 import styled from 'styled-components';
 
-const Modal = ({ show, onClose, children }) => {
+const Modal = ({ onClose, children }) => {
   const modalWrapperRef = useRef(null);
   const [isBrowser, setIsBrowser] = useState(false);
 
@@ -29,13 +29,13 @@ const Modal = ({ show, onClose, children }) => {
     return () => window.removeEventListener('click', backDropHandler);
   }, [backDropHandler]);
 
-  const modalContent = show ? (
+  const modalContent = (
     <StyledModalOverlay>
       <StyledModalWrapper ref={modalWrapperRef}>
         <StyledModal>{children}</StyledModal>
       </StyledModalWrapper>
     </StyledModalOverlay>
-  ) : null;
+  );
 
   if (isBrowser) {
     return ReactDOM.createPortal(

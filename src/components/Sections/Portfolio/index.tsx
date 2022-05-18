@@ -585,7 +585,7 @@ export const Portfolio = () => {
       </Styled.Background>
 
       {modalIsOpen ? (
-        <Modal onClose={closeModal} show={modalIsOpen}>
+        <Modal onClose={closeModal}>
           <Styled.ModalClose onClick={closeModal}>
             <Styled.ModalCloseButton onClick={closeModal}>
               <svg
