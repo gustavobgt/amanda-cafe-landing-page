@@ -36,10 +36,15 @@ export const Background = styled.div`
 `;
 
 export const SectionContainer = styled.div`
-  ${() => css`
+  ${({ theme }) => css`
     margin: 0 auto;
-    padding: 5%;
+    padding: 0 5%;
     width: 100%;
+    max-width: 1400px;
+
+    @media ${theme.media.lteMedium} {
+      padding-top: 5%;
+    }
   `}
 `;
 
@@ -350,7 +355,6 @@ export const ModalClose = styled.div`
       display: flex;
       align-items: center;
       justify-content: flex-end;
-      padding-right: 20px;
     `}
 `;
 
@@ -359,7 +363,6 @@ export const ModalCloseButton = styled.button`
     css`
       cursor: pointer;
       position: relative;
-      margin-bottom: -20px;
       padding: 20px;
     `}
 `;
@@ -380,3 +383,7 @@ export const ModalTitle = styled.p`
       color: #ffffff;
     `}
 `;
+
+export const ModalContainer = styled.div``;
+
+export const ModalContent = styled.div``;

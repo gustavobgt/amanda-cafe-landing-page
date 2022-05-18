@@ -3,11 +3,12 @@ import styled, { css } from 'styled-components';
 export const Container = styled.div`
   ${({ theme }) => css`
     margin: 0 auto;
-    padding: 5%;
+    padding: 0 5%;
     width: 100%;
+    max-width: 1400px;
 
     @media ${theme.media.lteMedium} {
-      padding: 0;
+      padding-top: 5%;
     }
   `}
 `;

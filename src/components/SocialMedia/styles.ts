@@ -1,11 +1,15 @@
 import styled, { css } from 'styled-components';
 
 export const Footer = styled.div`
-  ${() => css`
+  ${({ theme }) => css`
     display: flex;
     align-items: center;
     justify-content: flex-end;
     gap: 40px;
+
+    @media ${theme.media.lteMedium} {
+      display: none;
+    }
   `}
 `;
 

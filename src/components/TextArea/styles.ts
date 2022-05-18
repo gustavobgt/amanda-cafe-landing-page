@@ -7,6 +7,7 @@ interface Props {
 
 export const TextArea = styled.textarea<Props>`
   ${({ hasError }) => css`
+    resize: none;
     width: 100%;
     font-family: 'Montserrat';
     font-style: normal;

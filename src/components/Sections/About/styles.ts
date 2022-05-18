@@ -4,7 +4,7 @@ export const RelativeContainer = styled.div`
   ${({ theme }) => css`
     position: relative;
     z-index: 1;
-    height: 80vh;
+    height: 70vh;
     @media ${theme.media.lteMedium} {
       height: inherit;
     }

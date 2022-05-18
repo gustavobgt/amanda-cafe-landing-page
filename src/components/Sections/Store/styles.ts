@@ -37,10 +37,15 @@ export const Background = styled.div`
 `;
 
 export const SectionContainer = styled.div`
-  ${() => css`
+  ${({ theme }) => css`
     margin: 0 auto;
-    padding: 5%;
+    padding: 0 5%;
     width: 100%;
+    max-width: 1400px;
+
+    @media ${theme.media.lteMedium} {
+      padding-top: 5%;
+    }
   `}
 `;
 
@@ -92,7 +97,7 @@ export const Description = styled.p`
     font-weight: 500;
     font-size: 1.4rem;
     line-height: 20px;
-    max-width: 346px;
+    max-width: 370px;
     text-align: left;
 
     letter-spacing: 0.03em;

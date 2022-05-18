@@ -11,9 +11,11 @@ const data = [
   {
     id: 1,
     title: 'Preset: Fairytail',
-    price: 'R$ 35,00',
-    description:
-      'Um dos meus presets favoritos! Mistura tons quentes e traz aquela sensação de agradabilidade quando se olha pra foto! Lembrando que presets são configurações de cores prontas, sendo necessário adaptar para cada fotografia',
+    price: 'R$ 15,00',
+    description1:
+      'Um dos meus presets favoritos! Mistura tons quentes e traz aquela sensação de agradabilidade quando se olha pra foto!',
+    description2:
+      'Lembrando que presets são configurações de cores prontas, sendo necessário adaptar para cada fotografia.',
     buy_link: 'https://pay.hotmart.com/S70703324V',
     photo:
       'https://res.cloudinary.com/amanda-caf/image/upload/v1652635674/Loja/fairy-tail-photo_fyxayt.png',
@@ -25,9 +27,11 @@ const data = [
   {
     id: 2,
     title: 'Preset: Cold as your heart',
-    price: 'R$ 50,00',
-    description:
-      'Com nome de música de Diva Pop, esse preset traz tons mais frios às fotos, dando aquele aspecto de chique na neve. Lembrando que presets são configurações de cores prontas, sendo necessário adaptar para cada fotografia',
+    price: 'R$ 15,00',
+    description1:
+      'Com nome de música de Diva Pop, esse preset traz tons mais frios às fotos, dando aquele aspecto de chique na neve.',
+    description2:
+      'Lembrando que presets são configurações de cores prontas, sendo necessário adaptar para cada fotografia.',
     buy_link: 'https://pay.hotmart.com/D70704020T',
     photo:
       'https://res.cloudinary.com/amanda-caf/image/upload/v1652635674/Loja/cold-as-your-heart-photo_dh0qf3.png',
@@ -39,10 +43,11 @@ const data = [
   {
     id: 3,
     title: 'Preset: Greek beauty',
-    price: 'R$ 37,00',
-    description:
-      'Um dos meus presets favoritos! Mistura tons quentes e traz aquela sensação de agradabilidade quando se olha pra foto! Lembrando que presets são configurações de cores prontas, sendo necessário adaptar para cada fotografia',
-
+    price: 'R$ 15,00',
+    description1:
+      'O Greek Beauty é um dos queridinhos da galera! Defini com esse nome porquê me inspirei na paleta presente em obras gregas! Misturando tons mais amarelados/envelhecidos.',
+    description2:
+      'Lembrando que presets são configurações de cores prontas, sendo necessário adaptar para cada fotografia.',
     buy_link: 'https://pay.hotmart.com/S70704609Q',
     photo:
       'https://res.cloudinary.com/amanda-caf/image/upload/v1652635674/Loja/greek-beauty-photo_apvqa6.png',
@@ -137,7 +142,11 @@ export const Store = () => {
               <Styled.SubTitle>{data[currentIndex].price}</Styled.SubTitle>
 
               <Styled.Description>
-                {data[currentIndex].description}
+                {data[currentIndex].description1}
+              </Styled.Description>
+
+              <Styled.Description>
+                {data[currentIndex].description2}
               </Styled.Description>
 
               <Styled.ButtonsContainer>

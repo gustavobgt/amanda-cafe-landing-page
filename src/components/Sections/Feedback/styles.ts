@@ -37,10 +37,15 @@ export const Background = styled.div`
 `;
 
 export const SectionContainer = styled.div`
-  ${() => css`
+  ${({ theme }) => css`
     margin: 0 auto;
-    padding: 5%;
+    padding: 0 5%;
     width: 100%;
+    max-width: 1400px;
+
+    @media ${theme.media.lteMedium} {
+      padding-top: 5%;
+    }
   `}
 `;
 
