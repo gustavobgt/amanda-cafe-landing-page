@@ -42,6 +42,7 @@ export const SectionContainer = styled.div`
     padding: 0 5%;
     width: 100%;
     max-width: 1400px;
+    padding-top: 5%;
 
     @media ${theme.media.lteMedium} {
       padding-top: 5%;

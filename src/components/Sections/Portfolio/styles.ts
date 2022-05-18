@@ -40,6 +40,7 @@ export const SectionContainer = styled.div`
   ${({ theme }) => css`
     margin: 0 auto;
     padding: 0 5%;
+
     width: 100%;
     max-width: 1400px;
 

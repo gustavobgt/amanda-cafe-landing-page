@@ -2,8 +2,9 @@ import * as Styled from './styles';
 import Button from './components/Button';
 import Carousel from 'react-elastic-carousel';
 import { useState } from 'react';
-import Modal from 'react-modal';
+// import Modal from 'react-modal';
 import SocialMedia from '../../SocialMedia';
+import Modal from '../../Modal';
 
 const data = [
   {
@@ -583,21 +584,8 @@ export const Portfolio = () => {
         </div>
       </Styled.Background>
 
-      <Modal
-        onRequestClose={closeModal}
-        shouldCloseOnOverlayClick={true}
-        style={{
-          overlay: {
-            backgroundColor: 'rgba(0, 0, 0, 0.85)',
-          },
-          content: {
-            backgroundColor: 'transparent',
-            border: 'none',
-          },
-        }}
-        isOpen={modalIsOpen}
-      >
-        <Styled.ModalContainer>
+      {modalIsOpen ? (
+        <Modal onClose={closeModal} show={modalIsOpen}>
           <Styled.ModalClose onClick={closeModal}>
             <Styled.ModalCloseButton onClick={closeModal}>
               <svg
@@ -689,8 +677,8 @@ export const Portfolio = () => {
               </Styled.ModalImageContainer>
             ))}
           </Carousel>
-        </Styled.ModalContainer>
-      </Modal>
+        </Modal>
+      ) : null}
     </>
   );
 };
