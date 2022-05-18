@@ -588,7 +588,7 @@ export const ModalTitle = styled.p`
 export const ModalImageContainer = styled.div`
   ${() =>
     css`
-      cursor: pointer;
+      pointer-events: none;
       position: relative;
       box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
     `}

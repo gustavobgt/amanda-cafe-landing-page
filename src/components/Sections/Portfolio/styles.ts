@@ -249,6 +249,7 @@ export const ModalImageContainer = styled.div`
 export const CarouselImage = styled.img`
   ${() =>
     css`
+      pointer-events: none;
       display: block;
       width: 100%;
       height: auto;
