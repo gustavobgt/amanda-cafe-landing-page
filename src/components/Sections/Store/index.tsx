@@ -64,6 +64,23 @@ const breakPoints = [
   { width: 550, itemsToShow: 3, itemsToScroll: 3 },
 ];
 
+/*
+const modalStyles = {
+  overlay: {
+    backgroundColor: 'rgba(0, 0, 0, 0.85)',
+    zIndex: 6,
+  },
+  content: {
+    backgroundColor: 'transparent',
+    border: 'none',
+    inset: 0,
+    display: 'flex',
+    flexDirection: 'column',
+    aligItems: 'center',
+    justifyContent: 'center',
+  },
+};*/
+
 export const Store = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [modalIndex, setModalIndex] = useState(0);
@@ -355,22 +372,16 @@ export const Store = () => {
         style={{
           overlay: {
             backgroundColor: 'rgba(0, 0, 0, 0.85)',
-            zIndex: 6,
           },
           content: {
             backgroundColor: 'transparent',
             border: 'none',
-            inset: 0,
-            display: 'flex',
-            flexDirection: 'column',
-            aligItems: 'center',
-            justifyContent: 'center',
           },
         }}
         isOpen={modalIsOpen}
         contentLabel="Example Modal"
       >
-        <Styled.ModalClose>
+        <Styled.ModalClose onClick={closeModal}>
           <Styled.ModalCloseButton onClick={closeModal}>
             <svg
               width="10"
@@ -386,7 +397,7 @@ export const Store = () => {
             </svg>
           </Styled.ModalCloseButton>
         </Styled.ModalClose>
-        <Styled.ModalHeader>
+        <Styled.ModalHeader onClick={closeModal}>
           <Styled.ModalTitle>{data[modalIndex].title}</Styled.ModalTitle>
         </Styled.ModalHeader>
 
