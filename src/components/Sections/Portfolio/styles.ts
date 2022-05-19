@@ -1,4 +1,5 @@
 import styled, { css, keyframes } from 'styled-components';
+import { Swiper as SP } from 'swiper/react';
 
 export const Container = styled.div`
   ${({ theme }) => css`
@@ -242,7 +243,6 @@ export const ModalImageContainer = styled.div`
       overflow: hidden;
       position: relative;
       box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
-      //max-width: 500px;
     `}
 `;
 
@@ -438,4 +438,10 @@ export const MobileIndicatorTitle = styled.p`
 
       color: #ffffff;
     `}
+`;
+
+export const Swiper = styled(SP)`
+  .swiper-button-next {
+    color: red;
+  }
 `;
