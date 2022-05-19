@@ -50,7 +50,7 @@ const Modal = ({ onClose, children }) => {
 const StyledModalWrapper = styled.div`
   width: 100%;
   max-width: 1200px;
-  overflow: auto;
+  //: auto;
 `;
 
 const StyledModal = styled.div`
@@ -60,7 +60,8 @@ const StyledModal = styled.div`
 `;
 
 const StyledModalOverlay = styled.div`
-  overflow: auto;
+  overflow: hidden;
+  overflow-y: scroll;
   padding: 0 5%;
   display: flex;
   align-items: center;
@@ -72,7 +73,7 @@ const StyledModalOverlay = styled.div`
   height: 100vh;
   z-index: 30;
   opacity: 1;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.85);
 `;
 
 export default Modal;

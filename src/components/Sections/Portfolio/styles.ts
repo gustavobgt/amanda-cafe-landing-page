@@ -1,4 +1,5 @@
 import styled, { css, keyframes } from 'styled-components';
+import Slider from 'react-slick';
 
 export const Container = styled.div`
   ${({ theme }) => css`
@@ -236,6 +237,15 @@ export const CarouselImageContainer = styled.div`
     `}
 `;
 
+export const ModalImageContainerWrapper = styled.div`
+  ${() =>
+    css`
+      display: flex !important;
+      align-items: center;
+      justify-content: center;
+    `}
+`;
+
 export const ModalImageContainer = styled.div`
   ${() =>
     css`
@@ -243,6 +253,7 @@ export const ModalImageContainer = styled.div`
       position: relative;
       box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
       //max-width: 500px;
+      max-width: 400px;
     `}
 `;
 
@@ -339,6 +350,49 @@ export const Dot = styled.div<Dot>`
   `}
 `;
 
+export const Pagination2 = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  //margin-top: 20px;
+  position: fixed;
+  bottom: 20px;
+  //display: block;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  //text-align: center;
+  //display: block;
+`;
+
+export const DotContainer2 = styled.div`
+  position: relative;
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  padding: 2px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+interface Dot {
+  active: boolean;
+}
+
+export const Dot2 = styled.div<Dot>`
+  ${({ active }) => css`
+    opacity: ${!active ? 0 : 1};
+    background: #ffffff;
+    width: ${!active ? '5px' : '10px'};
+    height: ${!active ? '5px' : '10px'};
+    border-radius: 50%;
+    transition: all 0.25s ease-in-out;
+  `}
+`;
+
 interface NextButton {
   visible: boolean;
 }
@@ -385,7 +439,6 @@ export const ModalCloseButton = styled.button`
     css`
       cursor: pointer;
       position: relative;
-      padding: 20px;
     `}
 `;
 
@@ -438,4 +491,72 @@ export const MobileIndicatorTitle = styled.p`
 
       color: #ffffff;
     `}
+`;
+
+export const SlideNextButton = styled.button`
+  ${() =>
+    css`
+      margin-left: 5px;
+      font-size: 0;
+      line-height: 0;
+      //position: absolute;
+      //top: 50%;
+      display: flex;
+      align-items: center;
+      //width: 35px;
+      //height: 35px;
+      padding: 0;
+      //-webkit-transform: translate(0, -50%);
+      //transform: translate(0, -50%);
+      cursor: pointer;
+      //color: transparent;
+      border: none;
+      outline: none;
+      background: rgba(255, 255, 255, 0.2);
+      border: 1px solid #ffffff;
+      border-radius: 50%;
+      //left: -45px;
+
+      svg {
+        margin: 10px 12px;
+      }
+    `}
+`;
+
+export const SlideBackButton = styled.button`
+  ${() =>
+    css`
+      margin-right: 5px;
+      font-size: 0;
+      line-height: 0;
+      //position: absolute;
+      //top: 50%;
+      display: flex;
+      align-items: center;
+      //width: 35px;
+      //height: 35px;
+      padding: 0;
+      //-webkit-transform: translate(0, -50%);
+      //transform: translate(0, -50%);
+      cursor: pointer;
+      //color: transparent;
+      border: none;
+      outline: none;
+      background: rgba(255, 255, 255, 0.2);
+      border: 1px solid #ffffff;
+      border-radius: 50%;
+      //left: -45px;
+
+      svg {
+        margin: 10px 12px;
+      }
+    `}
+`;
+
+export const Sliderr = styled(Slider)`
+  ${() => css`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  `}
 `;
