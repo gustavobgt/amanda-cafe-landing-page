@@ -4,7 +4,7 @@ import Carousel from 'react-elastic-carousel';
 export const Container = styled.div`
   ${({ theme }) => css`
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 1fr 1.5fr;
     align-items: flex-start;
     grid-gap: 6rem;
 
@@ -39,10 +39,15 @@ export const Background = styled.div`
 export const SectionContainer = styled.div`
   ${({ theme }) => css`
     margin: 0 auto;
-    padding: 0 5%;
+    padding: 0 10%;
     width: 100%;
     max-width: 1400px;
     padding-top: 5%;
+
+    @media (max-width: 1256px) {
+      padding: 0 5%;
+      padding-top: 5%;
+    }
 
     @media ${theme.media.lteMedium} {
       padding-top: 5%;
@@ -188,7 +193,10 @@ export const DetailsButton = styled.button`
 export const PrincipalImageContainer = styled.div`
   ${() =>
     css`
-      margin-bottom: 44px;
+      cursor: pointer;
+      min-width: 349px;
+      max-width: 349px;
+      //margin-bottom: 44px;
     `}
 `;
 
@@ -204,9 +212,13 @@ export const ECarousel = styled(Carousel)`
   ${() => css`
     flex-direction: row;
 
+    .rec-swipable {
+      gap: 18px;
+    }
+
     @media (min-width: 1100px) {
       > div:nth-child(1) {
-        height: 600px !important;
+        //height: 600px !important;
       }
     }
 
@@ -217,6 +229,10 @@ export const ECarousel = styled(Carousel)`
 
     @media (max-width: 1100px) {
       flex-direction: column;
+
+      .rec-swipable {
+        gap: 0;
+      }
 
       > div:nth-child(2) {
         flex-direction: row;
@@ -279,12 +295,23 @@ export const ImageTitle = styled.p`
 `;
 
 export const RightSideContainer = styled.div`
-  ${({ theme }) => css`
-    display: grid;
-    grid-template-columns: 1fr 0.5fr;
-    grid-gap: 20px;
+  ${() => css`
+    //display: grid;
+    //grid-template-columns: 1fr 1fr;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 25px;
+
+    div:nth-child(2) {
+      max-width: 200px;
+    }
 
     @media (max-width: 1100px) {
+      div:nth-child(2) {
+        max-width: 400px;
+      }
+
       display: flex;
       flex-direction: column;
     }

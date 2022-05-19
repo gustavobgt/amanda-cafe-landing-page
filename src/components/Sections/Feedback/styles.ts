@@ -5,7 +5,7 @@ export const Container = styled.div`
     display: grid;
     grid-template-columns: 1fr 1.5fr;
     align-items: flex-start;
-    grid-gap: 6rem;
+    grid-gap: 5rem;
 
     @media ${theme.media.lteMedium} {
       grid-template-columns: 1fr;
