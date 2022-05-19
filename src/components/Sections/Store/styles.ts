@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components';
 import Carousel from 'react-elastic-carousel';
+import { motion } from 'framer-motion';
 
 export const Container = styled.div`
   ${({ theme }) => css`
@@ -190,7 +191,7 @@ export const DetailsButton = styled.button`
   `}
 `;
 
-export const PrincipalImageContainer = styled.div`
+export const PrincipalImageContainer = styled(motion.div)`
   ${() =>
     css`
       cursor: pointer;
@@ -200,7 +201,7 @@ export const PrincipalImageContainer = styled.div`
     `}
 `;
 
-export const PrincipalImage = styled.img`
+export const PrincipalImage = styled(motion.img)`
   ${() => css`
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
     width: 100%;

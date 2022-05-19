@@ -232,7 +232,13 @@ export const Store = () => {
             </Styled.TextContainer1>
 
             <Styled.RightSideContainer data-aos="fade-left">
-              <Styled.PrincipalImageContainer onClick={onVerMais}>
+              <Styled.PrincipalImageContainer
+                key={data[currentIndex].id}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.5 }}
+                onClick={onVerMais}
+              >
                 <Styled.PrincipalImage src={data[currentIndex].photo} />
               </Styled.PrincipalImageContainer>
 
