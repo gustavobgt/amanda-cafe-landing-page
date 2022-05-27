@@ -547,7 +547,7 @@ export const Portfolio = () => {
               </Styled.SubTitle1>
             </Styled.TextContainer1>
 
-            <Styled.MobileIndicatorContainer>
+            <Styled.MobileIndicatorContainer data-aos="fade-left">
               <svg
                 width="22"
                 height="36"

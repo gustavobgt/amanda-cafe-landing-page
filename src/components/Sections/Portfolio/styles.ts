@@ -254,6 +254,14 @@ export const ModalImageContainer = styled.div`
       box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
       //max-width: 500px;
       max-width: 400px;
+
+      @media (max-width: 713px) {
+        max-width: 300px;
+      }
+
+      @media (max-width: 440px) {
+        max-width: 250px;
+      }
     `}
 `;
 
@@ -356,8 +364,10 @@ export const Pagination2 = styled.div`
   justify-content: center;
   gap: 8px;
   //margin-top: 20px;
-  position: fixed;
-  bottom: 20px;
+  //position: fixed;
+  position: absolute;
+  //bottom: 20px;
+  bottom: -60px;
   //display: block;
   width: 100%;
   padding: 0;
@@ -496,11 +506,12 @@ export const MobileIndicatorTitle = styled.p`
 export const SlideNextButton = styled.button`
   ${() =>
     css`
-      margin-left: 5px;
+      z-index: 5;
       font-size: 0;
       line-height: 0;
       //position: absolute;
-      //top: 50%;
+      position: fixed;
+      top: 50%;
       display: flex;
       align-items: center;
       //width: 35px;
@@ -515,7 +526,8 @@ export const SlideNextButton = styled.button`
       background: rgba(255, 255, 255, 0.2);
       border: 1px solid #ffffff;
       border-radius: 50%;
-      //left: -45px;
+      //right: -45px;
+      right: 20px;
 
       svg {
         margin: 10px 12px;
@@ -526,11 +538,12 @@ export const SlideNextButton = styled.button`
 export const SlideBackButton = styled.button`
   ${() =>
     css`
-      margin-right: 5px;
+      z-index: 5;
       font-size: 0;
       line-height: 0;
       //position: absolute;
-      //top: 50%;
+      position: fixed;
+      top: 50%;
       display: flex;
       align-items: center;
       //width: 35px;
@@ -539,13 +552,14 @@ export const SlideBackButton = styled.button`
       //-webkit-transform: translate(0, -50%);
       //transform: translate(0, -50%);
       cursor: pointer;
-      //color: transparent;
+      color: transparent;
       border: none;
       outline: none;
       background: rgba(255, 255, 255, 0.2);
       border: 1px solid #ffffff;
       border-radius: 50%;
       //left: -45px;
+      left: 15px;
 
       svg {
         margin: 10px 12px;
@@ -555,8 +569,8 @@ export const SlideBackButton = styled.button`
 
 export const Sliderr = styled(Slider)`
   ${() => css`
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    //display: flex !important;
+    //align-items: center;
+    //justify-content: center;
   `}
 `;

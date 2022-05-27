@@ -56,7 +56,7 @@ export const SectionContainer = styled.div`
   `}
 `;
 
-export const TextContainer1 = styled.div`
+export const TextContainer1 = styled(motion.div)`
   ${({ theme }) => css`
     > h2 {
       margin: 0;
@@ -616,15 +616,167 @@ export const ModalTitle = styled.p`
 export const ModalImageContainer = styled.div`
   ${() =>
     css`
-      pointer-events: none;
+      overflow: hidden;
       position: relative;
       box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+      //max-width: 500px;
+
+      @media (max-width: 713px) {
+        max-width: 500px;
+      }
+
+      @media (max-width: 608px) {
+        max-width: 400px;
+      }
+
+      @media (max-width: 518px) {
+        max-width: 300px;
+      }
     `}
 `;
 
 export const ModalImage = styled.img`
   ${() =>
     css`
+      display: block;
+      width: 100%;
+      height: auto;
+      // box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+      // width: 100%;
+    `}
+`;
+
+export const SlideNextButton = styled.button`
+  ${() =>
+    css`
+      z-index: 5;
+      font-size: 0;
+      line-height: 0;
+      //position: absolute;
+      position: fixed;
+      top: 50%;
+      display: flex;
+      align-items: center;
+      //width: 35px;
+      //height: 35px;
+      padding: 0;
+      //-webkit-transform: translate(0, -50%);
+      //transform: translate(0, -50%);
+      cursor: pointer;
+      //color: transparent;
+      border: none;
+      outline: none;
+      background: rgba(255, 255, 255, 0.2);
+      border: 1px solid #ffffff;
+      border-radius: 50%;
+      //right: -45px;
+      right: 20px;
+
+      svg {
+        margin: 10px 12px;
+      }
+    `}
+`;
+
+export const SlideBackButton = styled.button`
+  ${() =>
+    css`
+      z-index: 5;
+      font-size: 0;
+      line-height: 0;
+      //position: absolute;
+      position: fixed;
+      top: 50%;
+      display: flex;
+      align-items: center;
+      //width: 35px;
+      //height: 35px;
+      padding: 0;
+      //-webkit-transform: translate(0, -50%);
+      //transform: translate(0, -50%);
+      cursor: pointer;
+      color: transparent;
+      border: none;
+      outline: none;
+      background: rgba(255, 255, 255, 0.2);
+      border: 1px solid #ffffff;
+      border-radius: 50%;
+      //left: -45px;
+      left: 15px;
+
+      svg {
+        margin: 10px 12px;
+      }
+    `}
+`;
+
+export const Pagination2 = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  //margin-top: 20px;
+  //position: fixed;
+  position: absolute;
+  //bottom: 20px;
+  bottom: -60px;
+  //display: block;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  //text-align: center;
+  //display: block;
+`;
+
+export const DotContainer2 = styled.div`
+  position: relative;
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  padding: 2px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+interface Dot {
+  active: boolean;
+}
+
+export const Dot2 = styled.div<Dot>`
+  ${({ active }) => css`
+    opacity: ${!active ? 0 : 1};
+    background: #ffffff;
+    width: ${!active ? '5px' : '10px'};
+    height: ${!active ? '5px' : '10px'};
+    border-radius: 50%;
+    transition: all 0.25s ease-in-out;
+  `}
+`;
+
+export const ModalImageContainerWrapper = styled.div`
+  ${() =>
+    css`
+      display: flex !important;
+      align-items: center;
+      justify-content: center;
+    `}
+`;
+
+export const ModalImagePoha = styled.img`
+  ${() =>
+    css`
+      display: block;
+      width: 100%;
+      height: auto;
+    `}
+`;
+
+export const CarouselImagePoha = styled.img`
+  ${() =>
+    css`
+      pointer-events: none;
       display: block;
       width: 100%;
       height: auto;

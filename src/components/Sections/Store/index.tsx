@@ -1,10 +1,8 @@
 import * as Styled from './styles';
 import { useState } from 'react';
 // import Modal from 'react-modal';
-import Button from './components/Button';
-import Carousel from 'react-elastic-carousel';
 import SocialMedia from '../../SocialMedia';
-
+import Slider from 'react-slick';
 import Modal from '../../Modal';
 
 import { useWindowDimensions } from './useWindowDimensions';
@@ -14,6 +12,8 @@ const data = [
     id: 1,
     title: 'Preset: Fairytail',
     price: 'R$ 15,00',
+    tooltip: 'Amanda Café',
+    altText: 'Foto Preset: Fairytail',
     description1:
       'Um dos meus presets favoritos! Mistura tons quentes e traz aquela sensação de agradabilidade quando se olha pra foto!',
     description2:
@@ -30,6 +30,8 @@ const data = [
     id: 2,
     title: 'Preset: Cold as your heart',
     price: 'R$ 15,00',
+    tooltip: 'Amanda Café',
+    altText: 'Foto Preset: Cold as your heart',
     description1:
       'Com nome de música de Diva Pop, esse preset traz tons mais frios às fotos, dando aquele aspecto de chique na neve.',
     description2:
@@ -46,6 +48,8 @@ const data = [
     id: 3,
     title: 'Preset: Greek beauty',
     price: 'R$ 15,00',
+    tooltip: 'Amanda Café',
+    altText: 'Foto Preset: Greek beauty',
     description1:
       'O Greek Beauty é um dos queridinhos da galera! Defini com esse nome porquê me inspirei na paleta presente em obras gregas! Misturando tons mais amarelados/envelhecidos.',
     description2:
@@ -83,6 +87,98 @@ const modalStyles = {
   },
 };*/
 
+function SampleNextArrow(props: any) {
+  const { onClick } = props;
+
+  return (
+    <Styled.SlideNextButton
+      //className={className}
+      //style={{ ...style, display: 'block', background: 'red' }}
+      onClick={onClick}
+    >
+      <svg
+        width="7"
+        height="12"
+        viewBox="0 0 7 12"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          fillRule="evenodd"
+          clipRule="evenodd"
+          d="M0.33011 0.277478C-0.0398602 0.647448 -0.0398602 1.24729 0.33011 1.61726L4.71285 6L0.33011 10.3827C-0.0398602 10.7527 -0.0398602 11.3526 0.33011 11.7225C0.70008 12.0925 1.29992 12.0925 1.66989 11.7225L6.72252 6.66989C7.09249 6.29992 7.09249 5.70008 6.72252 5.33011L1.66989 0.277478C1.29992 -0.0924926 0.70008 -0.0924926 0.33011 0.277478Z"
+          fill="white"
+        />
+      </svg>
+    </Styled.SlideNextButton>
+  );
+}
+
+function SamplePrevArrow(props: any) {
+  const { onClick } = props;
+  return (
+    <Styled.SlideBackButton
+      //className={className}
+      //style={{ ...style, display: 'block', background: 'red' }}
+      onClick={onClick}
+    >
+      <svg
+        width="7"
+        height="12"
+        viewBox="0 0 7 12"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          fillRule="evenodd"
+          clipRule="evenodd"
+          d="M6.66989 0.277478C7.03986 0.647448 7.03986 1.24729 6.66989 1.61726L2.28715 6L6.66989 10.3827C7.03986 10.7527 7.03986 11.3526 6.66989 11.7225C6.29992 12.0925 5.70008 12.0925 5.33011 11.7225L0.277478 6.66989C-0.0924926 6.29992 -0.0924926 5.70008 0.277478 5.33011L5.33011 0.277478C5.70008 -0.0924926 6.29992 -0.0924926 6.66989 0.277478Z"
+          fill="white"
+        />
+      </svg>
+    </Styled.SlideBackButton>
+  );
+}
+
+const settings = {
+  dots: true,
+  infinite: true,
+  speed: 500,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  nextArrow: <SampleNextArrow />,
+  prevArrow: <SamplePrevArrow />,
+  //adaptiveHeight: true,
+  //lazyLoad: true,
+  //fade: true,
+  //variableWidth: true,
+  /*
+  customPaging: function (i) {
+    console.log(' i = ', i);
+    return (
+      <Styled.DotContainer>
+        <Styled.Dot active />
+      </Styled.DotContainer>
+    );
+  },*/
+  appendDots: (dots) => {
+    return (
+      <Styled.Pagination2>
+        {dots.map((item, index) => {
+          return (
+            <Styled.DotContainer2
+              onClick={item.props.children.props.onClick}
+              key={index}
+            >
+              <Styled.Dot2 active={item.props.className === 'slick-active'} />
+            </Styled.DotContainer2>
+          );
+        })}
+      </Styled.Pagination2>
+    );
+  },
+};
+
 export const Store = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [modalIndex, setModalIndex] = useState(0);
@@ -96,7 +192,6 @@ export const Store = () => {
 
   function onVerMais() {
     setIsOpen(true);
-    //setModalIndex(currentIndex);
   }
 
   const onChange = ({ index }) => {
@@ -104,7 +199,6 @@ export const Store = () => {
   };
 
   //console.log('modalIsOpen = ', modalIsOpen);
-  console.log('width = ', width);
 
   /**
    *
@@ -125,7 +219,13 @@ export const Store = () => {
       <Styled.Background id="loja" data-aos="fade">
         <Styled.SectionContainer>
           <Styled.Container>
-            <Styled.TextContainer1 data-aos="fade-left">
+            <Styled.TextContainer1
+              data-aos="fade-left"
+              key={data[currentIndex].id}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.1 }}
+            >
               <Styled.SvgContainer1>
                 <div>
                   <svg
@@ -233,10 +333,10 @@ export const Store = () => {
 
             <Styled.RightSideContainer data-aos="fade-left">
               <Styled.PrincipalImageContainer
-                key={data[currentIndex].id}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.5 }}
+                //key={data[currentIndex].id}
+                //initial={{ opacity: 0 }}
+                //animate={{ opacity: 1 }}
+                //transition={{ duration: 0.5 }}
                 onClick={onVerMais}
               >
                 <Styled.PrincipalImage src={data[currentIndex].photo} />
@@ -398,80 +498,20 @@ export const Store = () => {
               </svg>
             </Styled.ModalCloseButton>
           </Styled.ModalClose>
-          <Styled.ModalHeader onClick={closeModal}>
-            <Styled.ModalTitle>{data[modalIndex].title}</Styled.ModalTitle>
-          </Styled.ModalHeader>
 
-          <Carousel
-            itemPadding={[0, 20]}
-            outerSpacing={50}
-            showArrows={false}
-            initialActiveIndex={currentIndex}
-            onChange={onChange}
-            itemsToShow={1}
-            renderPagination={({ pages, activePage, onClick }) => {
-              return (
-                <Styled.ModalPagination>
-                  <Styled.NextButton
-                    visible={!(activePage === 0)}
-                    onClick={() => onClick(activePage - 1)}
-                  >
-                    <svg
-                      width="25"
-                      height="18"
-                      viewBox="0 0 25 18"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M10.2239 15.5741C10.7705 16.1291 10.7705 17.0288 10.2239 17.5838C9.67729 18.1387 8.79107 18.1387 8.24447 17.5838L0.779585 10.0048C0.232981 9.44988 0.232981 8.55012 0.779585 7.99516L8.24447 0.416217C8.79107 -0.138738 9.67729 -0.138738 10.2239 0.416217C10.7705 0.971173 10.7705 1.87093 10.2239 2.42589L5.14839 7.57895L23.2308 7.57895C24.0038 7.57895 24.6305 8.21518 24.6305 9C24.6305 9.78483 24.0038 10.4211 23.2308 10.4211L5.14839 10.4211L10.2239 15.5741Z"
-                        fill="white"
-                      />
-                    </svg>
-                  </Styled.NextButton>
-
-                  {pages.map((page) => {
-                    const isActivePage = activePage === page;
-                    return (
-                      <Styled.DotContainer
-                        key={page}
-                        onClick={() => onClick(page)}
-                      >
-                        <Styled.Dot active={isActivePage} />
-                      </Styled.DotContainer>
-                    );
-                  })}
-
-                  <Styled.NextButton
-                    visible={!(pages.length === activePage + 1)}
-                    onClick={() => onClick(activePage + 1)}
-                  >
-                    <svg
-                      width="25"
-                      height="18"
-                      viewBox="0 0 25 18"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M14.7762 2.42589C14.2296 1.87093 14.2296 0.971172 14.7762 0.416217C15.3228 -0.138739 16.2091 -0.138739 16.7557 0.416217L24.2205 7.99516C24.7671 8.55012 24.7671 9.44988 24.2205 10.0048L16.7557 17.5838C16.2091 18.1387 15.3228 18.1387 14.7762 17.5838C14.2296 17.0288 14.2296 16.1291 14.7762 15.5741L19.8517 10.4211L1.76929 10.4211C0.996281 10.4211 0.369629 9.78483 0.369629 9C0.369629 8.21517 0.996281 7.57895 1.76929 7.57895L19.8517 7.57895L14.7762 2.42589Z"
-                        fill="white"
-                      />
-                    </svg>
-                  </Styled.NextButton>
-                </Styled.ModalPagination>
-              );
-            }}
-          >
-            {data.map((item, index) => (
-              <Styled.ModalImageContainer
-                onClick={() => setCurrentIndex(index)}
-                key={item.id}
-              >
-                <Styled.ModalImage src={item.modal_image} />
-              </Styled.ModalImageContainer>
+          <Slider {...settings}>
+            {data.map((item) => (
+              <Styled.ModalImageContainerWrapper key={item.id}>
+                <Styled.ModalImageContainer key={item.id}>
+                  <Styled.CarouselImagePoha
+                    src={item.modal_image}
+                    alt={item.altText}
+                    title={item.tooltip}
+                  />
+                </Styled.ModalImageContainer>
+              </Styled.ModalImageContainerWrapper>
             ))}
-          </Carousel>
+          </Slider>
         </Modal>
       ) : null}
     </>
