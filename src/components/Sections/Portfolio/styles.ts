@@ -34,6 +34,10 @@ export const Background = styled.div`
     background-attachment: fixed;
     background-size: cover;
     color: ${theme.colors.white};
+
+    @media ${theme.media.lteMedium} {
+      padding-top: 27px;
+    }
   `}
 `;
 
@@ -63,7 +67,12 @@ export const SvgContainer = styled.div`
       > svg {
         position: absolute;
         right: -3rem;
-        bottom: -7rem;
+        bottom: 7rem;
+
+        @media ${theme.media.lteMedium} {
+          right: inherit;
+          bottom: -6rem;
+        }
       }
     }
 
@@ -74,6 +83,12 @@ export const SvgContainer = styled.div`
         position: absolute;
         right: -2rem;
         bottom: -3rem;
+
+        @media ${theme.media.lteMedium} {
+          z-index: -1;
+          right: 2.2rem;
+          bottom: -3rem;
+        }
       }
     }
 
@@ -106,14 +121,14 @@ export const TextContainer1 = styled.div`
     }
 
     @media ${theme.media.lteMedium} {
-      margin-bottom: ${theme.spacings.large};
+      //margin-bottom: ${theme.spacings.large};
       max-width: inherit;
     }
   `}
 `;
 
 export const Title1 = styled.h2`
-  ${() => css`
+  ${({ theme }) => css`
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 700;
@@ -122,6 +137,20 @@ export const Title1 = styled.h2`
     letter-spacing: 0.01em;
 
     color: #ffffff;
+
+    @media ${theme.media.lteMedium} {
+      font-family: 'Poppins';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 30px;
+      line-height: 34px;
+      /* or 113% */
+
+      text-align: center;
+      letter-spacing: 0.01em;
+
+      color: #ffffff;
+    }
   `}
 `;
 

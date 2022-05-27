@@ -9,6 +9,8 @@ export const Container = styled.div`
 
     @media ${theme.media.lteMedium} {
       padding-top: 5%;
+      padding-left: 0;
+      padding-right: 0;
     }
   `}
 `;

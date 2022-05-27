@@ -14,7 +14,7 @@ const aboutInfo = {
 export const About = () => {
   return (
     <GridTwoColumns {...aboutInfo} data-aos="fade">
-      <Styled.RelativeContainer data-aos="fade-left">
+      <Styled.RelativeContainer1 data-aos="fade-left">
         <Styled.TextContainer1>
           <svg
             width="17"
@@ -37,13 +37,13 @@ export const About = () => {
             para que elas celebrem suas belezas.
           </Styled.SubTitle1>
         </Styled.TextContainer1>
-      </Styled.RelativeContainer>
+      </Styled.RelativeContainer1>
 
       <Styled.AmandaImgContainer data-aos="fade">
-        <Styled.AmandaImg src="https://i.imgur.com/KRetRm2.png" />
+        <Styled.AmandaImg src="https://res.cloudinary.com/amanda-caf/image/upload/v1653650768/sobre/foto-amanda-1_2_1_thld6m.png" />
       </Styled.AmandaImgContainer>
 
-      <Styled.RelativeContainer data-aos="fade-left">
+      <Styled.RelativeContainer2 data-aos="fade-left">
         <Styled.TextContainer2>
           <Styled.SvgContainer>
             <svg
@@ -70,12 +70,13 @@ export const About = () => {
 
           <Styled.Title2>Amanda Café</Styled.Title2>
           <Styled.SubTitle2>
-            Meu nome é Amanda Café e trabalho com fotografia desde 2016! Me
-            considero uma pessoa divertida e adaptável! Quero fazer de tudo para
-            o seu ensaio sair do jeito que você imaginou, senão melhor!
+            Sou fotógrafa desde 2016 e hoje celebro a beleza feminina,
+            principalmente nas cidades de Aracaju e Salvador. Me considero uma
+            pessoa divertida e adaptável! Quero fazer de tudo para o seu ensaio
+            sair do jeito que você imaginou, senão melhor!
           </Styled.SubTitle2>
         </Styled.TextContainer2>
-      </Styled.RelativeContainer>
+      </Styled.RelativeContainer2>
     </GridTwoColumns>
   );
 };

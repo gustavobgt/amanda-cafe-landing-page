@@ -1,12 +1,24 @@
 import styled, { css } from 'styled-components';
 
-export const RelativeContainer = styled.div`
+export const RelativeContainer1 = styled.div`
   ${({ theme }) => css`
     position: relative;
     z-index: 1;
     height: 70vh;
     @media ${theme.media.lteMedium} {
       height: inherit;
+      display: none;
+    }
+  `}
+`;
+
+export const RelativeContainer2 = styled.div`
+  ${({ theme }) => css`
+    position: relative;
+    z-index: 1;
+    height: 70vh;
+    @media ${theme.media.lteMedium} {
+      height: 200px;
     }
   `}
 `;
@@ -18,6 +30,8 @@ export const AmandaImgContainer = styled.div`
 
       @media ${theme.media.lteMedium} {
         display: block;
+        max-width: 500px;
+        margin: 0 auto;
       }
     `}
 `;
@@ -53,6 +67,7 @@ export const TextContainer2 = styled.div`
       display: flex;
       flex-direction: column;
       align-items: center;
+      transform: translateY(-10.5rem);
     }
   `}
 `;
@@ -102,9 +117,13 @@ export const SvgContainer = styled.div`
       margin-right: -8rem;
     }
     @media ${theme.media.lteMedium} {
+      z-index: -1;
+      position: relative;
       align-items: center;
       justify-content: center;
+      margin-bottom: 0.5rem;
       > svg {
+        position: absolute;
         margin-right: 0;
       }
     }
@@ -133,7 +152,7 @@ export const Title2 = styled.h2`
 `;
 
 export const SubTitle2 = styled.p`
-  ${() => css`
+  ${({ theme }) => css`
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 500;
@@ -144,5 +163,9 @@ export const SubTitle2 = styled.p`
     letter-spacing: 0.01em;
 
     color: #ffffff;
+
+    @media ${theme.media.lteMedium} {
+      text-align: center;
+    }
   `}
 `;

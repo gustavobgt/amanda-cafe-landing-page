@@ -9,12 +9,17 @@ export const Container = styled.div`
     gap: ${theme.spacings.large};
 
     @media ${theme.media.lteMedium} {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      /*
       grid-template-columns: 1fr;
-      grid-template-rows: 1fr 30rem 1fr;
+      grid-template-rows: 1fr 1fr;
       text-align: center;
-      height: 100%;
+      height: 100%;*/
     }
 
+    /*
     @media ${theme.media.lteMedium2} {
       grid-template-columns: 1fr;
       grid-template-rows: 1fr 14rem 1fr;
@@ -27,7 +32,7 @@ export const Container = styled.div`
       grid-template-rows: 1fr 0.1px 1fr;
       text-align: center;
       height: 100%;
-    }
+    }*/
 
     ${Title} {
       margin-bottom: ${theme.spacings.xlarge};
