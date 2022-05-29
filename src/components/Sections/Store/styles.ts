@@ -1,5 +1,19 @@
 import styled, { css, keyframes } from 'styled-components';
 import { motion } from 'framer-motion';
+import Carousel from 'react-elastic-carousel';
+
+export const CustomCarousel = styled(Carousel)`
+  ${({ theme }) => css`
+    display: none;
+    .rec .rec-slider-container {
+      margin: 0;
+    }
+
+    @media ${theme.media.lteMedium} {
+      display: flex;
+    }
+  `}
+`;
 
 export const Container = styled.div`
   ${({ theme }) => css`
@@ -36,7 +50,7 @@ export const Background = styled.div`
     color: ${theme.colors.white};
 
     @media ${theme.media.lteMedium} {
-      padding-top: 27px;
+      padding-top: 2.8rem;
     }
   `}
 `;
@@ -50,7 +64,8 @@ export const SectionContainer = styled.div`
     max-width: 1200px;
 
     @media ${theme.media.lteMedium} {
-      padding-top: 5%;
+      padding-top: 0%;
+      padding-bottom: 0;
     }
   `}
 `;
@@ -112,14 +127,14 @@ export const SvgContainer = styled.div`
   `}
 `;
 
-export const TextContainer1 = styled(motion.div)`
+export const TextContainer1 = styled.div`
   ${({ theme }) => css`
     > h2 {
       margin: 0;
     }
 
     @media ${theme.media.lteMedium} {
-      margin-bottom: ${theme.spacings.large};
+      //margin-bottom: ${theme.spacings.large};
       max-width: inherit;
     }
   `}
@@ -178,7 +193,7 @@ export const SvgContainer2 = styled.div`
 
         > svg {
           margin-right: 0;
-          right: -2rem;
+          right: -4rem;
           bottom: -4.5rem;
         }
       }
@@ -321,6 +336,50 @@ export const BuyButton = styled.a`
 
     @media ${theme.media.lteMedium} {
       width: 100%;
+
+      margin-bottom: 7rem;
+    }
+  `}
+`;
+
+export const BuyButton2 = styled.a`
+  ${({ theme }) => css`
+    display: none;
+    text-decoration: none;
+    cursor: pointer;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 20px;
+
+    /* Black */
+
+    background: #000000;
+    border-radius: 4px;
+
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 20px;
+    /* identical to box height, or 154% */
+
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+
+    color: #ffffff;
+    border: 1px solid #000000;
+
+    &:hover {
+      opacity: 0.7;
+      transition: 0.25s;
+    }
+
+    @media ${theme.media.lteMedium} {
+      display: flex;
+      width: 100%;
+
+      margin-bottom: 7rem;
     }
   `}
 `;
@@ -372,6 +431,7 @@ export const SubTitle = styled.h3`
     @media ${theme.media.lteMedium} {
       margin: 0;
       margin-top: 1rem;
+      margin-bottom: 2.8rem;
     }
   `}
 `;
@@ -432,7 +492,7 @@ export const CarouselContainer = styled.div`
     `}
 `;
 
-export const Carousel = styled.div`
+export const Carousel2 = styled.div`
   ${() => css`
     max-width: 724px;
     height: 468px;
@@ -480,25 +540,12 @@ const slide = keyframes`
 export const CarouselImageContainer = styled.div`
   ${({ theme }) =>
     css`
+      border-radius: 8px;
       overflow: hidden;
       cursor: pointer;
       position: relative;
-      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
-
-      :hover ${CarouselImageOverlay} {
-        opacity: 0.7;
-      }
-
-      :hover ${CarouselImage} {
-        transform: scale(1.3);
-        transition: transform 1s;
-      }
-
-      @media ${theme.media.lteMedium} {
-        ${CarouselImageOverlay} {
-          opacity: 0.7;
-        }
-      }
+      display: flex;
+      width: 100%;
     `}
 `;
 
@@ -549,6 +596,10 @@ export const ModalImageContainer = styled.div`
 
       @media (max-width: 440px) {
         max-width: 250px;
+      }
+
+      @media (max-width: 360px) {
+        max-width: 210px;
       }
     `}
 `;
@@ -618,7 +669,8 @@ export const Pagination = styled.div`
   display: flex;
   align-items: center;
   gap: 8px;
-  margin-top: 20px;
+  //margin-top: 20px;
+  transform: translate(0, 85px);
 `;
 
 export const DotContainer = styled.div`
@@ -752,6 +804,7 @@ export const ModalTitle = styled.p`
 
       text-align: center;
       letter-spacing: 0.01em;
+      margin: 0;
 
       color: #ffffff;
     `}
