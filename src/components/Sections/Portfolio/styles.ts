@@ -1,5 +1,4 @@
 import styled, { css, keyframes } from 'styled-components';
-import Slider from 'react-slick';
 
 export const Container = styled.div`
   ${({ theme }) => css`
@@ -594,12 +593,4 @@ export const SlideBackButton = styled.button`
         margin: 10px 12px;
       }
     `}
-`;
-
-export const Sliderr = styled(Slider)`
-  ${() => css`
-    //display: flex !important;
-    //align-items: center;
-    //justify-content: center;
-  `}
 `;

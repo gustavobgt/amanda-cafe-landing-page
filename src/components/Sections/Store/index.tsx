@@ -4,8 +4,6 @@ import { useState } from 'react';
 // import Modal from 'react-modal';
 import SocialMedia from '../../SocialMedia';
 import Modal from '../../Modal';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
 import Slider from 'react-slick';
 
 const data = [
@@ -70,13 +68,6 @@ const data = [
       'https://res.cloudinary.com/amanda-caf/image/upload/v1653659225/Loja/Mobile/Image_box_-_Greek_beauty-Mobile_xbfmse.png',
   },
 ];
-const settings2 = {
-  dots: true,
-  infinite: true,
-  speed: 500,
-  slidesToShow: 3,
-  slidesToScroll: 3,
-};
 
 function SampleNextArrow(props: any) {
   const { onClick } = props;
@@ -404,7 +395,7 @@ export const Store = () => {
             </Styled.ModalCloseButton>
           </Styled.ModalClose>
 
-          <Styled.Sliderr
+          <Slider
             afterChange={(index) => setModalIndex(index)}
             initialSlide={currentIndex}
             {...settings}
@@ -420,7 +411,7 @@ export const Store = () => {
                 </Styled.ModalImageContainer>
               </Styled.ModalImageContainerWrapper>
             ))}
-          </Styled.Sliderr>
+          </Slider>
         </Modal>
       ) : null}
     </>

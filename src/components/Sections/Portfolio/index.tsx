@@ -5,8 +5,8 @@ import { useState } from 'react';
 // import Modal from 'react-modal';
 import SocialMedia from '../../SocialMedia';
 import Modal from '../../Modal';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
+//import 'slick-carousel/slick/slick.css';
+//import 'slick-carousel/slick/slick-theme.css';
 import Slider from 'react-slick';
 
 const data = [
@@ -698,7 +698,7 @@ export const Portfolio = () => {
             </Styled.ModalCloseButton>
           </Styled.ModalClose>
 
-          <Styled.Sliderr {...settings}>
+          <Slider {...settings}>
             {data[currentIndex].modal_images.map((item) => (
               <Styled.ModalImageContainerWrapper key={item.id}>
                 <Styled.ModalImageContainer>
@@ -710,7 +710,7 @@ export const Portfolio = () => {
                 </Styled.ModalImageContainer>
               </Styled.ModalImageContainerWrapper>
             ))}
-          </Styled.Sliderr>
+          </Slider>
         </Modal>
       ) : null}
     </>
