@@ -1,12 +1,11 @@
 import * as Styled from './styles';
-import Button from './components/Button';
 import { useState } from 'react';
 // import Modal from 'react-modal';
 import SocialMedia from '../../SocialMedia';
-import Modal from '../../Modal';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
 import Slider from 'react-slick';
+import Modal from '../../Modal';
+
+import { useWindowDimensions } from './useWindowDimensions';
 
 const data = [
   {
@@ -70,13 +69,29 @@ const data = [
       'https://res.cloudinary.com/amanda-caf/image/upload/v1653659225/Loja/Mobile/Image_box_-_Greek_beauty-Mobile_xbfmse.png',
   },
 ];
-const settings2 = {
-  dots: true,
-  infinite: true,
-  speed: 500,
-  slidesToShow: 3,
-  slidesToScroll: 3,
-};
+
+const breakPoints = [
+  { width: 1, itemsToShow: 1 },
+  { width: 380, itemsToShow: 2, itemsToScroll: 2 },
+  { width: 550, itemsToShow: 3, itemsToScroll: 3 },
+];
+
+/*
+const modalStyles = {
+  overlay: {
+    backgroundColor: 'rgba(0, 0, 0, 0.85)',
+    zIndex: 6,
+  },
+  content: {
+    backgroundColor: 'transparent',
+    border: 'none',
+    inset: 0,
+    display: 'flex',
+    flexDirection: 'column',
+    aligItems: 'center',
+    justifyContent: 'center',
+  },
+};*/
 
 function SampleNextArrow(props: any) {
   const { onClick } = props;
@@ -139,7 +154,7 @@ const settings = {
   slidesToScroll: 1,
   nextArrow: <SampleNextArrow />,
   prevArrow: <SamplePrevArrow />,
-  adaptiveHeight: true,
+  //adaptiveHeight: true,
   //lazyLoad: true,
   //fade: true,
   //variableWidth: true,
@@ -173,22 +188,26 @@ const settings = {
 export const Store = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [modalIndex, setModalIndex] = useState(0);
-
   const [modalIsOpen, setIsOpen] = useState(false);
-
-  function openModal() {
-    setIsOpen(true);
-  }
+  //const width = 1000;
 
   function closeModal() {
     setIsOpen(false);
+  }
+
+  function onVerMais() {
+    setIsOpen(true);
   }
 
   const onChange = ({ index }) => {
     setModalIndex(index);
   };
 
-  const myArrow = ({ type, onClick, isEdge }) => {
+  //console.log('modalIsOpen = ', modalIsOpen);
+
+  /**
+   *
+   * const myArrow = ({ type, onClick, isEdge }) => {
     const pointer = type === 'PREV' ? 'left' : 'right';
 
     return (
@@ -197,10 +216,12 @@ export const Store = () => {
       </Styled.ButtonContainer>
     );
   };
+   *
+   */
 
   return (
     <>
-      <Styled.Background id="portfolio" data-aos="fade">
+      <Styled.Background id="loja" data-aos="fade">
         <Styled.SectionContainer>
           <Styled.Container>
             <Styled.TextContainer1
@@ -253,31 +274,6 @@ export const Store = () => {
 
               <Styled.SubTitle>{data[currentIndex].price}</Styled.SubTitle>
 
-              <Styled.MobilePhotoContainer>
-                <Styled.MobilePhotoImg src={data[currentIndex].mobile_image} />
-              </Styled.MobilePhotoContainer>
-              <Styled.BuyButton
-                target="_blank"
-                href={data[currentIndex].buy_link}
-              >
-                COMPRAR{' '}
-                <svg
-                  width="5"
-                  height="10"
-                  viewBox="0 0 5 10"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  style={{ marginLeft: 10 }}
-                >
-                  <path
-                    fillRule="evenodd"
-                    clipRule="evenodd"
-                    d="M0.199703 0.88134C-0.0665641 1.14761 -0.0665641 1.57931 0.199703 1.84558L3.35395 4.99982L0.199703 8.15406C-0.0665641 8.42033 -0.0665641 8.85203 0.199703 9.1183C0.465969 9.38457 0.897672 9.38457 1.16394 9.1183L4.8003 5.48194C5.06657 5.21567 5.06657 4.78397 4.8003 4.5177L1.16394 0.88134C0.897672 0.615074 0.465969 0.615074 0.199703 0.88134Z"
-                    fill="white"
-                  />
-                </svg>
-              </Styled.BuyButton>
-
               <Styled.Description>
                 {data[currentIndex].description1}
               </Styled.Description>
@@ -286,7 +282,7 @@ export const Store = () => {
                 {data[currentIndex].description2}
               </Styled.Description>
 
-              <Styled.ButtonsContainer2>
+              <Styled.ButtonsContainer>
                 <Styled.BuyButton
                   target="_blank"
                   href={data[currentIndex].buy_link}
@@ -309,10 +305,10 @@ export const Store = () => {
                   </svg>
                 </Styled.BuyButton>
 
-                <Styled.DetailsButton onClick={() => setIsOpen(true)}>
+                <Styled.DetailsButton onClick={onVerMais}>
                   VER MAIS
                 </Styled.DetailsButton>
-              </Styled.ButtonsContainer2>
+              </Styled.ButtonsContainer>
 
               <Styled.SvgContainer3>
                 <div>
@@ -340,12 +336,77 @@ export const Store = () => {
               </Styled.SvgContainer3>
             </Styled.TextContainer1>
 
-            <Styled.CarouselContainer data-aos="fade-left">
-              <Styled.PrincipalImageContainer onClick={() => setIsOpen(true)}>
+            <Styled.RightSideContainer data-aos="fade-left">
+              <Styled.PrincipalImageContainer
+                //key={data[currentIndex].id}
+                //initial={{ opacity: 0 }}
+                //animate={{ opacity: 1 }}
+                //transition={{ duration: 0.5 }}
+                onClick={onVerMais}
+              >
                 <Styled.PrincipalImage src={data[currentIndex].photo} />
               </Styled.PrincipalImageContainer>
 
-              <Styled.ImageBundle>
+              <Styled.ECarousel
+                pagination={false}
+                itemsToShow={3}
+                itemPadding={[0, 0, 0, 0]}
+                verticalMode
+                renderPagination={({ pages, activePage, onClick }) => {
+                  return (
+                    <Styled.Pagination>
+                      <Styled.NextButton
+                        visible={!(activePage === 0)}
+                        onClick={() => onClick(activePage - 1)}
+                      >
+                        <svg
+                          width="18"
+                          height="25"
+                          viewBox="0 0 18 25"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M2.42589 9.85426C1.87093 10.4009 0.971171 10.4009 0.416215 9.85426C-0.13874 9.30766 -0.13874 8.42144 0.416215 7.87484L7.99516 0.409954C8.55012 -0.136649 9.44988 -0.136649 10.0048 0.409954L17.5838 7.87484C18.1387 8.42144 18.1387 9.30766 17.5838 9.85426C17.0288 10.4009 16.1291 10.4009 15.5741 9.85426L10.4211 4.77876L10.421 22.8612C10.421 23.6342 9.78482 24.2609 9 24.2609C8.21517 24.2609 7.57894 23.6342 7.57894 22.8612L7.57895 4.77876L2.42589 9.85426Z"
+                            fill="white"
+                          />
+                        </svg>
+                      </Styled.NextButton>
+
+                      {pages.map((page) => {
+                        const isActivePage = activePage === page;
+                        return (
+                          <Styled.DotContainer
+                            key={page}
+                            onClick={() => onClick(page)}
+                          >
+                            <Styled.Dot active={isActivePage} />
+                          </Styled.DotContainer>
+                        );
+                      })}
+
+                      <Styled.NextButton
+                        visible={!(pages.length === activePage + 1)}
+                        onClick={() => onClick(activePage + 1)}
+                      >
+                        <svg
+                          width="18"
+                          height="25"
+                          viewBox="0 0 18 25"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M15.5741 14.4066C16.1291 13.86 17.0288 13.86 17.5838 14.4066C18.1387 14.9532 18.1387 15.8394 17.5838 16.386L10.0048 23.8509C9.44988 24.3975 8.55012 24.3975 7.99516 23.8509L0.416217 16.386C-0.138739 15.8394 -0.138739 14.9532 0.416217 14.4066C0.971172 13.86 1.87093 13.86 2.42589 14.4066L7.57895 19.4821L7.57895 1.39967C7.57895 0.626652 8.21517 -4.27708e-07 9 -3.93402e-07C9.78483 -3.59097e-07 10.4211 0.626652 10.4211 1.39967L10.4211 19.4821L15.5741 14.4066Z"
+                            fill="white"
+                          />
+                        </svg>
+                      </Styled.NextButton>
+                    </Styled.Pagination>
+                  );
+                }}
+                showArrows={false}
+              >
                 {data.map((item, index) => (
                   <Styled.ItemContainer
                     isActive={index === currentIndex}
@@ -354,25 +415,37 @@ export const Store = () => {
                     }}
                     key={item.id}
                   >
-                    <Styled.CarouselImageContainer2>
-                      <Styled.CarouselImage2 src={item.carousel_image} />
+                    <Styled.CarouselImageContainer>
+                      <Styled.CarouselImage src={item.carousel_image} />
 
-                      <Styled.CarouselImageOverlay2>
-                        <Styled.CarouselImageText2>
+                      <Styled.CarouselImageOverlay>
+                        <Styled.CarouselImageText>
                           {item.title}
-                        </Styled.CarouselImageText2>
-                      </Styled.CarouselImageOverlay2>
-                    </Styled.CarouselImageContainer2>
+                        </Styled.CarouselImageText>
+                      </Styled.CarouselImageOverlay>
+                    </Styled.CarouselImageContainer>
                   </Styled.ItemContainer>
                 ))}
-              </Styled.ImageBundle>
-            </Styled.CarouselContainer>
+              </Styled.ECarousel>
+
+              <Slider>
+                {data.map((item) => (
+                  <div key={item.id}>
+                    <img
+                      src={item.mobile_image}
+                      alt={item.altText}
+                      title={item.tooltip}
+                    />
+                  </div>
+                ))}
+              </Slider>
+            </Styled.RightSideContainer>
           </Styled.Container>
         </Styled.SectionContainer>
 
         <div
           style={{
-            padding: '10px 5%',
+            padding: '35px 5%',
             display: 'flex',
             width: '100%',
             justifyContent: 'flex-end',
@@ -384,9 +457,6 @@ export const Store = () => {
 
       {modalIsOpen ? (
         <Modal onClose={closeModal}>
-          <Styled.ModalTitle onClick={closeModal}>
-            {data[modalIndex].title}
-          </Styled.ModalTitle>
           <Styled.ModalClose onClick={closeModal}>
             <Styled.ModalCloseButton onClick={closeModal}>
               <svg
@@ -404,15 +474,11 @@ export const Store = () => {
             </Styled.ModalCloseButton>
           </Styled.ModalClose>
 
-          <Styled.Sliderr
-            afterChange={(index) => setModalIndex(index)}
-            initialSlide={currentIndex}
-            {...settings}
-          >
+          <Slider {...settings}>
             {data.map((item) => (
               <Styled.ModalImageContainerWrapper key={item.id}>
-                <Styled.ModalImageContainer>
-                  <Styled.CarouselImage
+                <Styled.ModalImageContainer key={item.id}>
+                  <Styled.CarouselImagePoha
                     src={item.modal_image}
                     alt={item.altText}
                     title={item.tooltip}
@@ -420,7 +486,7 @@ export const Store = () => {
                 </Styled.ModalImageContainer>
               </Styled.ModalImageContainerWrapper>
             ))}
-          </Styled.Sliderr>
+          </Slider>
         </Modal>
       ) : null}
     </>

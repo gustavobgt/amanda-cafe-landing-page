@@ -18,7 +18,7 @@ export const RelativeContainer2 = styled.div`
     z-index: 1;
     height: 70vh;
     @media ${theme.media.lteMedium} {
-      height: 200px;
+      height: 230px;
     }
   `}
 `;

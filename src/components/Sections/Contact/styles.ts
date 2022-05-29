@@ -65,7 +65,7 @@ export const TextContainer1 = styled.div`
 `;
 
 export const Title1 = styled.h2`
-  ${() => css`
+  ${({ theme }) => css`
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 700;
@@ -75,6 +75,20 @@ export const Title1 = styled.h2`
 
     color: #ffffff;
     text-align: left;
+
+    @media ${theme.media.lteMedium} {
+      font-family: 'Poppins';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 30px;
+      line-height: 34px;
+      /* or 113% */
+
+      text-align: center;
+      letter-spacing: 0.01em;
+
+      color: #ffffff;
+    }
   `}
 `;
 
@@ -94,6 +108,52 @@ export const Description = styled.p`
     @media ${theme.media.lteMedium} {
       max-width: inherit;
       min-height: inherit;
+      text-align: center;
+    }
+
+    color: #ffffff;
+  `}
+`;
+
+export const CaixinhaDesktop = styled.p`
+  ${({ theme }) => css`
+    display: inline;
+    min-height: 160px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.4rem;
+    line-height: 20px;
+    max-width: 346px;
+    text-align: left;
+
+    letter-spacing: 0.03em;
+
+    @media ${theme.media.lteMedium} {
+      display: none;
+    }
+
+    color: #ffffff;
+  `}
+`;
+
+export const CaixinhaMobile = styled.p`
+  ${({ theme }) => css`
+    display: none;
+
+    min-height: 160px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.4rem;
+    line-height: 20px;
+    max-width: 346px;
+    text-align: left;
+
+    letter-spacing: 0.03em;
+
+    @media ${theme.media.lteMedium} {
+      display: inline;
     }
 
     color: #ffffff;
@@ -101,7 +161,7 @@ export const Description = styled.p`
 `;
 
 export const Whatsapp = styled.a`
-  ${() => css`
+  ${({ theme }) => css`
     background: url('https://i.imgur.com/9siGmM3.png') no-repeat, #000000;
     background-position: 90% 0%;
     width: 100%;
@@ -124,11 +184,28 @@ export const Whatsapp = styled.a`
       opacity: 0.7;
       transition: 0.25s;
     }
+
+    @media ${theme.media.lteMedium} {
+      padding-left: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      > div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        > svg {
+          display: none;
+        }
+      }
+    }
   `}
 `;
 
 export const Instagram = styled.a`
-  ${() => css`
+  ${({ theme }) => css`
     background: url('https://i.imgur.com/sehzwjH.png') no-repeat, #000000;
     background-position: 90% 0%;
     width: 100%;
@@ -150,11 +227,28 @@ export const Instagram = styled.a`
       opacity: 0.7;
       transition: 0.25s;
     }
+
+    @media ${theme.media.lteMedium} {
+      padding-left: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      > div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        > svg {
+          display: none;
+        }
+      }
+    }
   `}
 `;
 
 export const Email = styled.a`
-  ${() => css`
+  ${({ theme }) => css`
     background: url('https://i.imgur.com/z1cqZ2G.png') no-repeat, #000000;
     background-position: 90% 0%;
     width: 100%;
@@ -175,6 +269,23 @@ export const Email = styled.a`
     &:hover {
       opacity: 0.7;
       transition: 0.25s;
+    }
+
+    @media ${theme.media.lteMedium} {
+      padding-left: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      > div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        > svg {
+          display: none;
+        }
+      }
     }
   `}
 `;

@@ -13,8 +13,12 @@ const data = [
     link: 'https://www.instagram.com/viviannerolemberg/',
     photo:
       'https://res.cloudinary.com/amanda-caf/image/upload/v1652625521/Feedbacks/viviane-photo_gne8uy.png',
+    photoMobile:
+      'https://res.cloudinary.com/amanda-caf/image/upload/v1653652576/Feedbacks/mobile/Primary_Image_Feedback_-_Viviane_oxflyb.png',
     avatar:
       'https://res.cloudinary.com/amanda-caf/image/upload/v1652625270/Feedbacks/viviane-avatar_hmlftg.png',
+    avatarMobile:
+      'https://res.cloudinary.com/amanda-caf/image/upload/v1653652861/Feedbacks/mobile/Image_3_owbdjq.png',
   },
   {
     id: 2,
@@ -25,8 +29,12 @@ const data = [
     link: 'https://www.instagram.com/ssampaiocarol/',
     photo:
       'https://res.cloudinary.com/amanda-caf/image/upload/v1652625526/Feedbacks/carol-photo_xiskhe.png',
+    photoMobile:
+      'https://res.cloudinary.com/amanda-caf/image/upload/v1653652575/Feedbacks/mobile/Primary_Image_Feedback_-_Carol_xbevdk.png',
     avatar:
       'https://res.cloudinary.com/amanda-caf/image/upload/v1652625289/Feedbacks/carol-avatar_zpeqzk.png',
+    avatarMobile:
+      'https://res.cloudinary.com/amanda-caf/image/upload/v1653652861/Feedbacks/mobile/Image_4_jwrgcy.png',
   },
   {
     id: 3,
@@ -37,8 +45,12 @@ const data = [
     link: 'https://www.instagram.com/lima_vic_oficial/',
     photo:
       'https://res.cloudinary.com/amanda-caf/image/upload/v1652625533/Feedbacks/victoria-photo_enxuev.png',
+    photoMobile:
+      'https://res.cloudinary.com/amanda-caf/image/upload/v1653652576/Feedbacks/mobile/Primary_Image_Feedback_-_Victoria_ltb72r.png',
     avatar:
       'https://res.cloudinary.com/amanda-caf/image/upload/v1652625310/Feedbacks/victoria-avatar_tsp55y.png',
+    avatarMobile:
+      'https://res.cloudinary.com/amanda-caf/image/upload/v1653652862/Feedbacks/mobile/Image_rei6os.png',
   },
   {
     id: 4,
@@ -49,8 +61,12 @@ const data = [
     link: 'https://www.instagram.com/anaclaradalmeida_/',
     photo:
       'https://res.cloudinary.com/amanda-caf/image/upload/v1652625532/Feedbacks/ana-photo_mkwpqj.png',
+    photoMobile:
+      'https://res.cloudinary.com/amanda-caf/image/upload/v1653652575/Feedbacks/mobile/Primary_Image_Feedback_-_Ana_Clara_ceeqij.png',
     avatar:
       'https://res.cloudinary.com/amanda-caf/image/upload/v1652625328/Feedbacks/ana-avatar_fdg1zh.png',
+    avatarMobile:
+      'https://res.cloudinary.com/amanda-caf/image/upload/v1653652862/Feedbacks/mobile/Image_rei6os.png',
   },
   {
     id: 5,
@@ -61,8 +77,12 @@ const data = [
     link: 'https://www.instagram.com/laumattos_/',
     photo:
       'https://res.cloudinary.com/amanda-caf/image/upload/v1652625533/Feedbacks/laura-photo_hlzdth.png',
+    photoMobile:
+      'https://res.cloudinary.com/amanda-caf/image/upload/v1653652350/Feedbacks/mobile/Primary_Image_Feedback_-_Laura_arnu16.png',
     avatar:
       'https://res.cloudinary.com/amanda-caf/image/upload/v1652625345/Feedbacks/laura-avatar_p7wjlr.png',
+    avatarMobile:
+      'https://res.cloudinary.com/amanda-caf/image/upload/v1653652862/Feedbacks/mobile/Image_rei6os.png',
   },
 ];
 
@@ -74,7 +94,13 @@ export const Feedback = () => {
       <Styled.SectionContainer>
         <Styled.Container>
           <Styled.PhotoContainer data-aos="fade-left">
-            <Styled.Photo src={data[currentIndex].photo} />
+            <picture>
+              <Styled.PhotoMobile
+                srcSet={data[currentIndex].photoMobile}
+                media="(max-width: 768px)"
+              />
+              <Styled.Photo srcSet={data[currentIndex].photo} />
+            </picture>
           </Styled.PhotoContainer>
 
           <Styled.TextContainer1 data-aos="fade-left">
@@ -134,16 +160,23 @@ export const Feedback = () => {
             </Styled.Instagram>
 
             <Styled.Avatars>
-              {data.map(({ avatar }, key) => {
+              {data.map(({ avatar, avatarMobile }, key) => {
                 return (
                   <Styled.AvatarContainer
                     isFocused={key === currentIndex}
                     key={key}
                   >
-                    <Styled.AvatarImg
-                      onClick={() => setCurrentIndex(key)}
-                      src={avatar}
-                    />
+                    <picture>
+                      <Styled.AvatarImgMobile
+                        srcSet={avatarMobile}
+                        media="(max-width: 768px)"
+                        onClick={() => setCurrentIndex(key)}
+                      />
+                      <Styled.AvatarImg
+                        srcSet={avatar}
+                        onClick={() => setCurrentIndex(key)}
+                      />
+                    </picture>
                   </Styled.AvatarContainer>
                 );
               })}

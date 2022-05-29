@@ -10,6 +10,7 @@ export const Container = styled.div`
     @media ${theme.media.lteMedium} {
       grid-template-columns: 1fr;
       text-align: center;
+      grid-gap: 1rem;
     }
   `}
 `;
@@ -54,16 +55,31 @@ export const PhotoSection = styled.div`
 `;
 
 export const PhotoContainer = styled.div`
-  ${() =>
+  ${({ theme }) =>
     css`
       width: 100%;
+
+      @media ${theme.media.lteMedium} {
+        margin: 0 auto;
+      }
     `}
 `;
 
 export const Photo = styled.img`
-  ${() =>
+  ${({ theme }) =>
     css`
       width: 100%;
+
+      @media ${theme.media.lteMedium} {
+        width: auto;
+      }
+    `}
+`;
+
+export const PhotoMobile = styled.source`
+  ${({ theme }) =>
+    css`
+      // width: 100%;
     `}
 `;
 
@@ -79,16 +95,21 @@ export const TextContainer1 = styled.div`
     @media ${theme.media.lteMedium} {
       margin-bottom: ${theme.spacings.large};
       max-width: inherit;
+      background-position: 50% 15%;
     }
   `}
 `;
 
 export const Header = styled.div`
-  ${() =>
+  ${({ theme }) =>
     css`
       display: flex;
       align-items: center;
       justify-content: space-between;
+
+      @media ${theme.media.lteMedium} {
+        display: none;
+      }
     `}
 `;
 
@@ -101,7 +122,7 @@ export const ButtonsContainer = styled.div`
 `;
 
 export const Title1 = styled.h2`
-  ${() => css`
+  ${({ theme }) => css`
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 700;
@@ -111,6 +132,20 @@ export const Title1 = styled.h2`
 
     color: #ffffff;
     text-align: left;
+
+    @media ${theme.media.lteMedium} {
+      font-family: 'Poppins';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 30px;
+      line-height: 34px;
+      /* identical to box height, or 113% */
+
+      text-align: center;
+      letter-spacing: 0.01em;
+
+      color: #ffffff;
+    }
   `}
 `;
 
@@ -129,6 +164,7 @@ export const Description = styled.p`
 
     @media ${theme.media.lteMedium} {
       max-width: inherit;
+      text-align: center;
     }
 
     color: #ffffff;
@@ -167,28 +203,50 @@ type AvatarContainerProps = {
   isFocused?: boolean;
 };
 
-const focused = () => css`
+const focused = (theme) => css`
   background: url('https://i.imgur.com/BMcnXbB.png') no-repeat;
   background-size: contain;
+
+  @media ${theme.media.lteMedium} {
+    background: url('https://res.cloudinary.com/amanda-caf/image/upload/v1653653223/Feedbacks/mobile/elipse_vndiix.png')
+      no-repeat;
+    //display: flex;
+    //align-items: center;
+    //justify-content: center;
+    //padding: 0.3rem;
+  }
 `;
 
 export const AvatarContainer = styled.div<AvatarContainerProps>`
-  ${({ isFocused }) => css`
+  ${({ isFocused, theme }) => css`
     display: flex;
     align-items: center;
     padding: 0.6rem;
     width: 92px;
     transition: all 0.5s ease-in-out;
-    ${isFocused && focused()}
+    ${isFocused && focused(theme)}
 
     :hover {
       transition: all 0.3s ease-in-out;
-      ${focused()}
+      ${focused(theme)}
+    }
+
+    @media ${theme.media.lteMedium} {
+      width: auto;
+      padding: 0.3rem;
     }
   `}
 `;
 
 export const AvatarImg = styled.img`
-  width: 100%;
-  cursor: pointer;
+  ${({ theme }) => css`
+    width: 100%;
+    cursor: pointer;
+
+    @media ${theme.media.lteMedium} {
+      width: auto;
+    }
+  `}
 `;
+
+export const AvatarImgMobile = styled.source``;

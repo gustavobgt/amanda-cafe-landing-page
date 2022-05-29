@@ -101,9 +101,12 @@ export const Container = styled.div<MenuVisible>`
     ${visible && menuVisible()}
 
     > ${SectionContainer} {
-      display: grid;
-      grid-template-columns: 1fr;
-      height: 100vh;
+      //display: grid;
+      //grid-template-columns: 1fr;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: calc(100vh - 51px);
       align-items: center;
       overflow-y: auto;
     }

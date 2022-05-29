@@ -67,7 +67,7 @@ export const SvgContainer = styled.div`
       > svg {
         position: absolute;
         right: -3rem;
-        bottom: 7rem;
+        bottom: -7rem;
 
         @media ${theme.media.lteMedium} {
           right: inherit;
@@ -282,7 +282,7 @@ export const ModalImageContainer = styled.div`
       position: relative;
       box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
       //max-width: 500px;
-      max-width: 400px;
+      max-width: 600px;
 
       @media (max-width: 713px) {
         max-width: 300px;
