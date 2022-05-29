@@ -281,7 +281,7 @@ export const ModalImageContainer = styled.div`
       position: relative;
       box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
       //max-width: 500px;
-      max-width: 600px;
+      max-width: 400px;
 
       @media (max-width: 713px) {
         max-width: 300px;
@@ -289,6 +289,10 @@ export const ModalImageContainer = styled.div`
 
       @media (max-width: 440px) {
         max-width: 250px;
+      }
+
+      @media (max-width: 360px) {
+        max-width: 210px;
       }
     `}
 `;
