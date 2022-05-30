@@ -42,7 +42,7 @@ export const Background = styled.div`
     align-items: center;
     border-bottom: 0.05px solid rgba(255, 255, 255, 0.5);
     gap: 20px;
-    background: url('https://i.imgur.com/HiKn6r3.png') no-repeat,
+    background: url('https://i.imgur.com/euiAPwX.png') no-repeat,
       ${theme.colors.background};
     background-position: center center;
     background-attachment: fixed;
@@ -268,6 +268,25 @@ export const Description = styled.p`
     font-weight: 500;
     font-size: 1.4rem;
     line-height: 20px;
+    max-width: 370px;
+    text-align: left;
+
+    letter-spacing: 0.03em;
+
+    @media ${theme.media.lteMedium} {
+      max-width: inherit;
+    }
+
+    color: #ffffff;
+  `}
+`;
+
+export const Description2 = styled.p`
+  ${({ theme }) => css`
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1rem;
     max-width: 370px;
     text-align: left;
 

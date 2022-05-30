@@ -5,11 +5,11 @@ type Background = {
   backgroundImg?: string;
 };
 
-const containerBackgroundActivate = (
-  theme: DefaultTheme,
-  backgroundImg: string,
-) => css`
-  background: url(${backgroundImg}) no-repeat, ${theme.colors.background};
+const containerBackgroundActivate = (theme: DefaultTheme) => css`
+  background: url('https://res.cloudinary.com/amanda-caf/image/upload/v1653948553/sobre/imagebg-2x_gdad0r.png')
+      no-repeat,
+    ${theme.colors.background};
+
   background-position: 0% 100%;
   background-attachment: fixed;
   background-size: cover;
@@ -17,10 +17,10 @@ const containerBackgroundActivate = (
 `;
 
 export const Container = styled.div<Background>`
-  ${({ theme, background, backgroundImg }) => css`
+  ${({ theme, background }) => css`
     background: ${theme.colors.white};
     color: ${theme.colors.primaryColor};
-    ${background && containerBackgroundActivate(theme, backgroundImg)};
+    ${background && containerBackgroundActivate(theme)};
     min-height: calc(100vh - 49px);
     display: flex;
     align-items: center;

@@ -30,7 +30,7 @@ const data = [
     image_original:
       'https://res.cloudinary.com/amanda-caf/image/upload/v1653850696/Loja/Mobile/Imagem-Original_d5vcmo.png',
     image_preset:
-      'https://res.cloudinary.com/amanda-caf/image/upload/v1653850705/Loja/Mobile/Preset-FairyTail_kotkui.png',
+      'https://res.cloudinary.com/amanda-caf/image/upload/v1653950289/Loja/Mobile/Image_box_-_Fairytail-Mobile_kcxvor.png',
   },
   {
     id: 2,
@@ -54,7 +54,7 @@ const data = [
     image_original:
       'https://res.cloudinary.com/amanda-caf/image/upload/v1653850696/Loja/Mobile/Imagem-Original_d5vcmo.png',
     image_preset:
-      'https://res.cloudinary.com/amanda-caf/image/upload/v1653850761/Loja/Mobile/Preset-Cold_dxnsyv.png',
+      'https://res.cloudinary.com/amanda-caf/image/upload/v1653950289/Loja/Mobile/Image_box_-_Cold_as_your_heart-Mobile_onsinr.png',
   },
   {
     id: 3,
@@ -78,7 +78,7 @@ const data = [
     image_original:
       'https://res.cloudinary.com/amanda-caf/image/upload/v1653850696/Loja/Mobile/Imagem-Original_d5vcmo.png',
     image_preset:
-      'https://res.cloudinary.com/amanda-caf/image/upload/v1653850758/Loja/Mobile/Preset-Greek_wgztxx.png',
+      'https://res.cloudinary.com/amanda-caf/image/upload/v1653950289/Loja/Mobile/Image_box_-_Greek_beauty-Mobile_hhwpnd.png',
   },
 ];
 
@@ -336,7 +336,6 @@ export const Store = () => {
                     }}
                     key={item.id}
                   >
-                    <Styled.CarouselImage src={item.image_original} />
                     <Styled.CarouselImage src={item.image_preset} />
                   </Styled.CarouselImageContainer>
                 ))}
@@ -368,9 +367,9 @@ export const Store = () => {
                 {data[currentIndex].description1}
               </Styled.Description>
 
-              <Styled.Description>
+              <Styled.Description2>
                 {data[currentIndex].description2}
-              </Styled.Description>
+              </Styled.Description2>
 
               <Styled.ButtonsContainer2>
                 <Styled.BuyButton

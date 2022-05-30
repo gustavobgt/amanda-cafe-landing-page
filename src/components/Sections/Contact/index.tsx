@@ -250,7 +250,7 @@ export const Contact = () => {
                       <Styled.Group>
                         <TextField
                           placeholder="Escrever"
-                          label="Email"
+                          label="E-mail"
                           name="email"
                           type="email"
                         />

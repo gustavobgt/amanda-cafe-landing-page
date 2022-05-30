@@ -257,6 +257,7 @@ const data = [
         src2: 'https://res.cloudinary.com/amanda-caf/image/upload/v1652909303/portfolio/Modal/Criativo/Criativo-7_2x_fgvnoc.jpg',
         tooltip: 'Amanda Café',
         altText: 'Quinta Foto do Portfólio Criativo',
+        horizontal: true,
       },
     ],
   },
@@ -303,7 +304,7 @@ const data = [
       },
       {
         id: 6,
-        src2: 'https://res.cloudinary.com/amanda-caf/image/upload/v1652909303/portfolio/Modal/Criativo/Criativo-7_2x_fgvnoc.jpg',
+        src2: 'https://res.cloudinary.com/amanda-caf/image/upload/v1652909439/portfolio/Modal/Estudio/Est%C3%BAdio-6_2x_vxhavn.jpg',
         src: 'https://res.cloudinary.com/amanda-caf/image/upload/v1652909439/portfolio/Modal/Estudio/Est%C3%BAdio-6_2x_vxhavn.jpg',
         tooltip: 'Amanda Café',
         altText: 'Quinta Foto do Portfólio Estúdio',
@@ -701,7 +702,7 @@ export const Portfolio = () => {
           <Slider {...settings}>
             {data[currentIndex].modal_images.map((item) => (
               <Styled.ModalImageContainerWrapper key={item.id}>
-                <Styled.ModalImageContainer>
+                <Styled.ModalImageContainer horizontal={item.horizontal}>
                   <Styled.CarouselImage
                     src={item.src2}
                     alt={item.altText}

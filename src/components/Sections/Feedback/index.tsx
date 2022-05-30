@@ -66,7 +66,7 @@ const data = [
     avatar:
       'https://res.cloudinary.com/amanda-caf/image/upload/v1652625328/Feedbacks/ana-avatar_fdg1zh.png',
     avatarMobile:
-      'https://res.cloudinary.com/amanda-caf/image/upload/v1653652862/Feedbacks/mobile/Image_rei6os.png',
+      'https://res.cloudinary.com/amanda-caf/image/upload/v1653950590/Feedbacks/mobile/Image_1_y8ql1w.png',
   },
   {
     id: 5,
@@ -82,7 +82,7 @@ const data = [
     avatar:
       'https://res.cloudinary.com/amanda-caf/image/upload/v1652625345/Feedbacks/laura-avatar_p7wjlr.png',
     avatarMobile:
-      'https://res.cloudinary.com/amanda-caf/image/upload/v1653652862/Feedbacks/mobile/Image_rei6os.png',
+      'https://res.cloudinary.com/amanda-caf/image/upload/v1653950590/Feedbacks/mobile/Image_2_tzr4bf.png',
   },
 ];
 

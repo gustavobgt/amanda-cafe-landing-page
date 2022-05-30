@@ -274,14 +274,22 @@ export const ModalImageContainerWrapper = styled.div`
     `}
 `;
 
-export const ModalImageContainer = styled.div`
-  ${() =>
+interface ModalImageContainerProps {
+  horizontal?: boolean;
+}
+
+export const ModalImageContainer = styled.div<ModalImageContainerProps>`
+  ${({ horizontal }) =>
     css`
       overflow: hidden;
       position: relative;
       box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
       //max-width: 500px;
-      max-width: 400px;
+      max-width: ${!horizontal ? '400px' : '700px'};
+
+      @media (min-width: 1800px) {
+        max-width: ${!horizontal ? '600px' : '1000px'};
+      }
 
       @media (max-width: 713px) {
         max-width: 300px;
