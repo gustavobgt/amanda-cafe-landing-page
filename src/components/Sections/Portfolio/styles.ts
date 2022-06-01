@@ -406,11 +406,13 @@ export const Pagination2 = styled.div`
   //margin-top: 20px;
   //position: fixed;
   position: absolute;
+  //padding-bottom: 1rem;
   //bottom: 20px;
   bottom: -60px;
   //display: block;
   width: 100%;
   padding: 0;
+  // padding-bottom: 1rem;
   margin: 0;
   list-style: none;
   //text-align: center;

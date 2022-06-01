@@ -58,7 +58,7 @@ export const Button = styled.button<MenuVisible>`
 `;
 
 export const Footer = styled.footer`
-  ${({ theme }) =>
+  ${() =>
     css`
       display: flex;
       align-items: center;

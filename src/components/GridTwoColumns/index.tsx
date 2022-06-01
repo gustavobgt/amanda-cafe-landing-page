@@ -24,7 +24,7 @@ export const GridTwoColumns = ({
       backgroundImg={backgroundImg}
       sectionId={sectionId}
     >
-      <Styled.Container>{children}</Styled.Container>
+      <Styled.Container data-aos="fade-left">{children}</Styled.Container>
 
       <Styled.SocialContainer>
         <SocialMedia />

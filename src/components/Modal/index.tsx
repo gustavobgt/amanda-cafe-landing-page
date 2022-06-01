@@ -50,13 +50,19 @@ const Modal = ({ onClose, children }) => {
 const StyledModalWrapper = styled.div`
   width: 100%;
   max-width: 1200px;
+  //height: 100%;
   //: auto;
+
+  @media (max-height: 700px) {
+    height: 100%;
+  }
 `;
 
 const StyledModal = styled.div`
   background: transparent;
   height: 100%;
   width: 100%;
+  padding: 2rem 0;
 `;
 
 const StyledModalOverlay = styled.div`

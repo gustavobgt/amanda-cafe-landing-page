@@ -14,7 +14,7 @@ const aboutInfo = {
 export const About = () => {
   return (
     <GridTwoColumns {...aboutInfo} data-aos="fade">
-      <Styled.RelativeContainer1 data-aos="fade-left">
+      <Styled.RelativeContainer1>
         <Styled.TextContainer1>
           <svg
             width="17"
@@ -43,7 +43,7 @@ export const About = () => {
         <Styled.AmandaImg src="https://res.cloudinary.com/amanda-caf/image/upload/v1653650768/sobre/foto-amanda-1_2_1_thld6m.png" />
       </Styled.AmandaImgContainer>
 
-      <Styled.RelativeContainer2 data-aos="fade-left">
+      <Styled.RelativeContainer2>
         <Styled.TextContainer2>
           <Styled.SvgContainer>
             <svg
