@@ -105,8 +105,8 @@ export const Container = styled.div<MenuVisible>`
       //grid-template-columns: 1fr;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
-      height: calc(100vh - 51px);
+      justify-content: space-evenly;
+      height: calc(100% - 51px);
       align-items: center;
       overflow-y: auto;
     }
