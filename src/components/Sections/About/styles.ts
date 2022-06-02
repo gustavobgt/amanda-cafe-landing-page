@@ -17,6 +17,11 @@ export const RelativeContainer2 = styled.div`
     position: relative;
     z-index: 1;
     height: 70vh;
+
+    @media (max-height: 680px) {
+      height: 80vh;
+    }
+
     @media ${theme.media.lteMedium} {
       height: 230px;
     }
