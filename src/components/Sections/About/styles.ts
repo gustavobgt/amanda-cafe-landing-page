@@ -82,9 +82,10 @@ export const Title1 = styled.h2`
     letter-spacing: 0.01em;
 
     color: #ffffff;
+    margin-bottom: 0;
 
     @media ${theme.media.lteMedium} {
-      margin: 5% 0 0 0;
+      margin-top: 5% 0 0 0;
     }
   `}
 `;
@@ -99,6 +100,7 @@ export const SubTitle1 = styled.p`
     /* or 150% */
 
     letter-spacing: 0.03em;
+    margin-top: 0;
 
     color: #ffffff;
 
