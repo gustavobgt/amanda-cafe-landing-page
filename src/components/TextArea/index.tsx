@@ -8,7 +8,12 @@ export const TextAreaInput = ({ label, ...props }: any) => {
   return (
     <>
       <Label htmlFor={field.name}>{label}</Label>
-      <TextArea hasError={meta.touched && meta.error} {...field} {...props} />
+      <TextArea
+        id={field.name}
+        hasError={meta.touched && meta.error}
+        {...field}
+        {...props}
+      />
       <FloatError>
         <ErrorMessage component="div" name={field.name} />
       </FloatError>

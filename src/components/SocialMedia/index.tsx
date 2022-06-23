@@ -4,6 +4,8 @@ const SocialMedia = () => {
   return (
     <Styled.Footer>
       <Styled.Link
+        aria-label="Link para o whatsapp da Amanda Café"
+        role="button"
         target="_blank"
         href="https://api.whatsapp.com/send?phone=5571992787948"
       >
@@ -22,6 +24,8 @@ const SocialMedia = () => {
       </Styled.Link>
 
       <Styled.Link
+        aria-label="Link para o instagram da Amanda Café"
+        role="button"
         target="_blank"
         href="https://www.instagram.com/amandacafefotografia/"
       >
@@ -48,6 +52,8 @@ const SocialMedia = () => {
       </Styled.Link>
 
       <Styled.Link
+        aria-label="Link para enviar e-mail para Amanda Café"
+        role="button"
         target="_blank"
         href="mailto: amandacafefotografia@gmail.com"
       >

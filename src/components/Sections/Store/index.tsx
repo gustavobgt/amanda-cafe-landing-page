@@ -90,6 +90,7 @@ function SampleNextArrow(props: any) {
       //className={className}
       //style={{ ...style, display: 'block', background: 'red' }}
       onClick={onClick}
+      aria-label="É possível rolar as fotos para a direita"
     >
       <svg
         width="7"
@@ -113,6 +114,7 @@ function SamplePrevArrow(props: any) {
   const { onClick } = props;
   return (
     <Styled.SlideBackButton
+      aria-label="É possível rolar as fotos para a esquerda"
       //className={className}
       //style={{ ...style, display: 'block', background: 'red' }}
       onClick={onClick}
@@ -277,6 +279,7 @@ export const Store = () => {
                   return (
                     <Styled.Pagination>
                       <Styled.NextButton
+                        aria-label="É possível rolar as fotos para a esquerda"
                         visible={!(activePage === 0)}
                         onClick={() => onClick(activePage - 1)}
                       >
@@ -307,6 +310,7 @@ export const Store = () => {
                       })}
 
                       <Styled.NextButton
+                        aria-label="É possível rolar as fotos para a direita"
                         visible={!(pages.length === activePage + 1)}
                         onClick={() => onClick(activePage + 1)}
                       >
@@ -336,7 +340,11 @@ export const Store = () => {
                     }}
                     key={item.id}
                   >
-                    <Styled.CarouselImage src={item.image_preset} />
+                    <Styled.CarouselImage
+                      src={item.image_preset}
+                      alt={item.altText}
+                      title={item.tooltip}
+                    />
                   </Styled.CarouselImageContainer>
                 ))}
               </Styled.CustomCarousel>
@@ -427,7 +435,11 @@ export const Store = () => {
 
             <Styled.CarouselContainer data-aos="fade-left">
               <Styled.PrincipalImageContainer onClick={() => setIsOpen(true)}>
-                <Styled.PrincipalImage src={data[currentIndex].photo} />
+                <Styled.PrincipalImage
+                  src={data[currentIndex].photo}
+                  alt={data[currentIndex].altText}
+                  title={data[currentIndex].tooltip}
+                />
               </Styled.PrincipalImageContainer>
 
               <Styled.ImageBundle>
@@ -440,7 +452,11 @@ export const Store = () => {
                     key={item.id}
                   >
                     <Styled.CarouselImageContainer2>
-                      <Styled.CarouselImage2 src={item.carousel_image} />
+                      <Styled.CarouselImage2
+                        src={item.carousel_image}
+                        alt={item.altText}
+                        title={item.tooltip}
+                      />
 
                       <Styled.CarouselImageOverlay2>
                         <Styled.CarouselImageText2>

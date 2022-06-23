@@ -68,6 +68,7 @@ export function DropdownComponent(props: PropsWithChildren<DropdownProps>) {
           onClick={onClick}
           isActive={isActive}
           type="button"
+          aria-label="Abrir caixa de seleção do Assunto"
         >
           <svg
             width="9"

@@ -40,7 +40,11 @@ export const About = () => {
       </Styled.RelativeContainer1>
 
       <Styled.AmandaImgContainer data-aos="fade">
-        <Styled.AmandaImg src="https://res.cloudinary.com/amanda-caf/image/upload/v1653650768/sobre/foto-amanda-1_2_1_thld6m.png" />
+        <Styled.AmandaImg
+          alt="Amanda Café"
+          title="Foto Amanda Café, proprietária do negócio"
+          src="https://res.cloudinary.com/amanda-caf/image/upload/v1653650768/sobre/foto-amanda-1_2_1_thld6m.png"
+        />
       </Styled.AmandaImgContainer>
 
       <Styled.RelativeContainer2>

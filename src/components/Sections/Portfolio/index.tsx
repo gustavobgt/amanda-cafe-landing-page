@@ -13,6 +13,8 @@ const data = [
   {
     id: 1,
     title: 'Praiano',
+    tooltip: 'Amanda Café',
+    altText: 'Foto de capa Portfólio Praiano',
     image:
       'https://res.cloudinary.com/amanda-caf/image/upload/v1652632996/portfolio/banner-praiano_bojowr.png',
     modal_images: [
@@ -63,6 +65,8 @@ const data = [
   {
     id: 2,
     title: 'Casual',
+    tooltip: 'Amanda Café',
+    altText: 'Foto de capa Portfólio Casual',
     image:
       'https://res.cloudinary.com/amanda-caf/image/upload/v1652632996/portfolio/banner-casual_q3m6le.png',
     modal_images: [
@@ -113,6 +117,8 @@ const data = [
   {
     id: 3,
     title: 'Urbano',
+    tooltip: 'Amanda Café',
+    altText: 'Foto de capa Portfólio Urbano',
     image:
       'https://res.cloudinary.com/amanda-caf/image/upload/v1652632996/portfolio/banner-urbano_n8coy5.png',
     modal_images: [
@@ -156,6 +162,8 @@ const data = [
   {
     id: 4,
     title: 'Sensual',
+    tooltip: 'Amanda Café',
+    altText: 'Foto de capa Portfólio Sensual',
     image:
       'https://res.cloudinary.com/amanda-caf/image/upload/v1652632996/portfolio/banner-sensual_xyvwok.png',
     modal_images: [
@@ -206,6 +214,8 @@ const data = [
   {
     id: 5,
     title: 'Criativo',
+    tooltip: 'Amanda Café',
+    altText: 'Foto de capa Portfólio Criativo',
     image:
       'https://res.cloudinary.com/amanda-caf/image/upload/v1652632996/portfolio/banner-criativo_v17e5u.png',
     modal_images: [
@@ -264,6 +274,8 @@ const data = [
   {
     id: 6,
     title: 'Estúdio',
+    tooltip: 'Amanda Café',
+    altText: 'Foto de capa Portfólio Estúdio',
     image:
       'https://res.cloudinary.com/amanda-caf/image/upload/v1652632996/portfolio/banner-estudio_wjwqud.png',
     modal_images: [
@@ -321,6 +333,8 @@ const data = [
   {
     id: 7,
     title: 'Casal',
+    tooltip: 'Amanda Café',
+    altText: 'Foto de capa Portfólio Casal',
     image:
       'https://res.cloudinary.com/amanda-caf/image/upload/v1652632996/portfolio/banner-casal_motkfc.png',
     modal_images: [
@@ -487,10 +501,19 @@ export const Portfolio = () => {
 
   const myArrow = ({ type, onClick, isEdge }) => {
     const pointer = type === 'PREV' ? 'left' : 'right';
+    const ariaLabel =
+      type === 'PREV'
+        ? 'Rolar as fotos para a esquerda'
+        : 'Rolar as fotos para a direita';
 
     return (
       <Styled.ButtonContainer>
-        <Button onClick={onClick} direction={pointer} disabled={isEdge} />
+        <Button
+          aria-label={ariaLabel}
+          onClick={onClick}
+          direction={pointer}
+          disabled={isEdge}
+        />
       </Styled.ButtonContainer>
     );
   };
@@ -595,6 +618,7 @@ export const Portfolio = () => {
                   return (
                     <Styled.Pagination>
                       <Styled.NextButton
+                        aria-label="É possível rolar as fotos para a esquerda"
                         visible={!(activePage === 0)}
                         onClick={() => onClick(activePage - 1)}
                       >
@@ -625,6 +649,7 @@ export const Portfolio = () => {
                       })}
 
                       <Styled.NextButton
+                        aria-label="É possível rolar as fotos para a esquerda"
                         visible={!(pages.length === activePage + 1)}
                         onClick={() => onClick(activePage + 1)}
                       >
@@ -652,9 +677,15 @@ export const Portfolio = () => {
                       setModalIndex(index);
                       openModal();
                     }}
+                    role="button"
+                    aria-label="Abre o visualizador de fotos do portfólio clicado"
                     key={item.id}
                   >
-                    <Styled.CarouselImage src={item.image} />
+                    <Styled.CarouselImage
+                      alt={item.altText}
+                      title={item.tooltip}
+                      src={item.image}
+                    />
 
                     <Styled.CarouselImageOverlay>
                       <Styled.CarouselImageText>
@@ -683,7 +714,10 @@ export const Portfolio = () => {
       {modalIsOpen ? (
         <Modal onClose={closeModal}>
           <Styled.ModalClose onClick={closeModal}>
-            <Styled.ModalCloseButton onClick={closeModal}>
+            <Styled.ModalCloseButton
+              onClick={closeModal}
+              aria-label="Fechar visualização de fotos"
+            >
               <svg
                 width="10"
                 height="10"
