@@ -10,18 +10,18 @@ export type Props = {
 };
 
 function Layout({ children }: Props) {
-  const { menu, footerHtml, title } = data[0];
+  const { menu, footerHtml } = data[0];
   const { links } = menu;
 
   return (
     <Base links={links} footerHtml={footerHtml}>
       <Head>
-        <title>{title}</title>
+        <title>Amanda Café Fotografia</title>
 
         <meta name="theme-color" content="#9100FF" />
         <meta
           name="description"
-          content="As landing pages mais legais da Internet."
+          content="Fotógrafa de Salvador e Aracaju especialista em retratos femininos"
         />
       </Head>
 
