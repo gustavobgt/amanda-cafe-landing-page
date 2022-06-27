@@ -16,12 +16,14 @@ function Layout({ children }: Props) {
   return (
     <Base links={links} footerHtml={footerHtml}>
       <Head>
-        <title>Amanda Café Fotografia</title>
+        <title>
+          Amanda Café Fotografia | Ensaios femininos - Bahia e Sergipe
+        </title>
 
         <meta name="theme-color" content="#9100FF" />
         <meta
           name="description"
-          content="Fotógrafa de Salvador e Aracaju especialista em retratos femininos"
+          content="Fotógrafa especialista em retratos femininos | Ensaios em Salvador e Aracaju | Retratos externos e em estúdio | Casal, Gestante, formaturas, etc."
         />
       </Head>
 
